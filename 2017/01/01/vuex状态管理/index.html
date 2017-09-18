@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SmallWen�Ĳ���">
 <meta property="og:description" content="vuex一般用于构建大型单页面应用    小项目不建议用vuex Vuex    是Vue.js设计的状态管理模式 解决vue不同组件之间的数据共享 使用Vuex安装：1npm install --save vuex 引入：1234import Vuex from &apos;vuex&apos;import Vue from &apos;vue&apos;Vue.use(Vuex) Vuex的组成部分主要: action   muta">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-18T05:29:02.052Z">
+<meta property="og:updated_time" content="2017-09-18T05:38:03.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex">
 <meta name="twitter:description" content="vuex一般用于构建大型单页面应用    小项目不建议用vuex Vuex    是Vue.js设计的状态管理模式 解决vue不同组件之间的数据共享 使用Vuex安装：1npm install --save vuex 引入：1234import Vuex from &apos;vuex&apos;import Vue from &apos;vue&apos;Vue.use(Vuex) Vuex的组成部分主要: action   muta">
@@ -179,6 +179,13 @@
 <h1 id="使用Vuex"><a href="#使用Vuex" class="headerlink" title="使用Vuex"></a>使用Vuex</h1><p>安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save vuex</div></pre></td></tr></table></figure></p>
 <p>引入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import Vuex from <span class="string">'vuex'</span></div><div class="line">import Vue from <span class="string">'vue'</span></div><div class="line"></div><div class="line">Vue.use(Vuex)</div></pre></td></tr></table></figure></p>
 <h1 id="Vuex的组成部分"><a href="#Vuex的组成部分" class="headerlink" title="Vuex的组成部分"></a>Vuex的组成部分</h1><p>主要: action   mutations   state</p>
+<h2 id="state"><a href="#state" class="headerlink" title="state"></a>state</h2><p>State负责存储整个应用的状态数据，一般需要在使用的时候在跟节点注入store对象，后期就可以使用this.$store.state直接获取状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//store为实例化生成的</div><div class="line">import store from <span class="string">'./store'</span></div><div class="line"></div><div class="line">new Vue(&#123;</div><div class="line">  el: <span class="string">'#app'</span>,</div><div class="line">  store,</div><div class="line">  render: h =&gt; h(App)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>这个store可以理解为一个容器，包含着应用中的state等。实例化生成store的过程是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">const mutations = &#123;...&#125;;</div><div class="line">const actions = &#123;...&#125;;</div><div class="line">const state = &#123;...&#125;;</div><div class="line"></div><div class="line">Vuex.Store(&#123;</div><div class="line">  state,</div><div class="line">  actions,</div><div class="line">  mutation</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="Mutations"><a href="#Mutations" class="headerlink" title="Mutations"></a>Mutations</h2><p>Mutations的中文意思是“变化”，利用它可以更改状态，本质就是用来处理数据的函数，其接收唯一参数值state。store.commit(mutationName)是用来触发一个mutation的方法。需要记住的是，定义的mutation必须是同步函数，否则devtool中的数据将可能出现问题，使状态改变变得难以跟踪。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const mutations = &#123;</div><div class="line">  mutationName(state) &#123;</div><div class="line">    //在这里改变state中的数据</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在组件中触发<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//我是一个组件</div><div class="line"><span class="built_in">export</span> default &#123;</div><div class="line">  methods: &#123;</div><div class="line">    <span class="function"><span class="title">handleClick</span></span>() &#123;</div><div class="line">      this.<span class="variable">$store</span>.commit(<span class="string">'mutationName'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>或者使用辅助函数mapMutations直接将触发函数映射到methods上，这样就能在元素事件绑定上直接使用了。如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import &#123;mapMutations&#125; from <span class="string">'vuex'</span></div><div class="line"></div><div class="line">//我是一个组件</div><div class="line"><span class="built_in">export</span> default &#123;</div><div class="line">  methods: mapMutations([</div><div class="line">    <span class="string">'mutationName'</span></div><div class="line">  ])</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="actions"><a href="#actions" class="headerlink" title="actions"></a>actions</h2><p>Actions也可以用于改变状态，不过是通过触发mutation实现的，重要的是可以包含异步操作。其辅助函数是mapActions与mapMutations类似，也是绑定在组件的methods上的。如果选择直接触发的话，使用this.$store.dispatch(actionName)方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//定义Actions</div><div class="line">const actions = &#123;</div><div class="line">  actionName(&#123; commit &#125;) &#123;</div><div class="line">    //dosomething</div><div class="line">    commit(<span class="string">'mutationName'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在组件中使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import &#123;mapActions&#125; from <span class="string">'vuex'</span></div><div class="line"></div><div class="line">//我是一个组件</div><div class="line"><span class="built_in">export</span> default &#123;</div><div class="line">  methods: mapActions([</div><div class="line">    <span class="string">'actionName'</span>,</div><div class="line">  ])</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
 
@@ -422,15 +429,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
               </li>
              
               <li class="article-tag-list-item">
