@@ -156,9 +156,24 @@
     <article id="post-vue基本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/18/vue基本/">vue的基本</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/18/vue基本/" class="archive-article-date">
+  	<time datetime="2017-09-18T03:48:31.790Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-18</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##vue�Ļ���ʹ��##<br>  �����û������Ľ���ʽ���� MVVM����</p>
+        <p>##vue的基本使用##<br>  构建用户界面的渐进式框架 MVVM框架</p>
 
       
 
@@ -221,7 +236,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>���ã�MyBlog</p>
+        <p>你好，MyBlog</p>
 
       
 
@@ -235,6 +250,96 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/09/18/first/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-isroll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/isroll/">插件</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/isroll/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#iscroll</p>
+<h3 id="iscroll初始化"><a href="#iscroll初始化" class="headerlink" title="iscroll初始化"></a>iscroll初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var myScroll = new IScroll(<span class="string">'.content'</span>, &#123;</div><div class="line">	bounce: <span class="literal">true</span>, //开启弹簧效果</div><div class="line">	click: <span class="literal">true</span>, //在iscroll中，为了性能优化，没有将点击事件传递下去</div><div class="line">	tap: <span class="literal">true</span>, //tap事件相当于移动端的click</div><div class="line">	startY: -100, //startX,startY设置起始位置</div><div class="line">	scrollY: <span class="literal">true</span>,//Y轴是否可以滚动</div><div class="line">	scrollX: <span class="literal">false</span>,//x轴是否可以滚动</div><div class="line">	freeScroll: <span class="literal">true</span>,//自由滚动</div><div class="line">	scrollbars: <span class="literal">true</span>, //是否显示滚动条</div><div class="line">	fadeScrollbars: <span class="literal">true</span>, //滚动时才显示滚动条</div><div class="line">	probeType: 3</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="iscroll方法"><a href="#iscroll方法" class="headerlink" title="iscroll方法"></a>iscroll方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">myScroll.on(<span class="string">'beforeScrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始前'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始了'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scroll'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'正在滚动。。。。'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	//主动的停止</div><div class="line">	myScroll.on(<span class="string">'scrollEnd'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'停止了滚动'</span>);</div><div class="line">	&#125;)</div><div class="line">	//被动的，来电，来短信，接收通知，app退出后台</div><div class="line">	myScroll.on(<span class="string">'scrollCancel'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动取消'</span>);</div><div class="line">	&#125;)</div><div class="line">			</div><div class="line">	//滚动最大范围</div><div class="line">	console.log(myScroll.maxScrollY)</div><div class="line">	console.log(myScroll.maxScrollX)</div><div class="line">	//刷新滚动视图，让滚动视图重新识别容器大小</div><div class="line">	myScroll.refresh();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">iscroll</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/iscroll//" class="article-tag-list-link color3">iscroll</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/isroll/">展开全文 >></a>
         </p>
       
 
@@ -355,6 +460,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
