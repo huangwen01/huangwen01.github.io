@@ -426,6 +426,93 @@
 
 
   
+    <article id="post-vue路由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/vue路由/">vue路由</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/vue路由/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vue-router 路由/也可以自动生成路由模块<br>安装<br>引入的模块   都要Vue.use一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import VueRouter from <span class="string">'vue-router'</span></div><div class="line">Vue.use(VuewRouter)</div><div class="line">npm/cnpm install vue-router --save</div></pre></td></tr></table></figure></p>
+<p>创建组件，引入组件<br>import Home from ‘…./Home.vue’</p>
+<h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">const routes=[</div><div class="line">		&#123;</div><div class="line">			path:<span class="string">'/home'</span>,component:Home,</div><div class="line">				//子路由</div><div class="line">				//子路由要显示 都要在副路由渲染下面加  &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">			children:[</div><div class="line">				&#123; path:<span class="string">'/homecontent'</span>,component:HomeConent&#125;</div><div class="line">				.....	</div><div class="line">			]</div><div class="line">		&#125;</div><div class="line">		,</div><div class="line">		......</div><div class="line">	]</div><div class="line">const router=new VueRouter(&#123;</div><div class="line">		routes   //es6缩写    routes:routes</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">挂载到vue视图上面 </div><div class="line">new Vue(&#123;</div><div class="line">		el:<span class="string">"#app"</span>,</div><div class="line">		router,</div><div class="line">		render:h=&gt;h(App)</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue路由</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue路由//" class="article-tag-list-link color1">vue路由</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/vue路由/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-webpack和gulp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -449,6 +536,11 @@
         <p>webpack模块化管理和打包工具<br>模块的相互依赖打包成js文件</p>
 <p>npm/cnpm安装   –save-dev</p>
 <p> css-loader   模块<br> style-loader  模块</p>
+<h2 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h2><p>Gulp就是为了规范前端开发流程，实现前后端分离、模块化开发、版本控制、文件合并与压缩、mock数据等功能的一个前端自动化构建工具。<br>………</p>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、AMD 模块、ES6 模块、CSS、图片、JSON、Coffeescript、LESS 等。</p>
+<p>Webpack就是需要通过其配置文件（webpack.config.js）中entry配置的一个入口文件（JS文件）,如下图<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> entry: &#123;</div><div class="line">      app:__dirname + <span class="string">"/src/scripts/app.js"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后Webpack进入该app.js文件进行解析，app.js文件如下图：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//引入scss文件</div><div class="line">   import <span class="string">'../style/app.scss'</span>;</div><div class="line">  </div><div class="line">//引入依赖模块</div><div class="line">   var greeter = require(<span class="string">'./Greeter.js'</span>);</div><div class="line">   </div><div class="line">document.getElementById(<span class="string">'root'</span>).appendChild(greeter());</div></pre></td></tr></table></figure></p>
+<p>解析过程中，发现一个app.scss文件，然后根据webpack.config.js配置文件中的module.loaders属性去查找处理.scss文件的loader进行处理，处理app.scss文件过程中，如果发现该文件还有其他依赖文件，则继续处理app.scss文件的依赖文件，直至处理完成该“链路”上的依赖文件，然后又遇到一个Greeter.js模块，于是像之前一样继续去查找对应的loader去处理…<br>所以，Webpack中对资源文件的处理是通过入口文件产生的依赖形成的，不会像Gulp那样，配置好路径后，该路径下所有规定的文件都会受影响。</p>
 
       
 
@@ -478,11 +570,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/vue/gulp//" class="article-tag-list-link color5">gulp</a>
+        			<a href="/categories/webpack/gulp//" class="article-tag-list-link color5">gulp</a>
         		</li>
       		
 		</ul>
@@ -627,6 +719,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
              
               <li class="article-tag-list-item">
