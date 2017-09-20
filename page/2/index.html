@@ -242,19 +242,19 @@
 
 
   
-    <article id="post-h5和c3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-es6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/h5和c3/">h5��css3</a>
+      <a class="article-title" href="/2016/06/01/es6/">JavaScript</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/h5和c3/" class="archive-article-date">
+        <a href="/2016/06/01/es6/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -262,261 +262,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ת�ԣ�<a href="http://www.cnblogs.com/star91/p/5659134.html" target="_blank" rel="external">http://www.cnblogs.com/star91/p/5659134.html</a><br>HTML5<br>1.HTML5 ��Ԫ��</p>
-<p>HTML5�ṩ���µ�Ԫ�����������õ�ҳ���ṹ��<br>��ǩ<br>����</p>
-<p><article><br>����ҳ������������������</article></p>
-<p><aside><br>����ҳ���Ĳ��������ݡ�<br><bdi><br>����������һ���ı���ʹ�������丸Ԫ�ص��ı��������á�</bdi></aside></p>
-<p><command><br>�������ť�����絥ѡ��ť����ѡ������ť</p>
-<p><details><br>���������ĵ����ĵ�ĳ�����ֵ�ϸ��</details></p>
-<p><dialog><br>�����Ի��򣬱�����ʾ��</dialog></p>
-<p><summary><br>��ǩ���� details Ԫ�صı���</summary></p>
-<p><figure><br>�涨�����������ݣ�ͼ����ͼ������Ƭ�������ȵȣ���</figure></p>
-<p><figcaption><br>���� <figure> Ԫ�صı���</figure></figcaption></p>
-<p><footer><br>���� section �� document ��ҳ�š�</footer></p>
-<p><header><br>�������ĵ���ͷ������<br><mark><br>�������мǺŵ��ı���</mark></header></p>
-<p><meter><br>���������⡣��������֪��������Сֵ�Ķ�����</meter></p>
-<p><nav><br>���嵼�����ӵĲ��֡�</nav></p>
-<p><progress><br>�����κ����͵������Ľ��ȡ�<br><ruby><br>���� ruby ע�ͣ�����ע�����ַ�����<br><rt><br>�����ַ�������ע�����ַ����Ľ��ͻ�������<br><rp><br>�� ruby ע����ʹ�ã����岻֧�� ruby Ԫ�ص�����������ʾ�����ݡ�</rp></rt></ruby></progress></p>
-<p><section><br>�����ĵ��еĽڣ�section�����Σ���<br><time><br>�������ڻ�ʱ�䡣<br><wbr><br>�涨���ı��еĺδ��ʺ����ӻ��з���<br>2.HTML5 Canvas</time></section></p>
-<p>HTML5 <canvas> Ԫ������ͼ�εĻ��ƣ�ͨ���ű� (ͨ����JavaScript)������.</canvas></p>
-<p><canvas> ��ǩֻ��ͼ��������������ʹ�ýű�������ͼ�Ρ�</canvas></p>
-<p><canvas>����ʵ������:</canvas></p>
-<p><canvasid="mycanvas"width="200"height="100"><br>ʹ�� JavaScript ������ͼ��<br>canvas Ԫ�ر�����û�л�ͼ�����ġ����еĻ��ƹ��������� JavaScript �ڲ����ɣ�</canvasid="mycanvas"width="200"height="100"></p>
-<script>
-var c=document.getElementById("myCanvas");
-var ctx=c.getContext("2d");
-ctx.fillStyle="#FF0000";
-ctx.fillRect(0,0,150,75);
-</script> 
-3.HTML5 �Ϸ�
-
- �Ϸ���һ�ֳ��������ԣ���ץȡ�����Ժ��ϵ���һ��λ�á��� HTML5 �У��Ϸ��Ǳ�׼��һ���֣��κ�Ԫ�ض��ܹ��Ϸš�
-����Ԫ��Ϊ���Ϸ�
-���ȣ�Ϊ��ʹԪ�ؿ��϶����� draggable ��������Ϊ true ��
-<imgdraggable="true">
-�϶�ʲô - ondragstart �� setData()
-�ŵ��δ� - ondragover
-���з��� - ondrop
-4.HTML5 ������λ
-
- HTML5 Geolocation API ���ڻ����û��ĵ���λ�á�
-���ڸ����Կ����ַ��û�����˽�������û�ͬ�⣬�����û�λ����Ϣ�ǲ����õġ�
-
-<script>
-var x=document.getElementById("demo");
-function getLocation()
-{
-if(navigator.geolocation)
-{
-    navigator.geolocation.getCurrentPosition(showPosition);
-}
-else{x.innerHTML="����������֧�ֻ�ȡ����λ�á�";}
-}
-function showPosition(position)
-{
-  x.innerHTML="Latitude: "+ position.coords.latitude +
-"<br>Longitude: "+ position.coords.longitude;
-}
-</script>
-
-<p>5.HTML5  Audio(��Ƶ)��Video(��Ƶ)</p>
-<p> HTML5 �涨������ҳ��Ƕ����ƵԪ�صı�׼����ʹ�� <audio> Ԫ�ء�</audio></p>
-<p><audiocontrols></audiocontrols></p>
-<p><sourcesrc="horse.ogg"type="audio ogg"=""></sourcesrc="horse.ogg"type="audio></p>
-<p><sourcesrc="horse.mp3"type="audio mpeg"=""><br>������������֧�� audio Ԫ�ء�<br></sourcesrc="horse.mp3"type="audio></p>
-<p> HTML5 �涨��һ��ͨ�� video Ԫ����������Ƶ�ı�׼������</p>
-<p><videowidth="320"height="240"controls></videowidth="320"height="240"controls></p>
-<p><sourcesrc="movie.mp4"type="video mp4"=""></sourcesrc="movie.mp4"type="video></p>
-<p><sourcesrc="movie.ogg"type="video ogg"=""><br>������������֧��Video��ǩ��<br></sourcesrc="movie.ogg"type="video></p>
-<p>6.HTML5 Input ����</p>
-<p> HTML5 ӵ�ж����µı����������͡���Щ�������ṩ�˸��õ��������ƺ���֤��<br>color��date��datetime��datetime-local��email��month��number��range��search��tel��time��url��week</p>
-<p><inputtype="range"name="points"min="1"max="10"><br>Search Google: <inputtype="search"name="googlesearch"><br>�绰����: <inputtype="tel"name="usrtel"></inputtype="tel"name="usrtel"></inputtype="search"name="googlesearch"></inputtype="range"name="points"min="1"max="10"></p>
-<p>7.HTML5 ����Ԫ��</p>
-<p> HTML5 �������µı���Ԫ��:<br>��ǩ    ����</p>
-<datalist>    </datalist><input>��ǩ����ѡ���б������� input Ԫ������ʹ�ø�Ԫ�أ������� input ���ܵ�ֵ��<br><keygen>    &gt;<keygen> ��ǩ�涨���ڱ�������Կ���������ֶΡ�<br><output>    <output> ��ǩ���岻ͬ���͵������������ű���������<br> <datalist> Ԫ�ع涨��������ѡ���б���<br></datalist><datalist> ���Թ涨 form �� input ��Ӧ��ӵ���Զ����ɹ��ܡ����û����Զ��������п�ʼ����ʱ��������Ӧ���ڸ�������ʾ��д��ѡ�<br>ʹ�� </datalist><input> Ԫ�ص��б������� <datalist> Ԫ�ذ���.<br><inputlist="browsers"><br><datalistid="browsers"><br><optionvalue="internet explorer"=""><br><optionvalue="firefox"><br><optionvalue="chrome"><br><optionvalue="opera"><br><optionvalue="safari"><br></optionvalue="safari"></optionvalue="opera"></optionvalue="chrome"></optionvalue="firefox"></optionvalue="internet></datalistid="browsers"></inputlist="browsers"></datalist>
-
-<p>8.HTML5 ��������</p>
-<p> HTML5 �� <form> �� <input>��ǩ�����˼���������.</form></p>
-<p><form>�����ԣ�<br>autocomplete��novalidate</form></p>
-<p><input>�����ԣ�<br>autocomplete��autofocus��form��formaction��formenctype��formmethod��formnovalidate��formtarget��height and width��list��min and max��multiple��pattern (regexp)��placeholder��required��step</p>
-<p>9.HTML5 ����Ԫ��</p>
-<p> HTML5�ṩ���µ�����Ԫ������ȷһ��Webҳ���Ĳ�ͬ����:</p>
-<p><header></header></p>
-<p><nav></nav></p>
-<p><section></section></p>
-<p><article></article></p>
-<p><aside></aside></p>
-<p><figcaption></figcaption></p>
-<p><figure></figure></p>
-<footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p>10.HTML5 Web �洢</p>
-<p> Web Storage DOM API ΪWebӦ���ṩ��һ���ܹ�����cookie��Javascript��������<br>sessionStorage���ͻ������ݴ洢��ֻ��ά���ڵ�ǰ�Ự��Χ�ڡ�<br>             sessionStorage ��������һ�� session �������ݴ洢�����û��ر����������ں������ݻᱻɾ����<br>localStorage���ͻ������ݴ洢����ά���ڶ����Ự��Χ�ڡ�<br>             localStorage �����洢������û��ʱ�����ơ��ڶ��졢�ڶ��ܻ���һ��֮����������Ȼ���á�<br>���ڴ����������ݽṹ��һ��ʹ��IndexDB</p>
-<p>11.HTML5 ����WebӦ�ã�Ӧ�ó��򻺴棩</p>
-<p> HTML5 ������Ӧ�ó��򻺴棬����ζ�� web Ӧ�ÿɽ��л��棬������û������������ʱ���з��ʡ�<br>Ӧ�ó��򻺴�ΪӦ�ô����������ƣ�<br>�������� - �û�����Ӧ������ʱʹ������<br>�ٶ� - �ѻ�����Դ���صø���<br>���ٷ��������� - ��������ֻ�ӷ��������ظ��¹������Ĺ�����Դ��<br>HTML5 Cache Manifest ʵ��<br>����������չʾ�˴��� cache manifest �� HTML �ĵ�����������������<br>&lt;!DOCTYPE HTML&gt;</p>
-<p><htmlmanifest="demo.appcache"></htmlmanifest="demo.appcache"></p>
-<p><body><br>The content of the document……<br></body><br><br>Manifest �ļ�<br>manifest �ļ��Ǽ򵥵��ı��ļ�������֪�����������������ݣ��Լ������������ݣ���<br>manifest �ļ��ɷ�Ϊ�������֣�<br>CACHE MANIFEST - �ڴ˱������г����ļ������״����غ����л���<br>NETWORK - �ڴ˱������г����ļ���Ҫ�������������ӣ��Ҳ��ᱻ����<br>FALLBACK - �ڴ˱������г����ļ��涨��ҳ���޷�����ʱ�Ļ���ҳ�棨���� 404 ҳ��<br>CACHE MANIFEST</p>
-<h1 id="2012-02-21-v1-0-0"><a href="#2012-02-21-v1-0-0" class="headerlink" title="2012-02-21 v1.0.0"></a>2012-02-21 v1.0.0</h1><p>/theme.css<br>/logo.gif<br>/main.js<br>NETWORK:<br>login.php<br>FALLBACK:<br>/html/ /offline.html</p>
-<p>12.HTML5 Web Workers</p>
-<p> ���� HTML ҳ����ִ�нű�ʱ��ҳ����״̬�ǲ�����Ӧ�ģ�ֱ���ű������ɡ�<br>web worker �������ں�̨�� JavaScript�������������ű�������Ӱ��ҳ�������ܡ������Լ������κ�Ը���������飺������ѡȡ���ݵȵȣ�����ʱ web worker �ں�̨���С����൱��ʵ�ֶ��̲߳�����</p>
-<p>13.HTML5 SSE</p>
-<p> Server-Sent �¼�ָ������ҳ�Զ���ȡ���Է������ĸ��¡�<br>��ǰҲ����������һ�㣬ǰ������ҳ���ò�ѯ���Ƿ��п��õĸ��¡�ͨ�������������¼��������ܹ��Զ����<br>���ӣ�Facebook/Twitter ���¡����۸��¡��µĲ��ġ����½����ȡ�<br>EventSource �������ڽ��շ����������¼�֪ͨ��<br>var source=newEventSource(“demo_sse.php”);<br>source.onmessage=function(event)<br>{<br>    document.getElementById(“result”).innerHTML+=event.data +”<br>“;<br>};<br>Ϊ�������������ӿ������У�������Ҫ�ܹ��������ݸ��µķ����������� PHP �� ASP����<br>&lt;?php<br>header(‘Content-Type: text/event-stream’);<br>header(‘Cache-Control: no-cache’);<br>$time = date(‘r’);<br>echo “data: The server time is: {$time}nn”;<br>flush();<br>?&gt;</p>
-<p>14.HTML5 WebSocket</p>
-<p> WebSocket��HTML5��ʼ�ṩ��һ���ڵ��� TCP �����Ͻ���ȫ˫��ͨѶ��Э�顣��WebSocket API�У��������ͷ�����ֻ��Ҫ��һ�����ֵĶ�����Ȼ�����������ͷ�����֮�����γ���һ������ͨ��������֮����ֱ�ӿ������ݻ��ഫ�͡�������ͨ�� JavaScript ���������������� WebSocket ���ӵ����������ӽ����Ժ󣬿ͻ��˺ͷ������˾Ϳ���ͨ�� TCP ����ֱ�ӽ������ݡ�������ȡ Web Socket ���Ӻ���������ͨ�� send() ���������������������ݣ���ͨ�� onmessage �¼������շ��������ص����ݡ����� API ���ڴ��� WebSocket ������</p>
-<p>CSS3<br>CSS3ѡ����</p>
-<p>ѡ����    ʾ��    ʾ��˵��    CSS<br>.class    .intro    ѡ������class=”intro”��Ԫ��    1</p>
-<p>#id    #firstname    ѡ������id=”firstname”��Ԫ��    1</p>
-<ul>
-<li><ul>
-<li>ѡ������Ԫ��    2<br>element    p    ѡ������<p>Ԫ��    1<br>element,element    div,p    ѡ������<div>Ԫ�غ�<p>Ԫ��    1<br>element element    div p    ѡ��<div>Ԫ���ڵ�����<p>Ԫ��    1<br>element&gt;element    div&gt;p    ѡ�����и����� <div> Ԫ�ص� <p> Ԫ��    2<br>element+element    div+p    ѡ�����н�����<div>Ԫ��֮����<p>Ԫ��    2<br>[attribute]    [target]    ѡ�����д���target����Ԫ��    2<br>[attribute=value]    [target=-blank]    ѡ������ʹ��target=”-blank”��Ԫ��    2<br>[attribute~=value]    [title~=flower]    ѡ���������԰�������”flower”������Ԫ��    2<br>[attribute|=language]    [lang|=en]    ѡ��һ��lang���Ե���ʼֵ=”EN”������Ԫ��    2<br>:link    a:link    ѡ������δ��������    1<br>:visited    a:visited    ѡ�����з��ʹ�������    1<br>:active    a:active    ѡ�������    1<br>:hover    a:hover    ѡ����������������ʱ    1<br>:focus    input:focus    ѡ�����н���������Ԫ��    2<br>:first-letter    p:first-letter    ѡ��ÿһ��</p><p>Ԫ�صĵ�һ����ĸ    1<br>:first-line    p:first-line    ѡ��ÿһ��</p><p>Ԫ�صĵ�һ��    1<br>:first-child    p:first-child    ָ��ֻ�е�</p><p>Ԫ�����丸���ĵ�һ���Ӽ�����ʽ��    2<br>:before    p:before    ��ÿ��</p><p>Ԫ��֮ǰ��������    2<br>:after    p:after    ��ÿ��</p><p>Ԫ��֮����������    2<br>:lang(language)    p:lang(it)    ѡ��һ��lang���Ե���ʼֵ=”it”������</p><p>Ԫ��    2<br>element1~element2    p~ul    ѡ��pԪ��֮����ÿһ��ulԪ��    3<br>[attribute^=value]    a[src^=”https”]    ѡ��ÿһ��src���Ե�ֵ��”https”��ͷ��Ԫ��    3<br>[attribute$=value]    a[src$=”.pdf”]    ѡ��ÿһ��src���Ե�ֵ��”.pdf”��β��Ԫ��    3<br>[attribute<em>=value]    a[src</em>=”44lan”]    ѡ��ÿһ��src���Ե�ֵ�������ַ���”44lan”��Ԫ��    3<br>:first-of-type    p:first-of-type    ѡ��ÿ��pԪ�����丸���ĵ�һ��pԪ��    3<br>:last-of-type    p:last-of-type    ѡ��ÿ��pԪ�����丸��������һ��pԪ��    3<br>:only-of-type    p:only-of-type    ѡ��ÿ��pԪ�����丸����ΨһpԪ��    3<br>:only-child    p:only-child    ѡ��ÿ��pԪ�����丸����Ψһ��Ԫ��    3<br>:nth-child(n)    p:nth-child(2)    ѡ��ÿ��pԪ�����丸���ĵڶ�����Ԫ��    3<br>:nth-last-child(n)    p:nth-last-child(2)    ѡ��ÿ��pԪ�ص����丸���ĵڶ�����Ԫ�أ�������һ����������    3<br>:nth-of-type(n)    p:nth-of-type(2)    ѡ��ÿ��pԪ�����丸���ĵڶ���pԪ��    3<br>:nth-last-of-type(n)    p:nth-last-of-type(2)    ѡ��ÿ��pԪ�ص����丸���ĵڶ���pԪ�أ�������һ����������    3<br>:last-child    p:last-child    ѡ��ÿ��pԪ�����丸��������һ���Ӽ���    3<br>:root    :root    ѡ���ĵ��ĸ�Ԫ��    3<br>:empty    p:empty    ѡ��ÿ��û���κ��Ӽ���pԪ�أ������ı��ڵ㣩    3<br>:target    #news:target    ѡ����ǰ���#newsԪ�أ�������ê���Ƶĵ�����URL��    3<br>:enabled    input:enabled    ѡ��ÿһ�������õ�����Ԫ��    3<br>:disabled    input:disabled    ѡ��ÿһ�����õ�����Ԫ��    3<br>:checked    input:checked    ѡ��ÿ��ѡ�е�����Ԫ��    3<br>:not(selector)    :not(p)    ѡ��ÿ������pԪ�ص�Ԫ��    3<br>::selection    ::selection    ƥ��Ԫ���б��û�ѡ�л����ڸ���״̬�Ĳ���    3<br>:out-of-range    :out-of-range    ƥ��ֵ��ָ������֮����inputԪ��    3<br>:in-range    :in-range    ƥ��ֵ��ָ������֮�ڵ�inputԪ��    3<br>:read-write    :read-write    ����ƥ���ɶ�����д��Ԫ��    3<br>:read-only    :read-only    ����ƥ������ “readonly”��ֻ���� ���Ե�Ԫ��    3<br>:optional    :optional    ����ƥ����ѡ������Ԫ��    3<br>:required    :required    ����ƥ�������� “required” ���Ե�Ԫ��    3<br>:valid    :valid    ����ƥ������ֵΪ�Ϸ���Ԫ��    3<br>:invalid    :invalid    ����ƥ������ֵΪ�Ƿ���Ԫ��</p></div></p></div></p></div></p></div></p></li>
-</ul>
-</li>
-</ul>
-<p>CSS3 �߿���Borders��</p>
-<p> ��CSS3�������Դ���Բ�Ǳ߿���������Ӱ�򣬲���Ϊ�߽�����������ʹ�����Ƴ���<br>����    ˵��    CSS<br>border-image    �������б߿�ͼ�����ټ����ԡ�    3<br>border-radius    һ���������������ĸ��߿�- *-�뾶���Ե��ټ�����    3<br>box-shadow    ����һ������������������Ӱ    3<br>div<br>{<br>  border:2px solid;<br>  border-radius:25px;<br>  box-shadow:10px10px5px#888888;<br>  border-image:url(border.png)3030 round;<br>}</p>
-<p>CSS3 ����</p>
-<p> CSS3�а��������µı������ԣ��ṩ���󱳾�Ԫ�ؿ��ơ�<br>˳��    ����    CSS<br>background-clip    �涨�����Ļ���������    3<br>background-origin    �涨����ͼƬ�Ķ�λ������    3<br>background-size    �涨����ͼƬ�ĳߴ硣    3<br>div<br>{<br>  background:url(img_flwr.gif);<br>  background-repeat:no-repeat;<br>  background-size:100%100%;<br>  background-origin:content-box;<br>}<br>�౳��<br>body<br>{<br>  background-image:url(img_flwr.gif),url(img_tree.gif);<br>}<br>CSS3 ����</p>
-<p>CSS3 �������������͵Ľ��䣨gradients����<br>���Խ��䣨Linear Gradients��- ����/����/����/����/�ԽǷ���<br> background: linear-gradient(direction, color-stop1, color-stop2,…);</p>
-<p>���򽥱䣨Radial Gradients��- �����ǵ����Ķ���<br> background: radial-gradient(center, shape size, start-color,…,last-color);</p>
-<p>CSS3 �ı�Ч��</p>
-<p>����    ����    CSS<br>hanging-punctuation    �涨�����ַ��Ƿ�λ���߿�֮�⡣    3<br>punctuation-trim    �涨�Ƿ��Ա����ַ������޼���    3<br>text-align-last    �������ζ�������һ�л�������ǿ�ƻ��з�֮ǰ���С�    3<br>text-emphasis    ��Ԫ�ص��ı�Ӧ���ص������Լ��ص����ǵ�ǰ��ɫ��    3<br>text-justify    �涨�� text-align ����Ϊ “justify” ʱ��ʹ�õĶ��뷽����    3<br>text-outline    �涨�ı���������    3<br>text-overflow    �涨���ı���������Ԫ��ʱ���������顣    3<br>text-shadow    ���ı�������Ӱ��    3<br>text-wrap    �涨�ı��Ļ��й�����    3<br>word-break    �涨�����պ��ı��Ļ��й�����    3<br>word-wrap    �����Գ��Ĳ��ɷָ��ĵ��ʽ��зָ���е���һ�С�    3</p>
-<p>CSS3 ����</p>
-<p> ��ǰCSS3�İ汾����ҳ����ʦ���ò�ʹ���û����������Ѿ���װ�����塣ʹ��CSS3����ҳ����ʦ����ʹ����/��ϲ�����κ����塣���㷢����Ҫʹ�õ������ļ�ʱ��ֻ���򵥵Ľ������ļ���������վ�У������Զ����ظ���Ҫ���û�������ѡ�����������µ�CSS3�汾�й���@font-face������������”�Լ���”���������� CSS3 @font-face �����ж����ġ�</p>
-<style>
-@font-face
-{
- font-family: myFirstFont;
- src: url(sansation_light.woff);
-}
-div
-{
- font-family:myFirstFont;
-}
-</style>
-
-<p>CSS3 ת���ͱ���</p>
-<p>2D��ת������<br>�����г������е�ת������:<br>Property    ����    CSS<br>transform    ������2D��3Dת����Ԫ��    3<br>transform-origin    ����������ת��Ԫ��λ��<br>2D ת������<br>����    ����<br>matrix(n,n,n,n,n,n)    ���� 2D ת����ʹ������ֵ�ľ�����<br>translate(x,y)    ���� 2D ת�������� X �� Y ���ƶ�Ԫ�ء�<br>translateX(n)    ���� 2D ת�������� X ���ƶ�Ԫ�ء�<br>translateY(n)    ���� 2D ת�������� Y ���ƶ�Ԫ�ء�<br>scale(x,y)    ���� 2D ����ת�����ı�Ԫ�صĿ��Ⱥ͸߶ȡ�<br>scaleX(n)    ���� 2D ����ת�����ı�Ԫ�صĿ��ȡ�<br>scaleY(n)    ���� 2D ����ת�����ı�Ԫ�صĸ߶ȡ�<br>rotate(angle)    ���� 2D ��ת���ڲ����й涨�Ƕȡ�<br>skew(x-angle,y-angle)    ���� 2D ��бת�������� X �� Y �ᡣ<br>skewX(angle)    ���� 2D ��бת�������� X �ᡣ<br>skewY(angle)    ���� 2D ��бת�������� Y �ᡣ</p>
-<p>3Dת������<br>�±��г������е�ת�����ԣ�<br>����    ����    CSS<br>transform    ��Ԫ��Ӧ�� 2D �� 3D ת����    3<br>transform-origin    �������ı䱻ת��Ԫ�ص�λ�á�    3<br>transform-style    �涨��Ƕ��Ԫ�������� 3D �ռ�����ʾ��    3<br>perspective    �涨 3D Ԫ�ص�͸��Ч����    3<br>perspective-origin    �涨 3D Ԫ�صĵײ�λ�á�    3<br>backface-visibility    ����Ԫ���ڲ�������Ļʱ�Ƿ��ɼ���    3<br>3D ת������<br>����    ����<br>matrix3d(n,n,n,n,n,n,<br>n,n,n,n,n,n,n,n,n,n)    ���� 3D ת����ʹ�� 16 ��ֵ�� 4x4 ������<br>translate3d(x,y,z)    ���� 3D ת����<br>translateX(x)    ���� 3D ת������ʹ������ X ����ֵ��<br>translateY(y)    ���� 3D ת������ʹ������ Y ����ֵ��<br>translateZ(z)    ���� 3D ת������ʹ������ Z ����ֵ��<br>scale3d(x,y,z)    ���� 3D ����ת����<br>scaleX(x)    ���� 3D ����ת����ͨ������һ�� X ����ֵ��<br>scaleY(y)    ���� 3D ����ת����ͨ������һ�� Y ����ֵ��<br>scaleZ(z)    ���� 3D ����ת����ͨ������һ�� Z ����ֵ��<br>rotate3d(x,y,z,angle)    ���� 3D ��ת��<br>rotateX(angle)    ������ X ���� 3D ��ת��<br>rotateY(angle)    ������ Y ���� 3D ��ת��<br>rotateZ(angle)    ������ Z ���� 3D ��ת��<br>perspective(n)    ���� 3D ת��Ԫ�ص�͸����ͼ��</p>
-<p>CSS3 ����</p>
-<p>��������<br>�±��г������еĹ�������:<br>����    ����    CSS<br>transition    ��д���ԣ�������һ�������������ĸ��������ԡ�    3<br>transition-property    �涨Ӧ�ù��ɵ� CSS ���Ե����ơ�    3<br>transition-duration    ��������Ч�����ѵ�ʱ�䡣Ĭ���� 0��    3<br>transition-timing-function    �涨����Ч����ʱ�����ߡ�Ĭ���� “ease”��    3<br>transition-delay    �涨����Ч����ʱ��ʼ��Ĭ���� 0��    3<br>div<br>{<br> transition-property: width;<br> transition-duration:1s;<br> transition-timing-function: linear;<br> transition-delay:2s;<br>/<em> Safari </em>/<br> -webkit-transition-property:width;<br> -webkit-transition-duration:1s;<br> -webkit-transition-timing-function:linear;<br> -webkit-transition-delay:2s;<br>}</p>
-<p>CSS3 ����</p>
-<p> Ҫ����CSS3����������Ҫ�˽�@keyframes������@keyframes�����Ǵ��������� @keyframes������ָ��һ��CSS��ʽ�Ͷ������𲽴�Ŀǰ����ʽ����Ϊ�µ���ʽ��<br>ʵ��<br>������Ϊ 25% �� 50% ʱ�ı䱳��ɫ��Ȼ�󵱶��� 100% ����ʱ�ٴθı䣺<br>@keyframes myfirst<br>{<br> 0%{background: red;}<br> 25%{background: yellow;}<br> 50%{background: blue;}<br> 100%{background: green;}<br>}<br>�����ı����г��� @keyframes ���������ж������ԣ�<br>����    ����    CSS<br>@keyframes    �涨������    3<br>animation    ���ж������Եļ�д���ԣ����� animation-play-state ���ԡ�    3<br>animation-name    �涨 @keyframes ���������ơ�    3<br>animation-duration    �涨��������һ�����������ѵ��������롣Ĭ���� 0��    3<br>animation-timing-function    �涨�������ٶ����ߡ�Ĭ���� “ease”��    3<br>animation-delay    �涨������ʱ��ʼ��Ĭ���� 0��    3<br>animation-iteration-count    �涨���������ŵĴ�����Ĭ���� 1��    3<br>animation-direction    �涨�����Ƿ�����һ���������ز��š�Ĭ���� “normal”��    3<br>animation-play-state    �涨�����Ƿ��������л���ͣ��Ĭ���� “running”��    3</p>
-<p>div<br>{<br> animation-name: myfirst;<br> animation-duration:5s;<br> animation-timing-function: linear;<br> animation-delay:2s;<br> animation-iteration-count: infinite;<br> animation-direction: alternate;<br> animation-play-state: running;<br>/<em> Safari and Chrome: </em>/<br> -webkit-animation-name: myfirst;<br> -webkit-animation-duration:5s;<br> -webkit-animation-timing-function: linear;<br> -webkit-animation-delay:2s;<br> -webkit-animation-iteration-count: infinite;<br> -webkit-animation-direction: alternate;<br> -webkit-animation-play-state: running;<br>}</p>
-<p>CSS3 ����</p>
-<p>�±��г������� CSS3 �Ķ������ԣ�<br>����    ����<br>column-count    ָ��Ԫ��Ӧ�ñ��ָ���������<br>column-fill    ָ������������<br>column-gap    ָ��������֮���ļ�϶<br>column-rule    ���� column-rule-* ���Եļ�д<br>column-rule-color    ָ�����м��߿�����ɫ<br>column-rule-style    ָ�����м��߿�����ʽ<br>column-rule-width    ָ�����м��߿��ĺ���<br>column-span    ָ��Ԫ��Ҫ��Խ������<br>column-width    ָ���еĿ���<br>columns    ���� column-width �� column-count �ļ�д</p>
-<p>CSS3 ��ģ��</p>
-<p> �� CSS3 ��, ������һЩ�µ��û���������������Ԫ�سߴ磬���ߴ������߿�����Ҫ���������û��������ԣ�<br>resize��none | both | horizontal | vertical | inherit<br>box-sizing: content-box | border-box | inherit<br>outline:outline-color outline-style outline-width outine-offset<br>resize����ָ��һ��Ԫ���Ƿ�Ӧ�����û�ȥ������С��<br>box-sizing ������������ȷ�еķ�ʽ������Ӧĳ�������ľ������ݡ�<br>outline-offset ���Զ���������ƫ�ƣ����ڳ����߿���Ե��λ�û���������</p>
-<p>CSS3�������ֺ�ģ��(���Ժ�)</p>
-<p> CSS3 ���ԺУ� Flexible Box �� flexbox������һ�ֵ�ҳ����Ҫ��Ӧ��ͬ����Ļ��С�Լ��豸����ʱȷ��Ԫ��ӵ��ǡ������Ϊ�Ĳ��ַ�ʽ��<br>���뵯�Ժв���ģ�͵�Ŀ�����ṩһ�ָ�����Ч�ķ�ʽ����һ�������е���Ԫ�ؽ������С������ͷ����հ׿ռ䡣<br> �±��г����ڵ��Ժ����г��õ�������:<br>����    ����<br>display    ָ�� HTML Ԫ�غ������͡�<br>flex-direction    ָ���˵�����������Ԫ�ص����з�ʽ<br>justify-content    ���õ��Ժ���Ԫ�������ᣨ���ᣩ�����ϵĶ��뷽ʽ��<br>align-items    ���õ��Ժ���Ԫ���ڲ��ᣨ���ᣩ�����ϵĶ��뷽ʽ��<br>flex-wrap    ���õ��Ժ��ӵ���Ԫ�س���������ʱ�Ƿ����С�<br>align-content    �޸� flex-wrap ���Ե���Ϊ������ align-items, ������������Ԫ�ض��룬���������ж���<br>flex-flow    flex-direction �� flex-wrap �ļ�д<br>order    ���õ��Ժ��ӵ���Ԫ������˳����<br>align-self    �ڵ�����Ԫ����ʹ�á����������� align-items ���ԡ�<br>flex    ���õ��Ժ��ӵ���Ԫ�����η����ռ䡣</p>
-<p>CSS3 ��ý����ѯ</p>
-<p>�� CSS �汾 2 ��ʼ���Ϳ���ͨ��ý�������� CSS �л���ý��֧�֡�����������ʹ�ù���ӡ��ʽ������ô�������Ѿ�ʹ�ù�ý�����͡��嵥 1 չʾ��һ��ʾ����<br>�嵥 1. ʹ��ý������</p>
-<p><linkrel="stylesheet"type="text css"href="site.css" media="screen"></linkrel="stylesheet"type="text></p>
-<p><linkrel="stylesheet"type="text css"href="print.css" media="print"><br>�嵥 2. ý����ѯ����<br>@media all and(min-width:800px){…}<br>@media all ��ý�����ͣ�Ҳ����˵������ CSS Ӧ��������ý�����͡�<br>(min-width:800px) �ǰ���ý����ѯ�ı���ʽ����������������С����Ϊ 800 ���أ���������������ֻ�������� CSS��<br>�嵥 3. and ����<br>@media(min-width:800px)and(max-width:1200px)and(orientation:portrait){…}</linkrel="stylesheet"type="text></p>
-<p>�嵥 4. or �ؼ���<br>@media(min-width:800px)or(orientation:portrait){…}</p>
-<p>�嵥 5. ʹ�� not<br>@media(not min-width:800px){…}</p>
-</footer></output></output></imgdraggable="true">
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">����</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">h5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">css3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/h5和c3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-webpack和gulp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/webpack和gulp/">webpack和gulp的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/webpack和gulp/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>webpack模块化管理和打包工具<br>模块的相互依赖打包成js文件</p>
-<p>npm/cnpm安装   –save-dev</p>
-<p> css-loader   模块<br> style-loader  模块</p>
-<h2 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h2><p>Gulp就是为了规范前端开发流程，实现前后端分离、模块化开发、版本控制、文件合并与压缩、mock数据等功能的一个前端自动化构建工具。<br>………</p>
-<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、AMD 模块、ES6 模块、CSS、图片、JSON、Coffeescript、LESS 等。</p>
-<p>Webpack就是需要通过其配置文件（webpack.config.js）中entry配置的一个入口文件（JS文件）,如下图<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> entry: &#123;</div><div class="line">      app:__dirname + <span class="string">"/src/scripts/app.js"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后Webpack进入该app.js文件进行解析，app.js文件如下图：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//引入scss文件</div><div class="line">   import <span class="string">'../style/app.scss'</span>;</div><div class="line">  </div><div class="line">//引入依赖模块</div><div class="line">   var greeter = require(<span class="string">'./Greeter.js'</span>);</div><div class="line">   </div><div class="line">document.getElementById(<span class="string">'root'</span>).appendChild(greeter());</div></pre></td></tr></table></figure></p>
-<p>解析过程中，发现一个app.scss文件，然后根据webpack.config.js配置文件中的module.loaders属性去查找处理.scss文件的loader进行处理，处理app.scss文件过程中，如果发现该文件还有其他依赖文件，则继续处理app.scss文件的依赖文件，直至处理完成该“链路”上的依赖文件，然后又遇到一个Greeter.js模块，于是像之前一样继续去查找对应的loader去处理…<br>所以，Webpack中对资源文件的处理是通过入口文件产生的依赖形成的，不会像Gulp那样，配置好路径后，该路径下所有规定的文件都会受影响。</p>
+        <h1 id="es6-http-es6-ruanyifeng-com-docs-let"><a href="#es6-http-es6-ruanyifeng-com-docs-let" class="headerlink" title="es6  http://es6.ruanyifeng.com/#docs/let"></a>es6  <a href="http://es6.ruanyifeng.com/#docs/let" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/let</a></h1><h3 id="let-const"><a href="#let-const" class="headerlink" title="let const"></a>let const</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">一.<span class="built_in">let</span> 块级作用域  </div><div class="line">1.let 不会变量提前</div><div class="line">    // var 的情况</div><div class="line">    console.log(foo); // 输出undefined</div><div class="line">    var foo = 2;</div><div class="line">    // <span class="built_in">let</span> 的情况</div><div class="line">    console.log(bar); // 报错ReferenceError</div><div class="line">    <span class="built_in">let</span> bar = 2;</div><div class="line">2.暂时性死区</div><div class="line">    只要块级作用域内存在<span class="built_in">let</span>命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</div><div class="line">    var tmp = 123;</div><div class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">    tmp = <span class="string">'abc'</span>; // ReferenceError</div><div class="line">    <span class="built_in">let</span> tmp;</div><div class="line">    &#125;</div><div class="line">3. 在同一作用域不允许重复声明</div><div class="line">    <span class="built_in">let</span>不允许在相同作用域内，重复声明同一个变量。</div><div class="line">二、const 常亮</div><div class="line">    声明的变量不能改变 改变就报错</div></pre></td></tr></table></figure>
+<h3 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">1.数组  没有的就是undefined</div><div class="line">    <span class="built_in">let</span> [foo, [[bar], baz]] = [1, [[2], 3]];</div><div class="line">    foo // 1</div><div class="line">    bar // 2</div><div class="line">    baz // 3</div><div class="line">    <span class="built_in">let</span> [ , , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</div><div class="line">    third // <span class="string">"baz"</span></div><div class="line">2.对象的结构赋值：</div><div class="line">    对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</div><div class="line">    <span class="built_in">let</span> &#123; bar, foo &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</div><div class="line">    foo // <span class="string">"aaa"</span></div><div class="line">    bar // <span class="string">"bbb"</span></div><div class="line"></div><div class="line">    <span class="built_in">let</span> &#123; baz &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</div><div class="line">    baz // undefined</div><div class="line">3.字符串结构</div><div class="line">    字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</div><div class="line">    const [a, b, c, d, e] = <span class="string">'hello'</span>;</div><div class="line">    a // <span class="string">"h"</span></div><div class="line">    b // <span class="string">"e"</span></div><div class="line">    c // <span class="string">"l"</span></div><div class="line">    d // <span class="string">"l"</span></div><div class="line">    e // <span class="string">"o"</span></div><div class="line">    类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</div><div class="line">    <span class="built_in">let</span> &#123;length : len&#125; = <span class="string">'hello'</span>;</div><div class="line">    len // 5</div><div class="line">4.函数参数的解构赋值</div><div class="line">    <span class="keyword">function</span> add([x, y])&#123;</div><div class="line">    <span class="built_in">return</span> x + y;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    add([1, 2]); // 3</div></pre></td></tr></table></figure>
+<h3 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1.字符串的遍历器接口  <span class="keyword">for</span> ...of</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> codePoint of <span class="string">'foo'</span>) &#123;</div><div class="line">        console.log(codePoint)</div><div class="line">    &#125;</div><div class="line">    // <span class="string">"f"</span></div><div class="line">    // <span class="string">"o"</span></div><div class="line">    // <span class="string">"o"</span></div><div class="line">2.字符串模板</div><div class="line">    starsWith（abc）判断字符串是不是开头</div><div class="line">    endsWith（abc）判断是不是abc结尾</div></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.Array.from() </div><div class="line">    可以用于深拷贝数组</div><div class="line">2.Array.of() 将一组数值转换为数组</div><div class="line">    Array.of(3, 11, 8) // [3,11,8]</div><div class="line">    Array.of(3) // [3]</div><div class="line">    Array.of(3).length // 1</div></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1.可以在函数里面传参</div><div class="line">    <span class="keyword">function</span> <span class="built_in">log</span>(x, y) &#123;</div><div class="line">        y = y || <span class="string">'World'</span>;</div><div class="line">        console.log(x, y);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">function</span> <span class="built_in">log</span>(x, y = <span class="string">'World'</span>) &#123;</div><div class="line">        console.log(x, y);</div><div class="line">    &#125;</div><div class="line">2.可以在函数内部开启严格模式</div><div class="line">    <span class="keyword">function</span> doSomething(a, b) &#123;</div><div class="line">    <span class="string">'use strict'</span>;</div><div class="line">    // code</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">新的数据类型</div><div class="line">ES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</div></pre></td></tr></table></figure>
 
       
 
@@ -530,11 +281,11 @@ div
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
         		</li>
       		
 		</ul>
@@ -546,11 +297,7 @@ div
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/webpack/gulp//" class="article-tag-list-link color5">gulp</a>
+        			<a href="/categories/es6//" class="article-tag-list-link color4">es6</a>
         		</li>
       		
 		</ul>
@@ -559,7 +306,7 @@ div
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/webpack和gulp/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/es6/">展开全文 >></a>
         </p>
       
 
@@ -763,6 +510,106 @@ div
 
 
   
+    <article id="post-webpack和gulp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/webpack和gulp/">webpack和gulp的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/webpack和gulp/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>webpack模块化管理和打包工具<br>模块的相互依赖打包成js文件</p>
+<p>npm/cnpm安装   –save-dev</p>
+<p> css-loader   模块<br> style-loader  模块</p>
+<h2 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h2><p>Gulp就是为了规范前端开发流程，实现前后端分离、模块化开发、版本控制、文件合并与压缩、mock数据等功能的一个前端自动化构建工具。<br>………</p>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、AMD 模块、ES6 模块、CSS、图片、JSON、Coffeescript、LESS 等。</p>
+<p>Webpack就是需要通过其配置文件（webpack.config.js）中entry配置的一个入口文件（JS文件）,如下图<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> entry: &#123;</div><div class="line">      app:__dirname + <span class="string">"/src/scripts/app.js"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后Webpack进入该app.js文件进行解析，app.js文件如下图：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//引入scss文件</div><div class="line">   import <span class="string">'../style/app.scss'</span>;</div><div class="line">  </div><div class="line">//引入依赖模块</div><div class="line">   var greeter = require(<span class="string">'./Greeter.js'</span>);</div><div class="line">   </div><div class="line">document.getElementById(<span class="string">'root'</span>).appendChild(greeter());</div></pre></td></tr></table></figure></p>
+<p>解析过程中，发现一个app.scss文件，然后根据webpack.config.js配置文件中的module.loaders属性去查找处理.scss文件的loader进行处理，处理app.scss文件过程中，如果发现该文件还有其他依赖文件，则继续处理app.scss文件的依赖文件，直至处理完成该“链路”上的依赖文件，然后又遇到一个Greeter.js模块，于是像之前一样继续去查找对应的loader去处理…<br>所以，Webpack中对资源文件的处理是通过入口文件产生的依赖形成的，不会像Gulp那样，配置好路径后，该路径下所有规定的文件都会受影响。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/webpack/gulp//" class="article-tag-list-link color5">gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/webpack和gulp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
@@ -860,26 +707,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">����</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
@@ -889,6 +716,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,19 +739,31 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">依赖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -928,10 +775,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
@@ -940,15 +783,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gulp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
             
             <div class="clearfix"></div>
