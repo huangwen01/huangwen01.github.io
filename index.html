@@ -250,359 +250,6 @@
 
 
   
-    <article id="post-rem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/rem/">rem</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/rem/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="通过监听屏蔽变化改变根元素fontsize的大小"><a href="#通过监听屏蔽变化改变根元素fontsize的大小" class="headerlink" title="通过监听屏蔽变化改变根元素fontsize的大小"></a>通过监听屏蔽变化改变根元素fontsize的大小</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by qiangxl on 2017/7/18 0018.</div><div class="line"> */</div><div class="line">//监听屏幕宽度发变化，和横竖屏变化，重新这是html的fontsize</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getRootFontSize</span></span>()&#123;</div><div class="line">	var root = document.documentElement;</div><div class="line">	var clientWidth = root.clientWidth;</div><div class="line">	console.log(clientWidth)</div><div class="line">	root.style.fontSize = clientWidth*100/750+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line">window.addEventListener(<span class="string">'orientationchange'</span>, getRootFontSize);</div><div class="line">window.addEventListener(<span class="string">'resize'</span>, getRootFontSize);</div><div class="line">getRootFontSize();</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">rem</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/rem//" class="article-tag-list-link color4">rem</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/rem/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js-hack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/js-hack/">js</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/js-hack/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="5大内核"><a href="#5大内核" class="headerlink" title="5大内核"></a>5大内核</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">google :webkit</div><div class="line">火狐：内核是Gecko；</div><div class="line">opera浏览器：内核是blink；</div><div class="line">IE浏览器是微软出品的浏览器，IE4以上版本都是Trident内核</div><div class="line">Presto内核：代表作品是Opera，</div></pre></td></tr></table></figure>
-<h3 id="js常见兼容性问题"><a href="#js常见兼容性问题" class="headerlink" title="js常见兼容性问题"></a>js常见兼容性问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">1.阻止事件冒泡</div><div class="line">  document.onclick=<span class="keyword">function</span>(e)&#123;</div><div class="line">    var e=e||window.event;</div><div class="line">    <span class="keyword">if</span> (e.stopPropagation) &#123;</div><div class="line">      e.stopPropagation();//W3C标准</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      e.cancelBubble=<span class="literal">true</span>;//IE....</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">2.阻止默认事件</div><div class="line">	//js阻止默认事件</div><div class="line">  document.onclick=<span class="keyword">function</span>(e)&#123;</div><div class="line">    var e=e||window.event;</div><div class="line">    <span class="keyword">if</span> (e.preventDefault) &#123;</div><div class="line">      e.preventDefault();//W3C标准</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      e.returnValue=<span class="string">'false'</span>;//IE..</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">3.event事件问题：</div><div class="line">	  document.onclick=<span class="keyword">function</span>(ev)&#123;//兼容写法；</div><div class="line">		var e=ev||window.event;</div><div class="line">		var mouseX=e.clientX;//鼠标X轴的坐标</div><div class="line">		var mouseY=e.clientY;//鼠标Y轴的坐标</div><div class="line">	  &#125;</div><div class="line">4.滚动条</div><div class="line">	document.documentElement.scrollTop||document.body.scrollTop</div><div class="line">5.获取样式兼容</div><div class="line">	functiongetStyle(dom, styleName)&#123;</div><div class="line"></div><div class="line">	<span class="built_in">return</span> dom.currentStyle?</div><div class="line"></div><div class="line">	dom.currentStyle[styleName]</div><div class="line"></div><div class="line">	getComputedStyle(dom)[styleName];</div><div class="line"></div><div class="line">	&#125;</div><div class="line">6.网页可视区域兼容</div><div class="line">	window.innerHeight || document.documentElement.clientHeight</div><div class="line">7.事件监听兼容</div><div class="line">	<span class="keyword">if</span>(document.all)&#123;</div><div class="line"></div><div class="line">	dom.attactEvent(“onclick”, fn);</div><div class="line"></div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">	dom.addEventListener(“click”, fn);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">8.事件目标对象兼容</div><div class="line">	var t = event.target || event.srcElement;</div><div class="line">	</div><div class="line">	</div><div class="line">css</div><div class="line">1.双边距BUG <span class="built_in">float</span>引起的  使用display</div><div class="line">2.3像素问题 使用<span class="built_in">float</span>引起的 使用dislpay:inline -3px  </div><div class="line">3.超链接hover 点击后失效  使用正确的书写顺序 link visited hover active</div><div class="line">4.Ie z-index问题 给父级添加position:relative</div><div class="line">5.Png 透明 使用js代码 改</div><div class="line">6.Min-height 最小高度 ！Important 解决’</div><div class="line">7.select 在ie6下遮盖 使用iframe嵌套</div><div class="line">8.为什么没有办法定义1px左右的宽度容器（IE6默认的行高造成的，使用over:hidden,zoom:0.08 line-height:1px）</div><div class="line">9.IE5-8不支持opacity，解决办法：</div><div class="line">.opacity &#123;</div><div class="line">    opacity: 0.4</div><div class="line">    filter: alpha(opacity=60); /* <span class="keyword">for</span> IE5-7 */</div><div class="line">    -ms-filter: <span class="string">"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"</span>; /* <span class="keyword">for</span> IE 8*/</div><div class="line">&#125;</div><div class="line">10. IE6不支持PNG透明背景，解决办法: IE6下使用gif图片</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/js兼容//" class="article-tag-list-link color5">js兼容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/js-hack/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-isroll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/isroll/">iscroll插件</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/isroll/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="iscroll"><a href="#iscroll" class="headerlink" title="iscroll"></a>iscroll</h1><h3 id="iscroll初始化"><a href="#iscroll初始化" class="headerlink" title="iscroll初始化"></a>iscroll初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var myScroll = new IScroll(<span class="string">'.content'</span>, &#123;</div><div class="line">	bounce: <span class="literal">true</span>, //开启弹簧效果</div><div class="line">	click: <span class="literal">true</span>, //在iscroll中，为了性能优化，没有将点击事件传递下去</div><div class="line">	tap: <span class="literal">true</span>, //tap事件相当于移动端的click</div><div class="line">	startY: -100, //startX,startY设置起始位置</div><div class="line">	scrollY: <span class="literal">true</span>,//Y轴是否可以滚动</div><div class="line">	scrollX: <span class="literal">false</span>,//x轴是否可以滚动</div><div class="line">	freeScroll: <span class="literal">true</span>,//自由滚动</div><div class="line">	scrollbars: <span class="literal">true</span>, //是否显示滚动条</div><div class="line">	fadeScrollbars: <span class="literal">true</span>, //滚动时才显示滚动条</div><div class="line">	probeType: 3</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="iscroll方法"><a href="#iscroll方法" class="headerlink" title="iscroll方法"></a>iscroll方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">myScroll.on(<span class="string">'beforeScrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始前'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始了'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scroll'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'正在滚动。。。。'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	//主动的停止</div><div class="line">	myScroll.on(<span class="string">'scrollEnd'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'停止了滚动'</span>);</div><div class="line">	&#125;)</div><div class="line">	//被动的，来电，来短信，接收通知，app退出后台</div><div class="line">	myScroll.on(<span class="string">'scrollCancel'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动取消'</span>);</div><div class="line">	&#125;)</div><div class="line">			</div><div class="line">	//滚动最大范围</div><div class="line">	console.log(myScroll.maxScrollY)</div><div class="line">	console.log(myScroll.maxScrollX)</div><div class="line">	//刷新滚动视图，让滚动视图重新识别容器大小</div><div class="line">	myScroll.refresh();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">iscroll</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/iscroll//" class="article-tag-list-link color3">iscroll</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/isroll/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-navigator.geolocation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/navigator.geolocation/">HTML5</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/navigator.geolocation/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="地图定位"><a href="#地图定位" class="headerlink" title="地图定位"></a>地图定位</h1><h3 id="H5提供了地理定位-navigator-geolocation"><a href="#H5提供了地理定位-navigator-geolocation" class="headerlink" title="H5提供了地理定位 navigator.geolocation"></a>H5提供了地理定位 navigator.geolocation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">1.地理位置对象：navigator.geolocation</div><div class="line">2. 执行方法： </div><div class="line">	getCurrentPostion(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	watchPosition(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	clearWatch(监听对象)</div><div class="line">3.进行定位</div><div class="line">	navigator.geolocation.getCurrentPosition(</div><div class="line">		<span class="keyword">function</span>(position)&#123;//定位成功回调</div><div class="line">			console.log(position)</div><div class="line">		&#125;,</div><div class="line">		<span class="keyword">function</span>(error)&#123;//定位失败回调</div><div class="line">			//失败的编号</div><div class="line">			//error.code</div><div class="line">			//0: 其他错误</div><div class="line">			//1：用户拒绝获取位置</div><div class="line">			//2：用户允许了，但是获取位置失败</div><div class="line">			//3：定位超时</div><div class="line">			console.log(<span class="string">'定位失败'</span>)</div><div class="line">			console.log(error)</div><div class="line">		&#125;, &#123;</div><div class="line">			timeout: 10000, //请求超时时间</div><div class="line">			enableHighAccuracy: <span class="literal">true</span>, //是否获得更精确的经纬度和海拔</div><div class="line">			maximumAge: 100000 //定位出来的位置可以缓存的最大时间， 默认为0</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">3.进行监听</div><div class="line">	var watcher = null;</div><div class="line">	<span class="keyword">function</span> <span class="function"><span class="title">btnAction1</span></span>()&#123;//触发的事件</div><div class="line">		watcher = navigator.geolocation.watchPosition(</div><div class="line">			<span class="keyword">function</span>(position)&#123;</div><div class="line">				console.log(<span class="string">'监听'</span>);</div><div class="line">				console.log(position);</div><div class="line">			&#125;,</div><div class="line">			<span class="keyword">function</span>(error)&#123;</div><div class="line">				console.log(error);</div><div class="line">			&#125;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">4.移除监听</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">btnAction2</span></span>()&#123;//触发的事件</div><div class="line">		navigator.geolocation.clearWatch(watcher);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h3 id="百度的地图"><a href="#百度的地图" class="headerlink" title="百度的地图"></a>百度的地图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.进入百度地图生成秘钥</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥"</span>&gt;&lt;/script&gt;</div><div class="line">2.然后直接看示例dom使用或者看api文档</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/地图//" class="article-tag-list-link color3">地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/navigator.geolocation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-react-dev" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -694,19 +341,19 @@
 
 
   
-    <article id="post-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-es6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/react/">react</a>
+      <a class="article-title" href="/2016/06/01/es6/">JavaScript</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/react/" class="archive-article-date">
+        <a href="/2016/06/01/es6/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -714,11 +361,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line">1.react相当于MVC中的V：view</div><div class="line">数据单向绑定（比较不同，使用diff算法比较不同，进行修改）</div><div class="line">组件化</div><div class="line">2.内部数据state在模板中访问</div><div class="line">    &lt;h1&gt;&#123;this.state.title&#125;&lt;/h1&gt;</div><div class="line">3.修改state</div><div class="line">	this.setState(&#123;title: <span class="string">'需要修改的值'</span>&#125;);</div><div class="line">4.事件：事件需要使用驼峰命名</div><div class="line">&lt;button onClick=&#123;this.btnAction&#125;&gt;按钮&lt;/button&gt;</div><div class="line">5.自定义事件this指向问题</div><div class="line">    指向是null，解决方法使用<span class="built_in">bind</span>（this）</div><div class="line">    &lt;button onClick=&#123;this.btnAction.bind(this)&#125;&gt;按钮&lt;/button&gt;</div><div class="line">6.虚拟DOM</div><div class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> res=<span class="string">"in"</span> /&gt;</div><div class="line">    js获取表单的值:this.refs.in.value</div><div class="line">7.父子组件传值</div><div class="line">    7.1.父向子级传递数据</div><div class="line">         属性传递</div><div class="line">        &lt;Son data=&#123;this.state.data&#125;/&gt;</div><div class="line">        子组件使用</div><div class="line">		this.props.data</div><div class="line">    7.2.子向父级传递数据</div><div class="line">        自定义事件传递给子级的属性，子级调用属性()传递数据</div><div class="line">        &lt;Son send=&#123;this.getData.bind(this)&#125;/&gt;</div><div class="line">        子级调用</div><div class="line">        this.props.getData(<span class="string">'需要传递的数据'</span>);</div><div class="line">8.属性校验</div><div class="line">&lt;!--more--&gt;</div><div class="line">import PT from <span class="string">'prop-types'</span></div><div class="line">//校验</div><div class="line">Son.propTypes = &#123;</div><div class="line">	s: PT.string.isRequired,//必须的</div><div class="line">	a: PT.array,//数组</div><div class="line">	f: PT.func//函数</div><div class="line">&#125;</div><div class="line">8.在jsx语法中的dom控制</div><div class="line">遍历</div><div class="line">	&lt;ul&gt;</div><div class="line">		&#123;this.state.arr.map((item, index)=&gt;&#123;</div><div class="line">			<span class="built_in">return</span> (</div><div class="line">				&lt;li&gt;</div><div class="line">					&#123;item&#125;</div><div class="line">				&lt;/li&gt;</div><div class="line">			)</div><div class="line">		&#125;)&#125;</div><div class="line">	&lt;/ul&gt; </div><div class="line">9.标签和标签的显示控制</div><div class="line">	<span class="built_in">let</span> boxEle = this.state.isShow? &lt;div class=<span class="string">"box"</span>&gt;&lt;/div&gt;: null;	</div><div class="line">	dom展示:</div><div class="line">		&lt;div&gt;</div><div class="line">			&#123;boxEle&#125;</div><div class="line">		&lt;/div&gt;</div><div class="line">    <span class="built_in">let</span> boxStyle = this.state.isShow? &#123;&#125; : &#123;display:<span class="string">'none'</span>&#125;;</div><div class="line">	dom展示:</div><div class="line">		&lt;div class=<span class="string">"box"</span> style=&#123;boxStyle&#125;&gt;&lt;/div&gt;</div><div class="line">10.style的写法：</div><div class="line">	const boxStyle = &#123;</div><div class="line">			height: <span class="string">'80px'</span>,</div><div class="line">			borderBottom: <span class="string">'1px solid #ddd'</span>,</div><div class="line">			display: <span class="string">'flex'</span></div><div class="line">		&#125;;</div><div class="line">	&lt;div style=&#123;boxStyle&#125;&gt;&lt;/div&gt;</div><div class="line">11.class的写法：</div><div class="line">	当成普通属性绑定</div><div class="line">	&lt;div class=&#123;index==this.state.selectIndex?<span class="string">'active'</span>:<span class="string">''</span>&#125;&gt;&lt;/div&gt;</div><div class="line">12.定义一个DOM结构 用花括号进行解析</div><div class="line">	<span class="built_in">let</span> banner=&lt;div&gt;</div><div class="line">				111</div><div class="line">		&lt;/div&gt;	</div><div class="line">	解析&#123;banner&#125;</div></pre></td></tr></table></figure>
-<h3 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1.componentWillMount</div><div class="line">    在react组件加载完之前立即执行，此时还不能访问到真实的dom结构.（一般用于请求数据）</div><div class="line">2.componentDidMount</div><div class="line">    在挂载发生后被立即调用。 需要DOM node的初始化应该放在这里。如果你要获取真的dom结构，应该是写在componentDidMount之后的任何时间内。</div><div class="line">3.componentWillReceiveProps</div><div class="line">    当挂载的组件接收到新的props时被调用。此方法应该被用于比较this.props 和 nextProps以用于使用this.setState()执行状态转换。这句话的意思是，你可以在这里写一些判断来接收传递过来的props来设置当前组件的state，这是很有用的一个事件，因为理论上是每个组件的state应该是独立的，如果调用者想要改变组件的state，就必须通过传递props方式，这时候的转化就发生在componentWillReceiveProps()中了（props的值发生变化时可以在这里进行比较，然后进行操作）</div><div class="line">        componentWillReceiveProps(newProps) &#123;</div><div class="line">            console.log(newProps.isShow, this.state.isShow);</div><div class="line">            <span class="keyword">if</span> (newProps.isShow &amp;&amp; !this.state.isShow) &#123;</div><div class="line">            this.show(newProps);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!newProps.isShow &amp;&amp; this.state.isShow) &#123;</div><div class="line">            this.hide(newProps);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">4.shouldComponentUpdate</div><div class="line">    当组件决定任何改变是否要更新到DOM时被调用。作为一个优化实现比较this.props 和 nextProps 、this.state 和 nextState ，如果React应该跳过更新，返回<span class="literal">false</span>。</div><div class="line">    这个事件的用处是我们可以控制react的更新频率，很多时候，并不是任何的state改变，我们都需要对整个组件进行render的，虽然react提供了很好的虚拟dom对比机制，但我们仍然可以在这里做进一步的优化。</div></pre></td></tr></table></figure>
-<h3 id="组件创造和更新的过程"><a href="#组件创造和更新的过程" class="headerlink" title="组件创造和更新的过程"></a>组件创造和更新的过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"> 组件的创建过程： Mounting</div><div class="line">	constructor()  构造函数</div><div class="line">	componentWillMount()  将要创建组件</div><div class="line">	render()  渲染组件结构</div><div class="line">	componentDidMount()  创建完成</div><div class="line">	</div><div class="line">	componentWillMount():</div><div class="line">		在这个函数中才开始可以访问props</div><div class="line">		即如果props上的数据需要赋值给state，就在这个函数上执行setState()进行赋值</div><div class="line">		</div><div class="line">	componentDidMount():</div><div class="line">		在这个函数之后组件才有结构，那么dom结构操作都是在这个函数之后才能起作用。如ref</div><div class="line">	</div><div class="line">组件数据更新：Updating (state, props)</div><div class="line">	componentWillReceiveProps()  将要接收到外部数据props</div><div class="line">	shouldComponentUpdate()  是否应该更新dom结构</div><div class="line">	componentWillUpdate()  将要更新</div><div class="line">	render()  渲染组件结构</div><div class="line">	componentDidUpdate()  已经更新完毕</div><div class="line">	</div><div class="line">	state更新</div><div class="line">		情况1：</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		componentWillUpdate()</div><div class="line">		render()</div><div class="line">		componentDidUpdate()</div><div class="line">		情况2：</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">		</div><div class="line">	props更新	</div><div class="line">		情况1：</div><div class="line">		componentWillReceiveProps()</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">		情况2：</div><div class="line">		componentWillReceiveProps()</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		componentWillUpdate()</div><div class="line">		render()</div><div class="line">		componentDidUpdate()</div><div class="line">	</div><div class="line">	componentWillReceiveProps()</div><div class="line">		在这个函数的参数能够接收到改变后的数据，但是this.props还是原数据</div><div class="line">	shouldComponentUpdate()</div><div class="line">		这个函数是控制组件dom是否应该更新，数据是一定会发生变化的。</div><div class="line">		在这个函数中可以优化组件更新</div><div class="line"></div><div class="line">销毁：Unmounting</div><div class="line">	componentWillUnmount()  将要销毁</div><div class="line">		释放内存</div></pre></td></tr></table></figure>
-<h3 id="react路由"><a href="#react路由" class="headerlink" title="react路由"></a>react路由</h3><p> 文档地址:<a href="http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/" target="_blank" rel="external">http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">1.安装路由</div><div class="line">    cnpm install react-router-dom -S</div><div class="line">2.路由容器</div><div class="line">    import &#123;BrowserRouter&#125; from <span class="string">'react-router-dom'</span></div><div class="line">	注意：包裹整个项目，只能有一个子节点</div><div class="line"></div><div class="line">3.路由页面</div><div class="line">    import &#123;Route&#125; from <span class="string">'react-router-dom'</span></div><div class="line">4.路由触发</div><div class="line">    import &#123;Link&#125; from <span class="string">'react-router-dom'</span></div><div class="line">    import &#123;NavLink&#125; from <span class="string">'react-router-dom'</span>  </div><div class="line">5.Route的三中方式</div><div class="line">    5.1 &lt;Route component&gt;</div><div class="line">         import &#123; BrowserRouter as Router, Route &#125; from <span class="string">'react-router-dom'</span></div><div class="line">            &lt;Router&gt;</div><div class="line">                &lt;div&gt;</div><div class="line">                    &lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</div><div class="line">                    &lt;Route path=<span class="string">"/news"</span> component=&#123;NewsFeed&#125;/&gt;</div><div class="line">                &lt;/div&gt;</div><div class="line">            &lt;/Router&gt;</div><div class="line">    5.2&lt;Route render&gt;</div><div class="line">        &lt;Route path=<span class="string">"/home"</span> render=&#123;() =&gt; &lt;div&gt;Home&lt;/div&gt;&#125;/&gt;</div><div class="line">    5.3&lt;Route children&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><p> 文档地址:<a href="http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/" target="_blank" rel="external">http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import &#123;createStore&#125; from <span class="string">'redux'</span></div><div class="line"></div><div class="line">//state(全局状态)</div><div class="line">//	外部方法访问state，执行store.getState()</div><div class="line"></div><div class="line">//action(操作全局状态的事件)</div><div class="line">//	外部调用action，执行store.dispatch();</div><div class="line"></div><div class="line">//外部监听state</div><div class="line">//var unsubscribe = store.subscribe(<span class="function"><span class="title">function</span></span>()&#123; 监听函数 &#125;);</div><div class="line">//移除监听 unsubscribe();</div></pre></td></tr></table></figure></p>
+        <h1 id="es6-http-es6-ruanyifeng-com-docs-let"><a href="#es6-http-es6-ruanyifeng-com-docs-let" class="headerlink" title="es6  http://es6.ruanyifeng.com/#docs/let"></a>es6  <a href="http://es6.ruanyifeng.com/#docs/let" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/let</a></h1><h3 id="let-const"><a href="#let-const" class="headerlink" title="let const"></a>let const</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">一.<span class="built_in">let</span> 块级作用域  </div><div class="line">1.let 不会变量提前</div><div class="line">    // var 的情况</div><div class="line">    console.log(foo); // 输出undefined</div><div class="line">    var foo = 2;</div><div class="line">    // <span class="built_in">let</span> 的情况</div><div class="line">    console.log(bar); // 报错ReferenceError</div><div class="line">    <span class="built_in">let</span> bar = 2;</div><div class="line">2.暂时性死区</div><div class="line">    只要块级作用域内存在<span class="built_in">let</span>命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</div><div class="line">    var tmp = 123;</div><div class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">    tmp = <span class="string">'abc'</span>; // ReferenceError</div><div class="line">    <span class="built_in">let</span> tmp;</div><div class="line">    &#125;</div><div class="line">3. 在同一作用域不允许重复声明</div><div class="line">    <span class="built_in">let</span>不允许在相同作用域内，重复声明同一个变量。</div><div class="line">二、const 常亮</div><div class="line">    声明的变量不能改变 改变就报错</div></pre></td></tr></table></figure>
+<h3 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">1.数组  没有的就是undefined</div><div class="line">    <span class="built_in">let</span> [foo, [[bar], baz]] = [1, [[2], 3]];</div><div class="line">    foo // 1</div><div class="line">    bar // 2</div><div class="line">    baz // 3</div><div class="line">    <span class="built_in">let</span> [ , , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</div><div class="line">    third // <span class="string">"baz"</span></div><div class="line">2.对象的结构赋值：</div><div class="line">    对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</div><div class="line">    <span class="built_in">let</span> &#123; bar, foo &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</div><div class="line">    foo // <span class="string">"aaa"</span></div><div class="line">    bar // <span class="string">"bbb"</span></div><div class="line"></div><div class="line">    <span class="built_in">let</span> &#123; baz &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</div><div class="line">    baz // undefined</div><div class="line">3.字符串结构</div><div class="line">    字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</div><div class="line">    const [a, b, c, d, e] = <span class="string">'hello'</span>;</div><div class="line">    a // <span class="string">"h"</span></div><div class="line">    b // <span class="string">"e"</span></div><div class="line">    c // <span class="string">"l"</span></div><div class="line">    d // <span class="string">"l"</span></div><div class="line">    e // <span class="string">"o"</span></div><div class="line">    类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</div><div class="line">    <span class="built_in">let</span> &#123;length : len&#125; = <span class="string">'hello'</span>;</div><div class="line">    len // 5</div><div class="line">4.函数参数的解构赋值</div><div class="line">    <span class="keyword">function</span> add([x, y])&#123;</div><div class="line">    <span class="built_in">return</span> x + y;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    add([1, 2]); // 3</div></pre></td></tr></table></figure>
+<h3 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1.字符串的遍历器接口  <span class="keyword">for</span> ...of</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> codePoint of <span class="string">'foo'</span>) &#123;</div><div class="line">        console.log(codePoint)</div><div class="line">    &#125;</div><div class="line">    // <span class="string">"f"</span></div><div class="line">    // <span class="string">"o"</span></div><div class="line">    // <span class="string">"o"</span></div><div class="line">2.字符串模板</div><div class="line">    starsWith（abc）判断字符串是不是开头</div><div class="line">    endsWith（abc）判断是不是abc结尾</div></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.Array.from() </div><div class="line">    可以用于深拷贝数组</div><div class="line">2.Array.of() 将一组数值转换为数组</div><div class="line">    Array.of(3, 11, 8) // [3,11,8]</div><div class="line">    Array.of(3) // [3]</div><div class="line">    Array.of(3).length // 1</div></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1.可以在函数里面传参</div><div class="line">    <span class="keyword">function</span> <span class="built_in">log</span>(x, y) &#123;</div><div class="line">        y = y || <span class="string">'World'</span>;</div><div class="line">        console.log(x, y);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">function</span> <span class="built_in">log</span>(x, y = <span class="string">'World'</span>) &#123;</div><div class="line">        console.log(x, y);</div><div class="line">    &#125;</div><div class="line">2.可以在函数内部开启严格模式</div><div class="line">    <span class="keyword">function</span> doSomething(a, b) &#123;</div><div class="line">    <span class="string">'use strict'</span>;</div><div class="line">    // code</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">新的数据类型</div><div class="line">ES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</div></pre></td></tr></table></figure>
 
       
 
@@ -732,11 +380,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
         		</li>
       		
 		</ul>
@@ -748,7 +396,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/react//" class="article-tag-list-link color1">react</a>
+        			<a href="/categories/es6//" class="article-tag-list-link color4">es6</a>
         		</li>
       		
 		</ul>
@@ -757,7 +405,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/react/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/es6/">展开全文 >></a>
         </p>
       
 
@@ -878,19 +526,19 @@
 
 
   
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-js-hack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/vue-router/">vue-router</a>
+      <a class="article-title" href="/2016/06/01/js-hack/">js</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/vue-router/" class="archive-article-date">
+        <a href="/2016/06/01/js-hack/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -898,7 +546,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">https://router.vuejs.org/zh-cn/essentials/getting-started.html</div><div class="line">1.&lt;router-view&gt;&lt;/router-view&gt;:&lt;!-- 路由匹配到的组件将渲染在这里 --&gt;</div><div class="line">2.&lt;router-link to=<span class="string">"/bar"</span>&gt;Go to Bar&lt;/router-link&gt;: to后面的是路由配置的路径如3所示</div><div class="line">&lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签</div><div class="line">3.动态路由传参</div><div class="line">const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">	 routes: [</div><div class="line">		&#123;</div><div class="line">		path:<span class="string">"/home"</span>,  //路径</div><div class="line">		component:Home,// 组件</div><div class="line">		children:[//子组件</div><div class="line">			&#123;</div><div class="line">				path:<span class="string">"ads/:id"</span>,// 动态路径参数 以冒号开头</div><div class="line">				component:Address</div><div class="line">			&#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line">如果需要获取传的参数可以在链接页面加载时 使用 this.<span class="variable">$router</span>.params.id  可以获得传入的id</div><div class="line">id是路由配置是写入的参数</div><div class="line">4,命名路由传值</div><div class="line">路由器配置：const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      path: <span class="string">'/user/:userId'</span>,//与上面一样 都是配置接收传值的参数</div><div class="line">      name: <span class="string">'user'</span>,//name给路由设置一个名字</div><div class="line">      component: User</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line"></div><div class="line">传入产生方式：这两种方式都会把路由导航到 /user/123 路径。</div><div class="line">&lt;router-link :to=<span class="string">"&#123; name: 'user', params: &#123; userId: 123 &#125;&#125;"</span>&gt;User&lt;/router-link&gt;</div><div class="line">router.push(&#123; name: <span class="string">'user'</span>, params: &#123; userId: 123 &#125;&#125;)</div></pre></td></tr></table></figure>
+        <h3 id="5大内核"><a href="#5大内核" class="headerlink" title="5大内核"></a>5大内核</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">google :webkit</div><div class="line">火狐：内核是Gecko；</div><div class="line">opera浏览器：内核是blink；</div><div class="line">IE浏览器是微软出品的浏览器，IE4以上版本都是Trident内核</div><div class="line">Presto内核：代表作品是Opera，</div></pre></td></tr></table></figure>
+<h3 id="js常见兼容性问题"><a href="#js常见兼容性问题" class="headerlink" title="js常见兼容性问题"></a>js常见兼容性问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">1.阻止事件冒泡</div><div class="line">  document.onclick=<span class="keyword">function</span>(e)&#123;</div><div class="line">    var e=e||window.event;</div><div class="line">    <span class="keyword">if</span> (e.stopPropagation) &#123;</div><div class="line">      e.stopPropagation();//W3C标准</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      e.cancelBubble=<span class="literal">true</span>;//IE....</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">2.阻止默认事件</div><div class="line">	//js阻止默认事件</div><div class="line">  document.onclick=<span class="keyword">function</span>(e)&#123;</div><div class="line">    var e=e||window.event;</div><div class="line">    <span class="keyword">if</span> (e.preventDefault) &#123;</div><div class="line">      e.preventDefault();//W3C标准</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      e.returnValue=<span class="string">'false'</span>;//IE..</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">3.event事件问题：</div><div class="line">	  document.onclick=<span class="keyword">function</span>(ev)&#123;//兼容写法；</div><div class="line">		var e=ev||window.event;</div><div class="line">		var mouseX=e.clientX;//鼠标X轴的坐标</div><div class="line">		var mouseY=e.clientY;//鼠标Y轴的坐标</div><div class="line">	  &#125;</div><div class="line">4.滚动条</div><div class="line">	document.documentElement.scrollTop||document.body.scrollTop</div><div class="line">5.获取样式兼容</div><div class="line">	functiongetStyle(dom, styleName)&#123;</div><div class="line"></div><div class="line">	<span class="built_in">return</span> dom.currentStyle?</div><div class="line"></div><div class="line">	dom.currentStyle[styleName]</div><div class="line"></div><div class="line">	getComputedStyle(dom)[styleName];</div><div class="line"></div><div class="line">	&#125;</div><div class="line">6.网页可视区域兼容</div><div class="line">	window.innerHeight || document.documentElement.clientHeight</div><div class="line">7.事件监听兼容</div><div class="line">	<span class="keyword">if</span>(document.all)&#123;</div><div class="line"></div><div class="line">	dom.attactEvent(“onclick”, fn);</div><div class="line"></div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">	dom.addEventListener(“click”, fn);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">8.事件目标对象兼容</div><div class="line">	var t = event.target || event.srcElement;</div><div class="line">	</div><div class="line">	</div><div class="line">css</div><div class="line">1.双边距BUG <span class="built_in">float</span>引起的  使用display</div><div class="line">2.3像素问题 使用<span class="built_in">float</span>引起的 使用dislpay:inline -3px  </div><div class="line">3.超链接hover 点击后失效  使用正确的书写顺序 link visited hover active</div><div class="line">4.Ie z-index问题 给父级添加position:relative</div><div class="line">5.Png 透明 使用js代码 改</div><div class="line">6.Min-height 最小高度 ！Important 解决’</div><div class="line">7.select 在ie6下遮盖 使用iframe嵌套</div><div class="line">8.为什么没有办法定义1px左右的宽度容器（IE6默认的行高造成的，使用over:hidden,zoom:0.08 line-height:1px）</div><div class="line">9.IE5-8不支持opacity，解决办法：</div><div class="line">.opacity &#123;</div><div class="line">    opacity: 0.4</div><div class="line">    filter: alpha(opacity=60); /* <span class="keyword">for</span> IE5-7 */</div><div class="line">    -ms-filter: <span class="string">"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"</span>; /* <span class="keyword">for</span> IE 8*/</div><div class="line">&#125;</div><div class="line">10. IE6不支持PNG透明背景，解决办法: IE6下使用gif图片</div></pre></td></tr></table></figure>
 
       
 
@@ -912,11 +561,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue-router</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -928,7 +573,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        			<a href="/categories/js兼容//" class="article-tag-list-link color5">js兼容</a>
         		</li>
       		
 		</ul>
@@ -937,7 +582,274 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/vue-router/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/js-hack/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-navigator.geolocation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/navigator.geolocation/">HTML5</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/navigator.geolocation/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="地图定位"><a href="#地图定位" class="headerlink" title="地图定位"></a>地图定位</h1><h3 id="H5提供了地理定位-navigator-geolocation"><a href="#H5提供了地理定位-navigator-geolocation" class="headerlink" title="H5提供了地理定位 navigator.geolocation"></a>H5提供了地理定位 navigator.geolocation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">1.地理位置对象：navigator.geolocation</div><div class="line">2. 执行方法： </div><div class="line">	getCurrentPostion(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	watchPosition(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	clearWatch(监听对象)</div><div class="line">3.进行定位</div><div class="line">	navigator.geolocation.getCurrentPosition(</div><div class="line">		<span class="keyword">function</span>(position)&#123;//定位成功回调</div><div class="line">			console.log(position)</div><div class="line">		&#125;,</div><div class="line">		<span class="keyword">function</span>(error)&#123;//定位失败回调</div><div class="line">			//失败的编号</div><div class="line">			//error.code</div><div class="line">			//0: 其他错误</div><div class="line">			//1：用户拒绝获取位置</div><div class="line">			//2：用户允许了，但是获取位置失败</div><div class="line">			//3：定位超时</div><div class="line">			console.log(<span class="string">'定位失败'</span>)</div><div class="line">			console.log(error)</div><div class="line">		&#125;, &#123;</div><div class="line">			timeout: 10000, //请求超时时间</div><div class="line">			enableHighAccuracy: <span class="literal">true</span>, //是否获得更精确的经纬度和海拔</div><div class="line">			maximumAge: 100000 //定位出来的位置可以缓存的最大时间， 默认为0</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">3.进行监听</div><div class="line">	var watcher = null;</div><div class="line">	<span class="keyword">function</span> <span class="function"><span class="title">btnAction1</span></span>()&#123;//触发的事件</div><div class="line">		watcher = navigator.geolocation.watchPosition(</div><div class="line">			<span class="keyword">function</span>(position)&#123;</div><div class="line">				console.log(<span class="string">'监听'</span>);</div><div class="line">				console.log(position);</div><div class="line">			&#125;,</div><div class="line">			<span class="keyword">function</span>(error)&#123;</div><div class="line">				console.log(error);</div><div class="line">			&#125;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">4.移除监听</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">btnAction2</span></span>()&#123;//触发的事件</div><div class="line">		navigator.geolocation.clearWatch(watcher);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="百度的地图"><a href="#百度的地图" class="headerlink" title="百度的地图"></a>百度的地图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.进入百度地图生成秘钥</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥"</span>&gt;&lt;/script&gt;</div><div class="line">2.然后直接看示例dom使用或者看api文档</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">地图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/地图//" class="article-tag-list-link color3">地图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/navigator.geolocation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-rem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/rem/">rem</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/rem/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="通过监听屏蔽变化改变根元素fontsize的大小"><a href="#通过监听屏蔽变化改变根元素fontsize的大小" class="headerlink" title="通过监听屏蔽变化改变根元素fontsize的大小"></a>通过监听屏蔽变化改变根元素fontsize的大小</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by qiangxl on 2017/7/18 0018.</div><div class="line"> */</div><div class="line">//监听屏幕宽度发变化，和横竖屏变化，重新这是html的fontsize</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getRootFontSize</span></span>()&#123;</div><div class="line">	var root = document.documentElement;</div><div class="line">	var clientWidth = root.clientWidth;</div><div class="line">	console.log(clientWidth)</div><div class="line">	root.style.fontSize = clientWidth*100/750+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line">window.addEventListener(<span class="string">'orientationchange'</span>, getRootFontSize);</div><div class="line">window.addEventListener(<span class="string">'resize'</span>, getRootFontSize);</div><div class="line">getRootFontSize();</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">rem</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/rem//" class="article-tag-list-link color4">rem</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/rem/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-isroll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/isroll/">iscroll插件</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/isroll/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iscroll"><a href="#iscroll" class="headerlink" title="iscroll"></a>iscroll</h1><h3 id="iscroll初始化"><a href="#iscroll初始化" class="headerlink" title="iscroll初始化"></a>iscroll初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var myScroll = new IScroll(<span class="string">'.content'</span>, &#123;</div><div class="line">	bounce: <span class="literal">true</span>, //开启弹簧效果</div><div class="line">	click: <span class="literal">true</span>, //在iscroll中，为了性能优化，没有将点击事件传递下去</div><div class="line">	tap: <span class="literal">true</span>, //tap事件相当于移动端的click</div><div class="line">	startY: -100, //startX,startY设置起始位置</div><div class="line">	scrollY: <span class="literal">true</span>,//Y轴是否可以滚动</div><div class="line">	scrollX: <span class="literal">false</span>,//x轴是否可以滚动</div><div class="line">	freeScroll: <span class="literal">true</span>,//自由滚动</div><div class="line">	scrollbars: <span class="literal">true</span>, //是否显示滚动条</div><div class="line">	fadeScrollbars: <span class="literal">true</span>, //滚动时才显示滚动条</div><div class="line">	probeType: 3</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="iscroll方法"><a href="#iscroll方法" class="headerlink" title="iscroll方法"></a>iscroll方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">myScroll.on(<span class="string">'beforeScrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始前'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始了'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scroll'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'正在滚动。。。。'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	//主动的停止</div><div class="line">	myScroll.on(<span class="string">'scrollEnd'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'停止了滚动'</span>);</div><div class="line">	&#125;)</div><div class="line">	//被动的，来电，来短信，接收通知，app退出后台</div><div class="line">	myScroll.on(<span class="string">'scrollCancel'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动取消'</span>);</div><div class="line">	&#125;)</div><div class="line">			</div><div class="line">	//滚动最大范围</div><div class="line">	console.log(myScroll.maxScrollY)</div><div class="line">	console.log(myScroll.maxScrollX)</div><div class="line">	//刷新滚动视图，让滚动视图重新识别容器大小</div><div class="line">	myScroll.refresh();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">iscroll</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/iscroll//" class="article-tag-list-link color3">iscroll</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/isroll/">展开全文 >></a>
         </p>
       
 
@@ -1065,6 +977,99 @@
 
 
   
+    <article id="post-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/react/">react</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/react/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line">1.react相当于MVC中的V：view</div><div class="line">数据单向绑定（比较不同，使用diff算法比较不同，进行修改）</div><div class="line">组件化</div><div class="line">2.内部数据state在模板中访问</div><div class="line">    &lt;h1&gt;&#123;this.state.title&#125;&lt;/h1&gt;</div><div class="line">3.修改state</div><div class="line">	this.setState(&#123;title: <span class="string">'需要修改的值'</span>&#125;);</div><div class="line">4.事件：事件需要使用驼峰命名</div><div class="line">&lt;button onClick=&#123;this.btnAction&#125;&gt;按钮&lt;/button&gt;</div><div class="line">5.自定义事件this指向问题</div><div class="line">    指向是null，解决方法使用<span class="built_in">bind</span>（this）</div><div class="line">    &lt;button onClick=&#123;this.btnAction.bind(this)&#125;&gt;按钮&lt;/button&gt;</div><div class="line">6.虚拟DOM</div><div class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> res=<span class="string">"in"</span> /&gt;</div><div class="line">    js获取表单的值:this.refs.in.value</div><div class="line">7.父子组件传值</div><div class="line">    7.1.父向子级传递数据</div><div class="line">         属性传递</div><div class="line">        &lt;Son data=&#123;this.state.data&#125;/&gt;</div><div class="line">        子组件使用</div><div class="line">		this.props.data</div><div class="line">    7.2.子向父级传递数据</div><div class="line">        自定义事件传递给子级的属性，子级调用属性()传递数据</div><div class="line">        &lt;Son send=&#123;this.getData.bind(this)&#125;/&gt;</div><div class="line">        子级调用</div><div class="line">        this.props.getData(<span class="string">'需要传递的数据'</span>);</div><div class="line">8.属性校验</div><div class="line">&lt;!--more--&gt;</div><div class="line">import PT from <span class="string">'prop-types'</span></div><div class="line">//校验</div><div class="line">Son.propTypes = &#123;</div><div class="line">	s: PT.string.isRequired,//必须的</div><div class="line">	a: PT.array,//数组</div><div class="line">	f: PT.func//函数</div><div class="line">&#125;</div><div class="line">8.在jsx语法中的dom控制</div><div class="line">遍历</div><div class="line">	&lt;ul&gt;</div><div class="line">		&#123;this.state.arr.map((item, index)=&gt;&#123;</div><div class="line">			<span class="built_in">return</span> (</div><div class="line">				&lt;li&gt;</div><div class="line">					&#123;item&#125;</div><div class="line">				&lt;/li&gt;</div><div class="line">			)</div><div class="line">		&#125;)&#125;</div><div class="line">	&lt;/ul&gt; </div><div class="line">9.标签和标签的显示控制</div><div class="line">	<span class="built_in">let</span> boxEle = this.state.isShow? &lt;div class=<span class="string">"box"</span>&gt;&lt;/div&gt;: null;	</div><div class="line">	dom展示:</div><div class="line">		&lt;div&gt;</div><div class="line">			&#123;boxEle&#125;</div><div class="line">		&lt;/div&gt;</div><div class="line">    <span class="built_in">let</span> boxStyle = this.state.isShow? &#123;&#125; : &#123;display:<span class="string">'none'</span>&#125;;</div><div class="line">	dom展示:</div><div class="line">		&lt;div class=<span class="string">"box"</span> style=&#123;boxStyle&#125;&gt;&lt;/div&gt;</div><div class="line">10.style的写法：</div><div class="line">	const boxStyle = &#123;</div><div class="line">			height: <span class="string">'80px'</span>,</div><div class="line">			borderBottom: <span class="string">'1px solid #ddd'</span>,</div><div class="line">			display: <span class="string">'flex'</span></div><div class="line">		&#125;;</div><div class="line">	&lt;div style=&#123;boxStyle&#125;&gt;&lt;/div&gt;</div><div class="line">11.class的写法：</div><div class="line">	当成普通属性绑定</div><div class="line">	&lt;div class=&#123;index==this.state.selectIndex?<span class="string">'active'</span>:<span class="string">''</span>&#125;&gt;&lt;/div&gt;</div><div class="line">12.定义一个DOM结构 用花括号进行解析</div><div class="line">	<span class="built_in">let</span> banner=&lt;div&gt;</div><div class="line">				111</div><div class="line">		&lt;/div&gt;	</div><div class="line">	解析&#123;banner&#125;</div></pre></td></tr></table></figure>
+<h3 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1.componentWillMount</div><div class="line">    在react组件加载完之前立即执行，此时还不能访问到真实的dom结构.（一般用于请求数据）</div><div class="line">2.componentDidMount</div><div class="line">    在挂载发生后被立即调用。 需要DOM node的初始化应该放在这里。如果你要获取真的dom结构，应该是写在componentDidMount之后的任何时间内。</div><div class="line">3.componentWillReceiveProps</div><div class="line">    当挂载的组件接收到新的props时被调用。此方法应该被用于比较this.props 和 nextProps以用于使用this.setState()执行状态转换。这句话的意思是，你可以在这里写一些判断来接收传递过来的props来设置当前组件的state，这是很有用的一个事件，因为理论上是每个组件的state应该是独立的，如果调用者想要改变组件的state，就必须通过传递props方式，这时候的转化就发生在componentWillReceiveProps()中了（props的值发生变化时可以在这里进行比较，然后进行操作）</div><div class="line">        componentWillReceiveProps(newProps) &#123;</div><div class="line">            console.log(newProps.isShow, this.state.isShow);</div><div class="line">            <span class="keyword">if</span> (newProps.isShow &amp;&amp; !this.state.isShow) &#123;</div><div class="line">            this.show(newProps);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!newProps.isShow &amp;&amp; this.state.isShow) &#123;</div><div class="line">            this.hide(newProps);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">4.shouldComponentUpdate</div><div class="line">    当组件决定任何改变是否要更新到DOM时被调用。作为一个优化实现比较this.props 和 nextProps 、this.state 和 nextState ，如果React应该跳过更新，返回<span class="literal">false</span>。</div><div class="line">    这个事件的用处是我们可以控制react的更新频率，很多时候，并不是任何的state改变，我们都需要对整个组件进行render的，虽然react提供了很好的虚拟dom对比机制，但我们仍然可以在这里做进一步的优化。</div></pre></td></tr></table></figure>
+<h3 id="组件创造和更新的过程"><a href="#组件创造和更新的过程" class="headerlink" title="组件创造和更新的过程"></a>组件创造和更新的过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"> 组件的创建过程： Mounting</div><div class="line">	constructor()  构造函数</div><div class="line">	componentWillMount()  将要创建组件</div><div class="line">	render()  渲染组件结构</div><div class="line">	componentDidMount()  创建完成</div><div class="line">	</div><div class="line">	componentWillMount():</div><div class="line">		在这个函数中才开始可以访问props</div><div class="line">		即如果props上的数据需要赋值给state，就在这个函数上执行setState()进行赋值</div><div class="line">		</div><div class="line">	componentDidMount():</div><div class="line">		在这个函数之后组件才有结构，那么dom结构操作都是在这个函数之后才能起作用。如ref</div><div class="line">	</div><div class="line">组件数据更新：Updating (state, props)</div><div class="line">	componentWillReceiveProps()  将要接收到外部数据props</div><div class="line">	shouldComponentUpdate()  是否应该更新dom结构</div><div class="line">	componentWillUpdate()  将要更新</div><div class="line">	render()  渲染组件结构</div><div class="line">	componentDidUpdate()  已经更新完毕</div><div class="line">	</div><div class="line">	state更新</div><div class="line">		情况1：</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		componentWillUpdate()</div><div class="line">		render()</div><div class="line">		componentDidUpdate()</div><div class="line">		情况2：</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">		</div><div class="line">	props更新	</div><div class="line">		情况1：</div><div class="line">		componentWillReceiveProps()</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">		情况2：</div><div class="line">		componentWillReceiveProps()</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		componentWillUpdate()</div><div class="line">		render()</div><div class="line">		componentDidUpdate()</div><div class="line">	</div><div class="line">	componentWillReceiveProps()</div><div class="line">		在这个函数的参数能够接收到改变后的数据，但是this.props还是原数据</div><div class="line">	shouldComponentUpdate()</div><div class="line">		这个函数是控制组件dom是否应该更新，数据是一定会发生变化的。</div><div class="line">		在这个函数中可以优化组件更新</div><div class="line"></div><div class="line">销毁：Unmounting</div><div class="line">	componentWillUnmount()  将要销毁</div><div class="line">		释放内存</div></pre></td></tr></table></figure>
+<h3 id="react路由"><a href="#react路由" class="headerlink" title="react路由"></a>react路由</h3><p> 文档地址:<a href="http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/" target="_blank" rel="external">http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">1.安装路由</div><div class="line">    cnpm install react-router-dom -S</div><div class="line">2.路由容器</div><div class="line">    import &#123;BrowserRouter&#125; from <span class="string">'react-router-dom'</span></div><div class="line">	注意：包裹整个项目，只能有一个子节点</div><div class="line"></div><div class="line">3.路由页面</div><div class="line">    import &#123;Route&#125; from <span class="string">'react-router-dom'</span></div><div class="line">4.路由触发</div><div class="line">    import &#123;Link&#125; from <span class="string">'react-router-dom'</span></div><div class="line">    import &#123;NavLink&#125; from <span class="string">'react-router-dom'</span>  </div><div class="line">5.Route的三中方式</div><div class="line">    5.1 &lt;Route component&gt;</div><div class="line">         import &#123; BrowserRouter as Router, Route &#125; from <span class="string">'react-router-dom'</span></div><div class="line">            &lt;Router&gt;</div><div class="line">                &lt;div&gt;</div><div class="line">                    &lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</div><div class="line">                    &lt;Route path=<span class="string">"/news"</span> component=&#123;NewsFeed&#125;/&gt;</div><div class="line">                &lt;/div&gt;</div><div class="line">            &lt;/Router&gt;</div><div class="line">    5.2&lt;Route render&gt;</div><div class="line">        &lt;Route path=<span class="string">"/home"</span> render=&#123;() =&gt; &lt;div&gt;Home&lt;/div&gt;&#125;/&gt;</div><div class="line">    5.3&lt;Route children&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><p> 文档地址:<a href="http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/" target="_blank" rel="external">http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import &#123;createStore&#125; from <span class="string">'redux'</span></div><div class="line"></div><div class="line">//state(全局状态)</div><div class="line">//	外部方法访问state，执行store.getState()</div><div class="line"></div><div class="line">//action(操作全局状态的事件)</div><div class="line">//	外部调用action，执行store.dispatch();</div><div class="line"></div><div class="line">//外部监听state</div><div class="line">//var unsubscribe = store.subscribe(<span class="function"><span class="title">function</span></span>()&#123; 监听函数 &#125;);</div><div class="line">//移除监听 unsubscribe();</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/react//" class="article-tag-list-link color1">react</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/react/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1162,6 +1167,26 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">����</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
@@ -1178,31 +1203,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">地图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">依赖</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1214,11 +1219,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+                <a href="javascript:void(0)" class="js-tag color3">依赖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1226,11 +1235,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1239,6 +1252,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
             
             <div class="clearfix"></div>
