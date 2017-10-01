@@ -153,77 +153,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-移动端" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>rem 作单位rem是根据页面的根元素的font-size的一个相对的单位<br>添加视口    禁止缩放  viewport</p>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=0">
-
-<p>html最好设置成625%    懒得计算<br>body设置小点的字体</p>
-<p>禁用a,button,input,optgroup,select,textarea 等标签背景变暗<br>在移动端点击后 会出现”暗色”的背景，这时候我们需要在css加入如下代码即可：</p>
-<p>a,button,input,optgroup,select,textarea{<br>    -webkit-tap-highlight-color: rgba(0,0,0,0);<br>}</p>
-<p>2.忽略将页面中的数字识别为电话号码<br>  <meta name="format-detection" content="telephone=no"></p>
-<ol>
-<li>忽略Android平台中对邮箱地址的识别<meta name="format-detection" content="email=no">
-
-
-</li>
-</ol>
-<ol>
-<li><p>当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari</p>
-<meta name="apple-mobile-web-app-capable" content="yes">
-</li>
-<li><p>将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式</p>
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-</li>
-</ol>
-<p>五：在android或者IOS下 拨打电话代码如下：</p>
-<p><a href="tel:15602512356" target="_blank" rel="external">打电话给:15602512356</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/20/移动端/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-vuex状态管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -321,19 +250,19 @@
 
 
   
-    <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-react-dev" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/git/">git</a>
+      <a class="article-title" href="/2016/06/01/react-dev/">react</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/git/" class="archive-article-date">
+        <a href="/2016/06/01/react-dev/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -341,13 +270,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#git</p>
-<h3 id="git是什么"><a href="#git是什么" class="headerlink" title="git是什么"></a>git是什么</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">目前世界上最先进的分布式版本控制系统</div></pre></td></tr></table></figure>
-<h3 id="git对比-svn"><a href="#git对比-svn" class="headerlink" title="git对比 svn"></a>git对比 svn</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git 是分布式的，svn 是集中式的。</div><div class="line">git 的分支操作非常方便，</div><div class="line">git 高端大气上档次</div></pre></td></tr></table></figure>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">•	直接去官网下载安装文件，安装即可。</div><div class="line">•	安装完成，会有一个 git bash 的命令行工具</div><div class="line">•	打开这个命令行工具，运行下面两行代码</div><div class="line"></div><div class="line">git config --global user.name <span class="string">"Your Name"</span> </div><div class="line">git config --global user.email <span class="string">"email@example.com"</span></div></pre></td></tr></table></figure>
-<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">git init	初始化git仓库</div><div class="line">git add	添加到暂存区</div><div class="line">git commit	提交版本</div><div class="line">git status	查看当前仓库状态</div><div class="line">git diff	查看文件是怎么修改的</div><div class="line">git <span class="built_in">log</span>	显示从最近到最远的提交日志</div><div class="line">git reset --hard HEAD^	回退到上一个版本</div><div class="line">git reflog	显示记录的我的每一次命令</div><div class="line">git checkout -- &lt;filename&gt;	丢弃工作区的修改</div><div class="line">git reset HEAD &lt;filename&gt;	撤销暂存区的修改</div><div class="line">git checkout -b 分支名	创建并切换分支</div><div class="line">git checkout 分支名	切换分支</div><div class="line">git branch	查看所有分支</div><div class="line">git merge 分支名	将某分支的最新内容合并到当前所在分支</div><div class="line">git branch -d 分支名	删除某分支</div><div class="line">git push	推送到远程仓库</div><div class="line">git pull	更新本地仓库，让其跟远程仓库保持一致</div><div class="line">git <span class="built_in">clone</span>	克隆某个分支到本地</div><div class="line">git remote	远程仓库相关操作</div></pre></td></tr></table></figure>
-<h3 id="git忽略文件-gitignore"><a href="#git忽略文件-gitignore" class="headerlink" title="git忽略文件 .gitignore"></a>git忽略文件 .gitignore</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">有些文件，不能让git管理起来，比如保存了一些敏感信息的配置文件，或者 node_modules 这种超大文件，再或者一些编辑器生成的配置文件等。这时，我们就得配置 git忽略文件</div></pre></td></tr></table></figure>
-<h3 id="操作及注意事项"><a href="#操作及注意事项" class="headerlink" title="操作及注意事项"></a>操作及注意事项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">撤销工作区的修改   git checkout -- 文件名</div><div class="line"></div><div class="line">添加到暂存区了。还想撤销。</div><div class="line">	1. git reset HEAD 文件名	</div><div class="line">	2. git checkout -- 文件名</div><div class="line">如果提交到了 版本库里面，回退版本</div><div class="line"></div><div class="line">1. 初始化一个 git 之后，默认所在的 分支 是 master  干净整洁</div><div class="line"></div><div class="line">2. 不要在 master 上 写代码，master 上只做  git push   git pull   git merg</div><div class="line">创建一个 分支 </div><div class="line">git checkout -b dev</div><div class="line">做登录的页面</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">''</span></div><div class="line">回到 master</div><div class="line">将 dev 上面做的 登录给合并到 master</div><div class="line">git merge dev</div><div class="line">推送到远程</div><div class="line">git push </div><div class="line">将某个本地分支推送到远程</div><div class="line">git push origin dev</div></pre></td></tr></table></figure>
+        <h3 id="项目开发依赖"><a href="#项目开发依赖" class="headerlink" title="项目开发依赖"></a>项目开发依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">npm install webpack webpack-dev-server -D   (前端工程构建化工具)</div><div class="line">npm install babel-core babel-loader -D   （babel）</div><div class="line">npm install babel-preset-es2015 -D     （解析es6）</div><div class="line">npm install babel-preset-react -D     （解析jsx语法）</div><div class="line">npm install css-loader style-loader -D （解析样式）</div><div class="line">npm install file-loader -D   (解析路径)</div><div class="line"></div><div class="line">npm install react -S</div><div class="line">npm install react-dom -S</div><div class="line">npm install prop-types -S (react组件的属性校验插件)</div></pre></td></tr></table></figure>
+<h3 id="创建webpack-config-js（webpack执行的配置文件）文件"><a href="#创建webpack-config-js（webpack执行的配置文件）文件" class="headerlink" title="创建webpack.config.js（webpack执行的配置文件）文件"></a>创建webpack.config.js（webpack执行的配置文件）文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">		entry: <span class="string">'./src/main.js'</span>//项目入口文件</div><div class="line">		output: &#123;//项目输出文件</div><div class="line">			path: __dirname,</div><div class="line">			filename: <span class="string">'dist/app.js'</span></div><div class="line">		&#125;,</div><div class="line">		module: &#123;</div><div class="line">			loaders: [//配置loader的执行规则</div><div class="line">				&#123;<span class="built_in">test</span>: /\.js$/, loader: <span class="string">'babel-loader'</span>, exclude:/node_modules/&#125;,</div><div class="line">				&#123;<span class="built_in">test</span>: /\.css$/, loader: <span class="string">'style-loader!css-loader'</span>&#125;,</div><div class="line">				&#123;<span class="built_in">test</span>: /\.(png|jpg|jpeg|gif|ttf)/, loader: <span class="string">'file-loader'</span>&#125;</div><div class="line">			]</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="创建-babelrc文件（babel的配置文件）"><a href="#创建-babelrc文件（babel的配置文件）" class="headerlink" title="创建.babelrc文件（babel的配置文件）"></a>创建.babelrc文件（babel的配置文件）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	presets: [<span class="string">'es2015'</span>, <span class="string">'react'</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
 
@@ -361,7 +286,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">依赖</a>
         		</li>
       		
 		</ul>
@@ -373,7 +302,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        			<a href="/categories/react//" class="article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
@@ -382,7 +311,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/git/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/react-dev/">展开全文 >></a>
         </p>
       
 
@@ -659,6 +588,97 @@ div
 
 
   
+    <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/git/">git</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/git/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#git</p>
+<h3 id="git是什么"><a href="#git是什么" class="headerlink" title="git是什么"></a>git是什么</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">目前世界上最先进的分布式版本控制系统</div></pre></td></tr></table></figure>
+<h3 id="git对比-svn"><a href="#git对比-svn" class="headerlink" title="git对比 svn"></a>git对比 svn</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git 是分布式的，svn 是集中式的。</div><div class="line">git 的分支操作非常方便，</div><div class="line">git 高端大气上档次</div></pre></td></tr></table></figure>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">•	直接去官网下载安装文件，安装即可。</div><div class="line">•	安装完成，会有一个 git bash 的命令行工具</div><div class="line">•	打开这个命令行工具，运行下面两行代码</div><div class="line"></div><div class="line">git config --global user.name <span class="string">"Your Name"</span> </div><div class="line">git config --global user.email <span class="string">"email@example.com"</span></div></pre></td></tr></table></figure>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">git init	初始化git仓库</div><div class="line">git add	添加到暂存区</div><div class="line">git commit	提交版本</div><div class="line">git status	查看当前仓库状态</div><div class="line">git diff	查看文件是怎么修改的</div><div class="line">git <span class="built_in">log</span>	显示从最近到最远的提交日志</div><div class="line">git reset --hard HEAD^	回退到上一个版本</div><div class="line">git reflog	显示记录的我的每一次命令</div><div class="line">git checkout -- &lt;filename&gt;	丢弃工作区的修改</div><div class="line">git reset HEAD &lt;filename&gt;	撤销暂存区的修改</div><div class="line">git checkout -b 分支名	创建并切换分支</div><div class="line">git checkout 分支名	切换分支</div><div class="line">git branch	查看所有分支</div><div class="line">git merge 分支名	将某分支的最新内容合并到当前所在分支</div><div class="line">git branch -d 分支名	删除某分支</div><div class="line">git push	推送到远程仓库</div><div class="line">git pull	更新本地仓库，让其跟远程仓库保持一致</div><div class="line">git <span class="built_in">clone</span>	克隆某个分支到本地</div><div class="line">git remote	远程仓库相关操作</div></pre></td></tr></table></figure>
+<h3 id="git忽略文件-gitignore"><a href="#git忽略文件-gitignore" class="headerlink" title="git忽略文件 .gitignore"></a>git忽略文件 .gitignore</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">有些文件，不能让git管理起来，比如保存了一些敏感信息的配置文件，或者 node_modules 这种超大文件，再或者一些编辑器生成的配置文件等。这时，我们就得配置 git忽略文件</div></pre></td></tr></table></figure>
+<h3 id="操作及注意事项"><a href="#操作及注意事项" class="headerlink" title="操作及注意事项"></a>操作及注意事项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">撤销工作区的修改   git checkout -- 文件名</div><div class="line"></div><div class="line">添加到暂存区了。还想撤销。</div><div class="line">	1. git reset HEAD 文件名	</div><div class="line">	2. git checkout -- 文件名</div><div class="line">如果提交到了 版本库里面，回退版本</div><div class="line"></div><div class="line">1. 初始化一个 git 之后，默认所在的 分支 是 master  干净整洁</div><div class="line"></div><div class="line">2. 不要在 master 上 写代码，master 上只做  git push   git pull   git merg</div><div class="line">创建一个 分支 </div><div class="line">git checkout -b dev</div><div class="line">做登录的页面</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">''</span></div><div class="line">回到 master</div><div class="line">将 dev 上面做的 登录给合并到 master</div><div class="line">git merge dev</div><div class="line">推送到远程</div><div class="line">git push </div><div class="line">将某个本地分支推送到远程</div><div class="line">git push origin dev</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/git/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-isroll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -805,109 +825,6 @@ div
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/06/01/js-hack/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mongodb的增删改查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/mongodb的增删改查/">mongodb</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/mongodb的增删改查/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#mongodb</p>
-<p>mongodb   ����<br>��װ   ���ӻ�������<br> mongod -dbpath �������ݿ����ݵ��ļ�  //����mongo</p>
-<p>show dbs    //�г����е����ݿ�<br>use ���ݿ���     //ʹ��ĳ�����ݿ�   ����û���������ݿ�����������ʱ�ᴴ��һ�����ݿ�<br>show collections   //�鿴��ǰ���ݿ����ж��ٱ�</p>
-<p>db.����.insert({“username”:’zhangsan’})   //������һ�����ݲ�������һ����</p>
-<p>db.����.find()     //��ѯ��������</p>
-<p>db.user.find({��������})     //������������</p>
-<p>����age��20�ļ�¼<br>db.����.find({“age”:{$gt:20}});   $gt���Ǵ���</p>
-<p>����age&lt;20�ļ�¼<br>db.����.find({“age”:{$lt:20}})</p>
-<p>����age&gt;=20�ļ�¼<br>db.����.find({“age”:{$gte:20}})</p>
-<p>����age��=20�ļ�¼<br>db.����.find({“age”:{$lte:20}})</p>
-<p>����age&gt;=20�Ĳ�age��=30�ļ�¼<br>db.����.find({“age”:{$gte:20,$lte:30}})</p>
-<p>ģ����ѯ     ���ִ�aaa��     ����aaa�Ķ��ᱻ��ѯ��<br>db.����.find({“username”:/aaa/});</p>
-<p>��ѯ��ʲô��ͷ��    ������aaa��ͷ��<br>db.����.find({“username”:/^aaa/});</p>
-<p>ָ����ѯname��age������       �������ֶ����Ͳ��ᱻ��ʾ<br>db.����.find({},{“name:1,age:1”});</p>
-<p>db.����.find().count();    //��ѯ�ж���������</p>
-<p>db.����.find().skip(10).limit(5);   //����ǰ10�����ݲ�ѯ5������<br>��ҳ��������</p>
-<p>db.����.find().sort({age:1});    ����������������<br>db.����.find().sort({age:-1});    �����������н���</p>
-<p>db.����.find().remove({“name”:”zhangsan”,”age”:20});  //ɾ������Ϊ��������������20������</p>
-<p>db.����.update({“name”:”lisi”},{$set:{“age”:30}});    //�鵽lisi�Ĳ��Ұ�age���ó�30</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mongodb//" class="article-tag-list-link color3">mongodb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/mongodb的增删改查/">展开全文 >></a>
         </p>
       
 
@@ -1261,19 +1178,19 @@ cordova -v
 
 
   
-    <article id="post-react-dev" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-mongodb的增删改查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/react-dev/">react</a>
+      <a class="article-title" href="/2016/06/01/mongodb的增删改查/">mongodb</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/react-dev/" class="archive-article-date">
+        <a href="/2016/06/01/mongodb的增删改查/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -1281,9 +1198,25 @@ cordova -v
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="项目开发依赖"><a href="#项目开发依赖" class="headerlink" title="项目开发依赖"></a>项目开发依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">npm install webpack webpack-dev-server -D   (前端工程构建化工具)</div><div class="line">npm install babel-core babel-loader -D   （babel）</div><div class="line">npm install babel-preset-es2015 -D     （解析es6）</div><div class="line">npm install babel-preset-react -D     （解析jsx语法）</div><div class="line">npm install css-loader style-loader -D （解析样式）</div><div class="line">npm install file-loader -D   (解析路径)</div><div class="line"></div><div class="line">npm install react -S</div><div class="line">npm install react-dom -S</div><div class="line">npm install prop-types -S (react组件的属性校验插件)</div></pre></td></tr></table></figure>
-<h3 id="创建webpack-config-js（webpack执行的配置文件）文件"><a href="#创建webpack-config-js（webpack执行的配置文件）文件" class="headerlink" title="创建webpack.config.js（webpack执行的配置文件）文件"></a>创建webpack.config.js（webpack执行的配置文件）文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">		entry: <span class="string">'./src/main.js'</span>//项目入口文件</div><div class="line">		output: &#123;//项目输出文件</div><div class="line">			path: __dirname,</div><div class="line">			filename: <span class="string">'dist/app.js'</span></div><div class="line">		&#125;,</div><div class="line">		module: &#123;</div><div class="line">			loaders: [//配置loader的执行规则</div><div class="line">				&#123;<span class="built_in">test</span>: /\.js$/, loader: <span class="string">'babel-loader'</span>, exclude:/node_modules/&#125;,</div><div class="line">				&#123;<span class="built_in">test</span>: /\.css$/, loader: <span class="string">'style-loader!css-loader'</span>&#125;,</div><div class="line">				&#123;<span class="built_in">test</span>: /\.(png|jpg|jpeg|gif|ttf)/, loader: <span class="string">'file-loader'</span>&#125;</div><div class="line">			]</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h3 id="创建-babelrc文件（babel的配置文件）"><a href="#创建-babelrc文件（babel的配置文件）" class="headerlink" title="创建.babelrc文件（babel的配置文件）"></a>创建.babelrc文件（babel的配置文件）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	presets: [<span class="string">'es2015'</span>, <span class="string">'react'</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>#mongodb</p>
+<p>mongodb   ����<br>��װ   ���ӻ�������<br> mongod -dbpath �������ݿ����ݵ��ļ�  //����mongo</p>
+<p>show dbs    //�г����е����ݿ�<br>use ���ݿ���     //ʹ��ĳ�����ݿ�   ����û���������ݿ�����������ʱ�ᴴ��һ�����ݿ�<br>show collections   //�鿴��ǰ���ݿ����ж��ٱ�</p>
+<p>db.����.insert({“username”:’zhangsan’})   //������һ�����ݲ�������һ����</p>
+<p>db.����.find()     //��ѯ��������</p>
+<p>db.user.find({��������})     //������������</p>
+<p>����age��20�ļ�¼<br>db.����.find({“age”:{$gt:20}});   $gt���Ǵ���</p>
+<p>����age&lt;20�ļ�¼<br>db.����.find({“age”:{$lt:20}})</p>
+<p>����age&gt;=20�ļ�¼<br>db.����.find({“age”:{$gte:20}})</p>
+<p>����age��=20�ļ�¼<br>db.����.find({“age”:{$lte:20}})</p>
+<p>����age&gt;=20�Ĳ�age��=30�ļ�¼<br>db.����.find({“age”:{$gte:20,$lte:30}})</p>
+<p>ģ����ѯ     ���ִ�aaa��     ����aaa�Ķ��ᱻ��ѯ��<br>db.����.find({“username”:/aaa/});</p>
+<p>��ѯ��ʲô��ͷ��    ������aaa��ͷ��<br>db.����.find({“username”:/^aaa/});</p>
+<p>ָ����ѯname��age������       �������ֶ����Ͳ��ᱻ��ʾ<br>db.����.find({},{“name:1,age:1”});</p>
+<p>db.����.find().count();    //��ѯ�ж���������</p>
+<p>db.����.find().skip(10).limit(5);   //����ǰ10�����ݲ�ѯ5������<br>��ҳ��������</p>
+<p>db.����.find().sort({age:1});    ����������������<br>db.����.find().sort({age:-1});    �����������н���</p>
+<p>db.����.find().remove({“name”:”zhangsan”,”age”:20});  //ɾ������Ϊ��������������20������</p>
+<p>db.����.update({“name”:”lisi”},{$set:{“age”:30}});    //�鵽lisi�Ĳ��Ұ�age���ó�30</p>
 
       
 
@@ -1297,11 +1230,100 @@ cordova -v
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mongodb//" class="article-tag-list-link color3">mongodb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/mongodb的增删改查/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/react/">react</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/react/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line">1.react相当于MVC中的V：view</div><div class="line">数据单向绑定（比较不同，使用diff算法比较不同，进行修改）</div><div class="line">组件化</div><div class="line">2.内部数据state在模板中访问</div><div class="line">    &lt;h1&gt;&#123;this.state.title&#125;&lt;/h1&gt;</div><div class="line">3.修改state</div><div class="line">	this.setState(&#123;title: <span class="string">'需要修改的值'</span>&#125;);</div><div class="line">4.事件：事件需要使用驼峰命名</div><div class="line">&lt;button onClick=&#123;this.btnAction&#125;&gt;按钮&lt;/button&gt;</div><div class="line">5.自定义事件this指向问题</div><div class="line">    指向是null，解决方法使用<span class="built_in">bind</span>（this）</div><div class="line">    &lt;button onClick=&#123;this.btnAction.bind(this)&#125;&gt;按钮&lt;/button&gt;</div><div class="line">6.虚拟DOM</div><div class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> res=<span class="string">"in"</span> /&gt;</div><div class="line">    js获取表单的值:this.refs.in.value</div><div class="line">7.父子组件传值</div><div class="line">    7.1.父向子级传递数据</div><div class="line">         属性传递</div><div class="line">        &lt;Son data=&#123;this.state.data&#125;/&gt;</div><div class="line">        子组件使用</div><div class="line">		this.props.data</div><div class="line">    7.2.子向父级传递数据</div><div class="line">        自定义事件传递给子级的属性，子级调用属性()传递数据</div><div class="line">        &lt;Son send=&#123;this.getData.bind(this)&#125;/&gt;</div><div class="line">        子级调用</div><div class="line">        this.props.getData(<span class="string">'需要传递的数据'</span>);</div><div class="line">8.属性校验</div><div class="line">&lt;!--more--&gt;</div><div class="line">import PT from <span class="string">'prop-types'</span></div><div class="line">//校验</div><div class="line">Son.propTypes = &#123;</div><div class="line">	s: PT.string.isRequired,//必须的</div><div class="line">	a: PT.array,//数组</div><div class="line">	f: PT.func//函数</div><div class="line">&#125;</div><div class="line">8.在jsx语法中的dom控制</div><div class="line">遍历</div><div class="line">	&lt;ul&gt;</div><div class="line">		&#123;this.state.arr.map((item, index)=&gt;&#123;</div><div class="line">			<span class="built_in">return</span> (</div><div class="line">				&lt;li&gt;</div><div class="line">					&#123;item&#125;</div><div class="line">				&lt;/li&gt;</div><div class="line">			)</div><div class="line">		&#125;)&#125;</div><div class="line">	&lt;/ul&gt; </div><div class="line">9.标签和标签的显示控制</div><div class="line">	<span class="built_in">let</span> boxEle = this.state.isShow? &lt;div class=<span class="string">"box"</span>&gt;&lt;/div&gt;: null;	</div><div class="line">	dom展示:</div><div class="line">		&lt;div&gt;</div><div class="line">			&#123;boxEle&#125;</div><div class="line">		&lt;/div&gt;</div><div class="line">    <span class="built_in">let</span> boxStyle = this.state.isShow? &#123;&#125; : &#123;display:<span class="string">'none'</span>&#125;;</div><div class="line">	dom展示:</div><div class="line">		&lt;div class=<span class="string">"box"</span> style=&#123;boxStyle&#125;&gt;&lt;/div&gt;</div><div class="line">10.style的写法：</div><div class="line">	const boxStyle = &#123;</div><div class="line">			height: <span class="string">'80px'</span>,</div><div class="line">			borderBottom: <span class="string">'1px solid #ddd'</span>,</div><div class="line">			display: <span class="string">'flex'</span></div><div class="line">		&#125;;</div><div class="line">	&lt;div style=&#123;boxStyle&#125;&gt;&lt;/div&gt;</div><div class="line">11.class的写法：</div><div class="line">	当成普通属性绑定</div><div class="line">	&lt;div class=&#123;index==this.state.selectIndex?<span class="string">'active'</span>:<span class="string">''</span>&#125;&gt;&lt;/div&gt;</div><div class="line">12.定义一个DOM结构 用花括号进行解析</div><div class="line">	<span class="built_in">let</span> banner=&lt;div&gt;</div><div class="line">				111</div><div class="line">		&lt;/div&gt;	</div><div class="line">	解析&#123;banner&#125;</div></pre></td></tr></table></figure>
+<h3 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1.componentWillMount</div><div class="line">    在react组件加载完之前立即执行，此时还不能访问到真实的dom结构.（一般用于请求数据）</div><div class="line">2.componentDidMount</div><div class="line">    在挂载发生后被立即调用。 需要DOM node的初始化应该放在这里。如果你要获取真的dom结构，应该是写在componentDidMount之后的任何时间内。</div><div class="line">3.componentWillReceiveProps</div><div class="line">    当挂载的组件接收到新的props时被调用。此方法应该被用于比较this.props 和 nextProps以用于使用this.setState()执行状态转换。这句话的意思是，你可以在这里写一些判断来接收传递过来的props来设置当前组件的state，这是很有用的一个事件，因为理论上是每个组件的state应该是独立的，如果调用者想要改变组件的state，就必须通过传递props方式，这时候的转化就发生在componentWillReceiveProps()中了（props的值发生变化时可以在这里进行比较，然后进行操作）</div><div class="line">        componentWillReceiveProps(newProps) &#123;</div><div class="line">            console.log(newProps.isShow, this.state.isShow);</div><div class="line">            <span class="keyword">if</span> (newProps.isShow &amp;&amp; !this.state.isShow) &#123;</div><div class="line">            this.show(newProps);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!newProps.isShow &amp;&amp; this.state.isShow) &#123;</div><div class="line">            this.hide(newProps);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">4.shouldComponentUpdate</div><div class="line">    当组件决定任何改变是否要更新到DOM时被调用。作为一个优化实现比较this.props 和 nextProps 、this.state 和 nextState ，如果React应该跳过更新，返回<span class="literal">false</span>。</div><div class="line">    这个事件的用处是我们可以控制react的更新频率，很多时候，并不是任何的state改变，我们都需要对整个组件进行render的，虽然react提供了很好的虚拟dom对比机制，但我们仍然可以在这里做进一步的优化。</div></pre></td></tr></table></figure>
+<h3 id="组件创造和更新的过程"><a href="#组件创造和更新的过程" class="headerlink" title="组件创造和更新的过程"></a>组件创造和更新的过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"> 组件的创建过程： Mounting</div><div class="line">	constructor()  构造函数</div><div class="line">	componentWillMount()  将要创建组件</div><div class="line">	render()  渲染组件结构</div><div class="line">	componentDidMount()  创建完成</div><div class="line">	</div><div class="line">	componentWillMount():</div><div class="line">		在这个函数中才开始可以访问props</div><div class="line">		即如果props上的数据需要赋值给state，就在这个函数上执行setState()进行赋值</div><div class="line">		</div><div class="line">	componentDidMount():</div><div class="line">		在这个函数之后组件才有结构，那么dom结构操作都是在这个函数之后才能起作用。如ref</div><div class="line">	</div><div class="line">组件数据更新：Updating (state, props)</div><div class="line">	componentWillReceiveProps()  将要接收到外部数据props</div><div class="line">	shouldComponentUpdate()  是否应该更新dom结构</div><div class="line">	componentWillUpdate()  将要更新</div><div class="line">	render()  渲染组件结构</div><div class="line">	componentDidUpdate()  已经更新完毕</div><div class="line">	</div><div class="line">	state更新</div><div class="line">		情况1：</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		componentWillUpdate()</div><div class="line">		render()</div><div class="line">		componentDidUpdate()</div><div class="line">		情况2：</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">		</div><div class="line">	props更新	</div><div class="line">		情况1：</div><div class="line">		componentWillReceiveProps()</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">		情况2：</div><div class="line">		componentWillReceiveProps()</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		componentWillUpdate()</div><div class="line">		render()</div><div class="line">		componentDidUpdate()</div><div class="line">	</div><div class="line">	componentWillReceiveProps()</div><div class="line">		在这个函数的参数能够接收到改变后的数据，但是this.props还是原数据</div><div class="line">	shouldComponentUpdate()</div><div class="line">		这个函数是控制组件dom是否应该更新，数据是一定会发生变化的。</div><div class="line">		在这个函数中可以优化组件更新</div><div class="line"></div><div class="line">销毁：Unmounting</div><div class="line">	componentWillUnmount()  将要销毁</div><div class="line">		释放内存</div></pre></td></tr></table></figure>
+<h3 id="react路由"><a href="#react路由" class="headerlink" title="react路由"></a>react路由</h3><p> 文档地址:<a href="http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/" target="_blank" rel="external">http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">1.安装路由</div><div class="line">    cnpm install react-router-dom -S</div><div class="line">2.路由容器</div><div class="line">    import &#123;BrowserRouter&#125; from <span class="string">'react-router-dom'</span></div><div class="line">	注意：包裹整个项目，只能有一个子节点</div><div class="line"></div><div class="line">3.路由页面</div><div class="line">    import &#123;Route&#125; from <span class="string">'react-router-dom'</span></div><div class="line">4.路由触发</div><div class="line">    import &#123;Link&#125; from <span class="string">'react-router-dom'</span></div><div class="line">    import &#123;NavLink&#125; from <span class="string">'react-router-dom'</span>  </div><div class="line">5.Route的三中方式</div><div class="line">    5.1 &lt;Route component&gt;</div><div class="line">         import &#123; BrowserRouter as Router, Route &#125; from <span class="string">'react-router-dom'</span></div><div class="line">            &lt;Router&gt;</div><div class="line">                &lt;div&gt;</div><div class="line">                    &lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</div><div class="line">                    &lt;Route path=<span class="string">"/news"</span> component=&#123;NewsFeed&#125;/&gt;</div><div class="line">                &lt;/div&gt;</div><div class="line">            &lt;/Router&gt;</div><div class="line">    5.2&lt;Route render&gt;</div><div class="line">        &lt;Route path=<span class="string">"/home"</span> render=&#123;() =&gt; &lt;div&gt;Home&lt;/div&gt;&#125;/&gt;</div><div class="line">    5.3&lt;Route children&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><p> 文档地址:<a href="http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/" target="_blank" rel="external">http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import &#123;createStore&#125; from <span class="string">'redux'</span></div><div class="line"></div><div class="line">//state(全局状态)</div><div class="line">//	外部方法访问state，执行store.getState()</div><div class="line"></div><div class="line">//action(操作全局状态的事件)</div><div class="line">//	外部调用action，执行store.dispatch();</div><div class="line"></div><div class="line">//外部监听state</div><div class="line">//var unsubscribe = store.subscribe(<span class="function"><span class="title">function</span></span>()&#123; 监听函数 &#125;);</div><div class="line">//移除监听 unsubscribe();</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">依赖</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
@@ -1322,7 +1344,7 @@ cordova -v
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/react-dev/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/react/">展开全文 >></a>
         </p>
       
 
@@ -1461,10 +1483,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
@@ -1477,15 +1495,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1501,6 +1519,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
@@ -1509,19 +1535,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1534,6 +1548,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1554,6 +1576,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
             
             <div class="clearfix"></div>
