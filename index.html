@@ -250,19 +250,19 @@
 
 
   
-    <article id="post-react-dev" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Myreact" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/react-dev/">react</a>
+      <a class="article-title" href="/2016/06/01/Myreact/">myreact</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/react-dev/" class="archive-article-date">
+        <a href="/2016/06/01/Myreact/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -270,9 +270,56 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="项目开发依赖"><a href="#项目开发依赖" class="headerlink" title="项目开发依赖"></a>项目开发依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">npm install webpack webpack-dev-server -D   (前端工程构建化工具)</div><div class="line">npm install babel-core babel-loader -D   （babel）</div><div class="line">npm install babel-preset-es2015 -D     （解析es6）</div><div class="line">npm install babel-preset-react -D     （解析jsx语法）</div><div class="line">npm install css-loader style-loader -D （解析样式）</div><div class="line">npm install file-loader -D   (解析路径)</div><div class="line"></div><div class="line">npm install react -S</div><div class="line">npm install react-dom -S</div><div class="line">npm install prop-types -S (react组件的属性校验插件)</div></pre></td></tr></table></figure>
-<h3 id="创建webpack-config-js（webpack执行的配置文件）文件"><a href="#创建webpack-config-js（webpack执行的配置文件）文件" class="headerlink" title="创建webpack.config.js（webpack执行的配置文件）文件"></a>创建webpack.config.js（webpack执行的配置文件）文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">		entry: <span class="string">'./src/main.js'</span>//项目入口文件</div><div class="line">		output: &#123;//项目输出文件</div><div class="line">			path: __dirname,</div><div class="line">			filename: <span class="string">'dist/app.js'</span></div><div class="line">		&#125;,</div><div class="line">		module: &#123;</div><div class="line">			loaders: [//配置loader的执行规则</div><div class="line">				&#123;<span class="built_in">test</span>: /\.js$/, loader: <span class="string">'babel-loader'</span>, exclude:/node_modules/&#125;,</div><div class="line">				&#123;<span class="built_in">test</span>: /\.css$/, loader: <span class="string">'style-loader!css-loader'</span>&#125;,</div><div class="line">				&#123;<span class="built_in">test</span>: /\.(png|jpg|jpeg|gif|ttf)/, loader: <span class="string">'file-loader'</span>&#125;</div><div class="line">			]</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h3 id="创建-babelrc文件（babel的配置文件）"><a href="#创建-babelrc文件（babel的配置文件）" class="headerlink" title="创建.babelrc文件（babel的配置文件）"></a>创建.babelrc文件（babel的配置文件）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	presets: [<span class="string">'es2015'</span>, <span class="string">'react'</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>React 是一个用于构建用户界面的 JAVASCRIPT 库。<br>React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。<br>React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。<br>React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。</p>
+<p>React 特点<br>1.声明式设计 −React采用声明范式，可以轻松描述应用。<br>2.高效 −React通过对DOM的模拟，最大限度地减少与DOM的交互。<br>3.灵活 −React可以与已知的库或框架很好地配合。<br>4.JSX − JSX 是 JavaScript 语法的扩展。React 开发不一定使用 JSX ，但我们建议使用它。<br>5.组件 − 通过 React 构建组件，使得代码更加容易得到复用，能够很好的应用在大项目的开发中。<br>6.单向响应的数据流 − React 实现了单向响应的数据流，从而减少了重复代码，这也是它为什么比传统数据绑定更简单。</p>
+<p>开始:</p>
+<pre><code>React 的安装包，可以到官网下载。不过，React Demos 已经自带 React 源码，不用另外安装，
+
+只需把这个库拷贝到你的硬盘就行了。 
+
+
+注意：选择15.3--15.5的版本，这里面有列子。
+</code></pre><p>安装下载看demo</p>
+<p>引入<br>  react.js<br>  react-dom.js<br>  browser.min.js</p>
+<p>react的js类型</p>
+<script type="text/babel"></script>
+
+<p>//定义组件  组件的名称首字母一定要大写</p>
+<p>例：var Header=React.createClass({   /<em>对象</em>/<br>            render:function(){</p>
+<pre><code>        return (
+ /*模板必须要被根节点包含起来*/
+
+            &lt;div&gt;
+                &lt;h2&gt;这是一个头部组件&lt;/h2&gt;
+            &lt;/div&gt;
+        )
+    }
+
+})
+</code></pre><p> ReactDOM.render(） // 渲染</p>
+<p>1.安装脚手架工具   （单文件组件项目生成工具）   只需要安装一次</p>
+<pre><code>https://facebook.github.io/react/docs/installation.html
+
+
+npm install -g create-react-app   /  cnpm install -g create-react-app
+</code></pre><p>2.创建项目   （可能创建多次）</p>
+<pre><code>找到项目要创建的目录：
+
+create-react-app reactdemo
+</code></pre><p>3.cd  到项目里面    </p>
+<pre><code>cd  reactdemo
+
+
+npm start  运行项目
+
+
+npm run build 生成项目
+</code></pre><p>react 脚手架    创建项目<br> npm install -g create-react-app<br> create-react-app myapp<br> cd myapp<br> npm start<br> react run build</p>
+<p>父子组件</p>
+<p>axios    react的请求数据模块<br>下载安装<br>cnpm install axios –save<br>引入axios<br>import axiox from ‘axios’<br>看官方文档  demo</p>
+<p>生命周期函数     刷新就执行   不用做其他操作</p>
+<p>使用swiper<br>cnpm install swiper –save<br>import swiper from ‘swiper’<br>引入swipercss<br>加载自己的css</p>
+<p>react<br>andt的css样式要拿出来手动引入<br>ANTd DESIGN   插件     <strong><em>*</em></strong>好用</p>
 
       
 
@@ -286,11 +333,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">依赖</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">myreact</a>
         		</li>
       		
 		</ul>
@@ -302,7 +345,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/react//" class="article-tag-list-link color1">react</a>
+        			<a href="/categories/myreact//" class="article-tag-list-link color3">myreact</a>
         		</li>
       		
 		</ul>
@@ -311,7 +354,514 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/react-dev/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/Myreact/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-es6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/es6/">JavaScript</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/es6/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="es6-http-es6-ruanyifeng-com-docs-let"><a href="#es6-http-es6-ruanyifeng-com-docs-let" class="headerlink" title="es6  http://es6.ruanyifeng.com/#docs/let"></a>es6  <a href="http://es6.ruanyifeng.com/#docs/let" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/let</a></h1><h3 id="let-const"><a href="#let-const" class="headerlink" title="let const"></a>let const</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">一.<span class="built_in">let</span> 块级作用域  </div><div class="line">1.let 不会变量提前</div><div class="line">    // var 的情况</div><div class="line">    console.log(foo); // 输出undefined</div><div class="line">    var foo = 2;</div><div class="line">    // <span class="built_in">let</span> 的情况</div><div class="line">    console.log(bar); // 报错ReferenceError</div><div class="line">    <span class="built_in">let</span> bar = 2;</div><div class="line">2.暂时性死区</div><div class="line">    只要块级作用域内存在<span class="built_in">let</span>命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</div><div class="line">    var tmp = 123;</div><div class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">    tmp = <span class="string">'abc'</span>; // ReferenceError</div><div class="line">    <span class="built_in">let</span> tmp;</div><div class="line">    &#125;</div><div class="line">3. 在同一作用域不允许重复声明</div><div class="line">    <span class="built_in">let</span>不允许在相同作用域内，重复声明同一个变量。</div><div class="line">二、const 常亮</div><div class="line">    声明的变量不能改变 改变就报错</div></pre></td></tr></table></figure>
+<h3 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">1.数组  没有的就是undefined</div><div class="line">    <span class="built_in">let</span> [foo, [[bar], baz]] = [1, [[2], 3]];</div><div class="line">    foo // 1</div><div class="line">    bar // 2</div><div class="line">    baz // 3</div><div class="line">    <span class="built_in">let</span> [ , , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</div><div class="line">    third // <span class="string">"baz"</span></div><div class="line">2.对象的结构赋值：</div><div class="line">    对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</div><div class="line">    <span class="built_in">let</span> &#123; bar, foo &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</div><div class="line">    foo // <span class="string">"aaa"</span></div><div class="line">    bar // <span class="string">"bbb"</span></div><div class="line"></div><div class="line">    <span class="built_in">let</span> &#123; baz &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</div><div class="line">    baz // undefined</div><div class="line">3.字符串结构</div><div class="line">    字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</div><div class="line">    const [a, b, c, d, e] = <span class="string">'hello'</span>;</div><div class="line">    a // <span class="string">"h"</span></div><div class="line">    b // <span class="string">"e"</span></div><div class="line">    c // <span class="string">"l"</span></div><div class="line">    d // <span class="string">"l"</span></div><div class="line">    e // <span class="string">"o"</span></div><div class="line">    类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</div><div class="line">    <span class="built_in">let</span> &#123;length : len&#125; = <span class="string">'hello'</span>;</div><div class="line">    len // 5</div><div class="line">4.函数参数的解构赋值</div><div class="line">    <span class="keyword">function</span> add([x, y])&#123;</div><div class="line">    <span class="built_in">return</span> x + y;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    add([1, 2]); // 3</div></pre></td></tr></table></figure>
+<h3 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1.字符串的遍历器接口  <span class="keyword">for</span> ...of</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> codePoint of <span class="string">'foo'</span>) &#123;</div><div class="line">        console.log(codePoint)</div><div class="line">    &#125;</div><div class="line">    // <span class="string">"f"</span></div><div class="line">    // <span class="string">"o"</span></div><div class="line">    // <span class="string">"o"</span></div><div class="line">2.字符串模板</div><div class="line">    starsWith（abc）判断字符串是不是开头</div><div class="line">    endsWith（abc）判断是不是abc结尾</div></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.Array.from() </div><div class="line">    可以用于深拷贝数组</div><div class="line">2.Array.of() 将一组数值转换为数组</div><div class="line">    Array.of(3, 11, 8) // [3,11,8]</div><div class="line">    Array.of(3) // [3]</div><div class="line">    Array.of(3).length // 1</div></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1.可以在函数里面传参</div><div class="line">    <span class="keyword">function</span> <span class="built_in">log</span>(x, y) &#123;</div><div class="line">        y = y || <span class="string">'World'</span>;</div><div class="line">        console.log(x, y);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">function</span> <span class="built_in">log</span>(x, y = <span class="string">'World'</span>) &#123;</div><div class="line">        console.log(x, y);</div><div class="line">    &#125;</div><div class="line">2.可以在函数内部开启严格模式</div><div class="line">    <span class="keyword">function</span> doSomething(a, b) &#123;</div><div class="line">    <span class="string">'use strict'</span>;</div><div class="line">    // code</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">新的数据类型</div><div class="line">ES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/es6//" class="article-tag-list-link color4">es6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/es6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-phonegap.coedova操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/phonegap.coedova操作/">phonegap/cordova</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/phonegap.coedova操作/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.phonegap/cordova是什么?</p>
+<pre><code>1.可以把我们用html css  js写的移动端页面打包成移动app的一个框架
+2.可以让我们用js来调用原生的api，包括地理定位，加速器，联系人，声音和振动等
+</code></pre><p>2.JDK的安装？</p>
+<pre><code>介绍：JDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。
+
+
+1.找到jdk 下一步下一步安装
+
+2.配置环境变量
+
+    2.1在我的电脑右键-属性-&gt;高级系统设置-高级 -找到环境变量-&gt;系统变量
+
+
+    2.2 在系统变量里面--新建环境变量   变量名：JAVA_HOME    变量值：C:\Program Files\Java\jdk1.8.0_31。点击确定
+
+
+    2.3 在系统变量里面找到path环境变量，在path环境变量后面追加。
+
+        ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin
+
+
+    注意:    ;英文的      不能有个空格 
+
+
+
+    点击 确定  确定 确定
+
+
+
+3.重新打开cmd   输入 java   能出来东西，在输入javac也能出来说明配置成功。
+</code></pre><p>3.安装ADT     </p>
+<pre><code>介绍：Android Developer Tools   ，有eclipse   sdk 
+
+1.减压到你的任何一个盘，注意盘符不能有中文 空格
+
+2.找到系统变量里面的path环境变量，在path后面追加,环境变量和环境变量之间用;隔开
+
+
+    系统变量 Path   后面添加：  注意不能有中文
+
+     D:\Program Files\ADT\sdk\tools;
+     D:\Program Files\ADT\sdk\platform-tools;
+
+
+     D:\Program Files\ADT 你的adt的目录
+
+
+     比如我的：  ;F:\adt\sdk\tools;F:\adt\sdk\platform-tools
+
+
+
+    3.重新打开cmd   输入android    如果能出来android的sdk管理器说明成功了。   -----android的sdk管理器不用管
+</code></pre><p>4.安装cordova</p>
+<pre><code>前提：nodejs需要安装
+
+介绍：就是phonegpa
+
+
+1.打开cnd  输入 npm install -g cordova  或者 cnpm install -g cordova
+
+
+    cordova -v  7.1的版本
+
+
+
+    7.1的版本有bug
+
+
+
+
+2.降低cordova的版本    *****************************
+
+     cnpm install -g cordova@6.3.1  
+
+
+
+3.如果有些人安装了最新版本。
+
+    3.1卸载最新的版本
+
+       npm uninstall cordova  -g
+
+        3.2   重新运行 
+
+
+       cnpm install -g cordova@6.3.1  
+
+
+
+4.看成功没有成功 输入
+
+cordova -v
+</code></pre><p>5.创建项目<br>    1.找到你自己的项目目录  C:\cordova_demo</p>
+<pre><code>2.cd 到这个目录
+
+3.cordova create 项目名称    
+
+    比如创建cordova01的项目
+
+
+  cordova create cordova01
+
+
+4.cd 到项目里面    cd cordova01
+
+
+5.cordova platform add android             -- 把android开发相关的包下载到我们项目里面
+
+
+                           把cordova添加到android平台
+
+
+
+
+例如：
+
+ cordova create cordova02
+
+ cd  cordova02
+
+ cordova platform add android
+</code></pre><p>6.导入项目</p>
+<pre><code>1.打开adt下面的eclipse
+
+
+2.导入项目
+
+    File-&gt;import-&gt;找到android  以及存在的android项目-&gt;选择你的项目-&gt;下一步
+
+    3.找到MainActivity 点击右键     run  as android  application
+
+
+注意真机调试：
+
+    1.手机必须连到电脑上面 
+    2.手机必须开启调试模式（百度搜索XXX手机开启调试模式）
+    3.运行来自外部的软件安装
+
+注意模拟器调试：
+
+    1.打开模拟
+
+
+注意：有时候其他的软件 比如 HBuilder 比如360   应用宝会占用连接手机的端口 。 关掉这些软件重试。
+</code></pre><p>7.修改项目</p>
+<pre><code>修改 项目目录下面的www里面的代码
+
+
+修改完成以后要运行  cordova prepare
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">phonegap</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/cordova//" class="article-tag-list-link color3">cordova</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/phonegap.coedova操作/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-isroll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/isroll/">iscroll插件</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/isroll/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iscroll"><a href="#iscroll" class="headerlink" title="iscroll"></a>iscroll</h1><h3 id="iscroll初始化"><a href="#iscroll初始化" class="headerlink" title="iscroll初始化"></a>iscroll初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var myScroll = new IScroll(<span class="string">'.content'</span>, &#123;</div><div class="line">	bounce: <span class="literal">true</span>, //开启弹簧效果</div><div class="line">	click: <span class="literal">true</span>, //在iscroll中，为了性能优化，没有将点击事件传递下去</div><div class="line">	tap: <span class="literal">true</span>, //tap事件相当于移动端的click</div><div class="line">	startY: -100, //startX,startY设置起始位置</div><div class="line">	scrollY: <span class="literal">true</span>,//Y轴是否可以滚动</div><div class="line">	scrollX: <span class="literal">false</span>,//x轴是否可以滚动</div><div class="line">	freeScroll: <span class="literal">true</span>,//自由滚动</div><div class="line">	scrollbars: <span class="literal">true</span>, //是否显示滚动条</div><div class="line">	fadeScrollbars: <span class="literal">true</span>, //滚动时才显示滚动条</div><div class="line">	probeType: 3</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="iscroll方法"><a href="#iscroll方法" class="headerlink" title="iscroll方法"></a>iscroll方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">myScroll.on(<span class="string">'beforeScrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始前'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始了'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scroll'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'正在滚动。。。。'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	//主动的停止</div><div class="line">	myScroll.on(<span class="string">'scrollEnd'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'停止了滚动'</span>);</div><div class="line">	&#125;)</div><div class="line">	//被动的，来电，来短信，接收通知，app退出后台</div><div class="line">	myScroll.on(<span class="string">'scrollCancel'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动取消'</span>);</div><div class="line">	&#125;)</div><div class="line">			</div><div class="line">	//滚动最大范围</div><div class="line">	console.log(myScroll.maxScrollY)</div><div class="line">	console.log(myScroll.maxScrollX)</div><div class="line">	//刷新滚动视图，让滚动视图重新识别容器大小</div><div class="line">	myScroll.refresh();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">iscroll</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/iscroll//" class="article-tag-list-link color3">iscroll</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/isroll/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-navigator.geolocation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/navigator.geolocation/">HTML5</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/navigator.geolocation/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="地图定位"><a href="#地图定位" class="headerlink" title="地图定位"></a>地图定位</h1><h3 id="H5提供了地理定位-navigator-geolocation"><a href="#H5提供了地理定位-navigator-geolocation" class="headerlink" title="H5提供了地理定位 navigator.geolocation"></a>H5提供了地理定位 navigator.geolocation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">1.地理位置对象：navigator.geolocation</div><div class="line">2. 执行方法： </div><div class="line">	getCurrentPostion(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	watchPosition(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	clearWatch(监听对象)</div><div class="line">3.进行定位</div><div class="line">	navigator.geolocation.getCurrentPosition(</div><div class="line">		<span class="keyword">function</span>(position)&#123;//定位成功回调</div><div class="line">			console.log(position)</div><div class="line">		&#125;,</div><div class="line">		<span class="keyword">function</span>(error)&#123;//定位失败回调</div><div class="line">			//失败的编号</div><div class="line">			//error.code</div><div class="line">			//0: 其他错误</div><div class="line">			//1：用户拒绝获取位置</div><div class="line">			//2：用户允许了，但是获取位置失败</div><div class="line">			//3：定位超时</div><div class="line">			console.log(<span class="string">'定位失败'</span>)</div><div class="line">			console.log(error)</div><div class="line">		&#125;, &#123;</div><div class="line">			timeout: 10000, //请求超时时间</div><div class="line">			enableHighAccuracy: <span class="literal">true</span>, //是否获得更精确的经纬度和海拔</div><div class="line">			maximumAge: 100000 //定位出来的位置可以缓存的最大时间， 默认为0</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">3.进行监听</div><div class="line">	var watcher = null;</div><div class="line">	<span class="keyword">function</span> <span class="function"><span class="title">btnAction1</span></span>()&#123;//触发的事件</div><div class="line">		watcher = navigator.geolocation.watchPosition(</div><div class="line">			<span class="keyword">function</span>(position)&#123;</div><div class="line">				console.log(<span class="string">'监听'</span>);</div><div class="line">				console.log(position);</div><div class="line">			&#125;,</div><div class="line">			<span class="keyword">function</span>(error)&#123;</div><div class="line">				console.log(error);</div><div class="line">			&#125;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">4.移除监听</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">btnAction2</span></span>()&#123;//触发的事件</div><div class="line">		navigator.geolocation.clearWatch(watcher);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="百度的地图"><a href="#百度的地图" class="headerlink" title="百度的地图"></a>百度的地图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.进入百度地图生成秘钥</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥"</span>&gt;&lt;/script&gt;</div><div class="line">2.然后直接看示例dom使用或者看api文档</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">地图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/地图//" class="article-tag-list-link color3">地图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/navigator.geolocation/">展开全文 >></a>
         </p>
       
 
@@ -588,186 +1138,6 @@ div
 
 
   
-    <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/git/">git</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/git/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#git</p>
-<h3 id="git是什么"><a href="#git是什么" class="headerlink" title="git是什么"></a>git是什么</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">目前世界上最先进的分布式版本控制系统</div></pre></td></tr></table></figure>
-<h3 id="git对比-svn"><a href="#git对比-svn" class="headerlink" title="git对比 svn"></a>git对比 svn</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git 是分布式的，svn 是集中式的。</div><div class="line">git 的分支操作非常方便，</div><div class="line">git 高端大气上档次</div></pre></td></tr></table></figure>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">•	直接去官网下载安装文件，安装即可。</div><div class="line">•	安装完成，会有一个 git bash 的命令行工具</div><div class="line">•	打开这个命令行工具，运行下面两行代码</div><div class="line"></div><div class="line">git config --global user.name <span class="string">"Your Name"</span> </div><div class="line">git config --global user.email <span class="string">"email@example.com"</span></div></pre></td></tr></table></figure>
-<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">git init	初始化git仓库</div><div class="line">git add	添加到暂存区</div><div class="line">git commit	提交版本</div><div class="line">git status	查看当前仓库状态</div><div class="line">git diff	查看文件是怎么修改的</div><div class="line">git <span class="built_in">log</span>	显示从最近到最远的提交日志</div><div class="line">git reset --hard HEAD^	回退到上一个版本</div><div class="line">git reflog	显示记录的我的每一次命令</div><div class="line">git checkout -- &lt;filename&gt;	丢弃工作区的修改</div><div class="line">git reset HEAD &lt;filename&gt;	撤销暂存区的修改</div><div class="line">git checkout -b 分支名	创建并切换分支</div><div class="line">git checkout 分支名	切换分支</div><div class="line">git branch	查看所有分支</div><div class="line">git merge 分支名	将某分支的最新内容合并到当前所在分支</div><div class="line">git branch -d 分支名	删除某分支</div><div class="line">git push	推送到远程仓库</div><div class="line">git pull	更新本地仓库，让其跟远程仓库保持一致</div><div class="line">git <span class="built_in">clone</span>	克隆某个分支到本地</div><div class="line">git remote	远程仓库相关操作</div></pre></td></tr></table></figure>
-<h3 id="git忽略文件-gitignore"><a href="#git忽略文件-gitignore" class="headerlink" title="git忽略文件 .gitignore"></a>git忽略文件 .gitignore</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">有些文件，不能让git管理起来，比如保存了一些敏感信息的配置文件，或者 node_modules 这种超大文件，再或者一些编辑器生成的配置文件等。这时，我们就得配置 git忽略文件</div></pre></td></tr></table></figure>
-<h3 id="操作及注意事项"><a href="#操作及注意事项" class="headerlink" title="操作及注意事项"></a>操作及注意事项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">撤销工作区的修改   git checkout -- 文件名</div><div class="line"></div><div class="line">添加到暂存区了。还想撤销。</div><div class="line">	1. git reset HEAD 文件名	</div><div class="line">	2. git checkout -- 文件名</div><div class="line">如果提交到了 版本库里面，回退版本</div><div class="line"></div><div class="line">1. 初始化一个 git 之后，默认所在的 分支 是 master  干净整洁</div><div class="line"></div><div class="line">2. 不要在 master 上 写代码，master 上只做  git push   git pull   git merg</div><div class="line">创建一个 分支 </div><div class="line">git checkout -b dev</div><div class="line">做登录的页面</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">''</span></div><div class="line">回到 master</div><div class="line">将 dev 上面做的 登录给合并到 master</div><div class="line">git merge dev</div><div class="line">推送到远程</div><div class="line">git push </div><div class="line">将某个本地分支推送到远程</div><div class="line">git push origin dev</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/git/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-isroll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/isroll/">iscroll插件</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/isroll/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="iscroll"><a href="#iscroll" class="headerlink" title="iscroll"></a>iscroll</h1><h3 id="iscroll初始化"><a href="#iscroll初始化" class="headerlink" title="iscroll初始化"></a>iscroll初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var myScroll = new IScroll(<span class="string">'.content'</span>, &#123;</div><div class="line">	bounce: <span class="literal">true</span>, //开启弹簧效果</div><div class="line">	click: <span class="literal">true</span>, //在iscroll中，为了性能优化，没有将点击事件传递下去</div><div class="line">	tap: <span class="literal">true</span>, //tap事件相当于移动端的click</div><div class="line">	startY: -100, //startX,startY设置起始位置</div><div class="line">	scrollY: <span class="literal">true</span>,//Y轴是否可以滚动</div><div class="line">	scrollX: <span class="literal">false</span>,//x轴是否可以滚动</div><div class="line">	freeScroll: <span class="literal">true</span>,//自由滚动</div><div class="line">	scrollbars: <span class="literal">true</span>, //是否显示滚动条</div><div class="line">	fadeScrollbars: <span class="literal">true</span>, //滚动时才显示滚动条</div><div class="line">	probeType: 3</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="iscroll方法"><a href="#iscroll方法" class="headerlink" title="iscroll方法"></a>iscroll方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">myScroll.on(<span class="string">'beforeScrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始前'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始了'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scroll'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'正在滚动。。。。'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	//主动的停止</div><div class="line">	myScroll.on(<span class="string">'scrollEnd'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'停止了滚动'</span>);</div><div class="line">	&#125;)</div><div class="line">	//被动的，来电，来短信，接收通知，app退出后台</div><div class="line">	myScroll.on(<span class="string">'scrollCancel'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动取消'</span>);</div><div class="line">	&#125;)</div><div class="line">			</div><div class="line">	//滚动最大范围</div><div class="line">	console.log(myScroll.maxScrollY)</div><div class="line">	console.log(myScroll.maxScrollX)</div><div class="line">	//刷新滚动视图，让滚动视图重新识别容器大小</div><div class="line">	myScroll.refresh();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">iscroll</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/iscroll//" class="article-tag-list-link color3">iscroll</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/isroll/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-js-hack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -854,19 +1224,19 @@ div
 
 
   
-    <article id="post-navigator.geolocation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-react-dev" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/navigator.geolocation/">HTML5</a>
+      <a class="article-title" href="/2016/06/01/react-dev/">react</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/navigator.geolocation/" class="archive-article-date">
+        <a href="/2016/06/01/react-dev/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -874,8 +1244,9 @@ div
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="地图定位"><a href="#地图定位" class="headerlink" title="地图定位"></a>地图定位</h1><h3 id="H5提供了地理定位-navigator-geolocation"><a href="#H5提供了地理定位-navigator-geolocation" class="headerlink" title="H5提供了地理定位 navigator.geolocation"></a>H5提供了地理定位 navigator.geolocation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">1.地理位置对象：navigator.geolocation</div><div class="line">2. 执行方法： </div><div class="line">	getCurrentPostion(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	watchPosition(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	clearWatch(监听对象)</div><div class="line">3.进行定位</div><div class="line">	navigator.geolocation.getCurrentPosition(</div><div class="line">		<span class="keyword">function</span>(position)&#123;//定位成功回调</div><div class="line">			console.log(position)</div><div class="line">		&#125;,</div><div class="line">		<span class="keyword">function</span>(error)&#123;//定位失败回调</div><div class="line">			//失败的编号</div><div class="line">			//error.code</div><div class="line">			//0: 其他错误</div><div class="line">			//1：用户拒绝获取位置</div><div class="line">			//2：用户允许了，但是获取位置失败</div><div class="line">			//3：定位超时</div><div class="line">			console.log(<span class="string">'定位失败'</span>)</div><div class="line">			console.log(error)</div><div class="line">		&#125;, &#123;</div><div class="line">			timeout: 10000, //请求超时时间</div><div class="line">			enableHighAccuracy: <span class="literal">true</span>, //是否获得更精确的经纬度和海拔</div><div class="line">			maximumAge: 100000 //定位出来的位置可以缓存的最大时间， 默认为0</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">3.进行监听</div><div class="line">	var watcher = null;</div><div class="line">	<span class="keyword">function</span> <span class="function"><span class="title">btnAction1</span></span>()&#123;//触发的事件</div><div class="line">		watcher = navigator.geolocation.watchPosition(</div><div class="line">			<span class="keyword">function</span>(position)&#123;</div><div class="line">				console.log(<span class="string">'监听'</span>);</div><div class="line">				console.log(position);</div><div class="line">			&#125;,</div><div class="line">			<span class="keyword">function</span>(error)&#123;</div><div class="line">				console.log(error);</div><div class="line">			&#125;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">4.移除监听</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">btnAction2</span></span>()&#123;//触发的事件</div><div class="line">		navigator.geolocation.clearWatch(watcher);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h3 id="百度的地图"><a href="#百度的地图" class="headerlink" title="百度的地图"></a>百度的地图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.进入百度地图生成秘钥</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥"</span>&gt;&lt;/script&gt;</div><div class="line">2.然后直接看示例dom使用或者看api文档</div></pre></td></tr></table></figure>
+        <h3 id="项目开发依赖"><a href="#项目开发依赖" class="headerlink" title="项目开发依赖"></a>项目开发依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">npm install webpack webpack-dev-server -D   (前端工程构建化工具)</div><div class="line">npm install babel-core babel-loader -D   （babel）</div><div class="line">npm install babel-preset-es2015 -D     （解析es6）</div><div class="line">npm install babel-preset-react -D     （解析jsx语法）</div><div class="line">npm install css-loader style-loader -D （解析样式）</div><div class="line">npm install file-loader -D   (解析路径)</div><div class="line"></div><div class="line">npm install react -S</div><div class="line">npm install react-dom -S</div><div class="line">npm install prop-types -S (react组件的属性校验插件)</div></pre></td></tr></table></figure>
+<h3 id="创建webpack-config-js（webpack执行的配置文件）文件"><a href="#创建webpack-config-js（webpack执行的配置文件）文件" class="headerlink" title="创建webpack.config.js（webpack执行的配置文件）文件"></a>创建webpack.config.js（webpack执行的配置文件）文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">		entry: <span class="string">'./src/main.js'</span>//项目入口文件</div><div class="line">		output: &#123;//项目输出文件</div><div class="line">			path: __dirname,</div><div class="line">			filename: <span class="string">'dist/app.js'</span></div><div class="line">		&#125;,</div><div class="line">		module: &#123;</div><div class="line">			loaders: [//配置loader的执行规则</div><div class="line">				&#123;<span class="built_in">test</span>: /\.js$/, loader: <span class="string">'babel-loader'</span>, exclude:/node_modules/&#125;,</div><div class="line">				&#123;<span class="built_in">test</span>: /\.css$/, loader: <span class="string">'style-loader!css-loader'</span>&#125;,</div><div class="line">				&#123;<span class="built_in">test</span>: /\.(png|jpg|jpeg|gif|ttf)/, loader: <span class="string">'file-loader'</span>&#125;</div><div class="line">			]</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="创建-babelrc文件（babel的配置文件）"><a href="#创建-babelrc文件（babel的配置文件）" class="headerlink" title="创建.babelrc文件（babel的配置文件）"></a>创建.babelrc文件（babel的配置文件）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	presets: [<span class="string">'es2015'</span>, <span class="string">'react'</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
 
@@ -888,442 +1259,12 @@ div
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/地图//" class="article-tag-list-link color3">地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/navigator.geolocation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-phonegap.coedova操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/phonegap.coedova操作/">phonegap/cordova</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/phonegap.coedova操作/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.phonegap/cordova��ʲô?</p>
-<pre><code>1.���԰�������html css  jsд���ƶ���ҳ���������ƶ�app��һ������
-2.������������js������ԭ����api������������λ������������ϵ�ˣ��������񶯵�
-</code></pre><p>2.JDK�İ�װ��</p>
-<pre><code>���ܣ�JDK�� Java ���Ե������������߰�����Ҫ�����ƶ��豸��Ƕ��ʽ�豸�ϵ�javaӦ�ó�����
-
-
-1.�ҵ�jdk ��һ����һ����װ
-
-2.���û�������
-
-    2.1���ҵĵ����Ҽ�-����-&gt;�߼�ϵͳ����-�߼� -�ҵ���������-&gt;ϵͳ����
-
-
-    2.2 ��ϵͳ��������--�½���������   ��������JAVA_HOME    ����ֵ��C:\Program Files\Java\jdk1.8.0_31������ȷ��
-
-
-    2.3 ��ϵͳ���������ҵ�path������������path������������׷�ӡ�
-
-        ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin
-
-
-    ע��:    ;Ӣ�ĵ�      �����и��ո� 
-
-
-
-    ���� ȷ��  ȷ�� ȷ��
-
-
-
-3.���´���cmd   ���� java   �ܳ���������������javacҲ�ܳ���˵�����óɹ���
-</code></pre><p>3.��װADT     </p>
-<pre><code>���ܣ�Android Developer Tools   ����eclipse   sdk 
-
-1.��ѹ�������κ�һ���̣�ע���̷����������� �ո�
-
-2.�ҵ�ϵͳ����������path������������path����׷��,���������ͻ�������֮����;����
-
-
-    ϵͳ���� Path   �������ӣ�  ע�ⲻ��������
-
-     D:\Program Files\ADT\sdk\tools;
-     D:\Program Files\ADT\sdk\platform-tools;
-
-
-     D:\Program Files\ADT ����adt��Ŀ¼
-
-
-     �����ҵģ�  ;F:\adt\sdk\tools;F:\adt\sdk\platform-tools
-
-
-
-    3.���´���cmd   ����android    �����ܳ���android��sdk������˵���ɹ��ˡ�   -----android��sdk���������ù�
-</code></pre><p>4.��װcordova</p>
-<pre><code>ǰ�᣺nodejs��Ҫ��װ
-
-���ܣ�����phonegpa
-
-
-1.����cnd  ���� npm install -g cordova  ���� cnpm install -g cordova
-
-
-    cordova -v  7.1�İ汾
-
-
-
-    7.1�İ汾��bug
-
-
-
-
-2.����cordova�İ汾    *****************************
-
-     cnpm install -g cordova@6.3.1  
-
-
-
-3.������Щ�˰�װ�����°汾��
-
-    3.1ж�����µİ汾
-
-       npm uninstall cordova  -g
-
-        3.2   �������� 
-
-
-       cnpm install -g cordova@6.3.1  
-
-
-
-4.���ɹ�û�гɹ� ����
-
-cordova -v
-</code></pre><p>5.������Ŀ<br>    1.�ҵ����Լ�����ĿĿ¼  C:\cordova_demo</p>
-<pre><code>2.cd ������Ŀ¼
-
-3.cordova create ��Ŀ����    
-
-    ���紴��cordova01����Ŀ
-
-
-  cordova create cordova01
-
-
-4.cd ����Ŀ����    cd cordova01
-
-
-5.cordova platform add android             -- ��android�������صİ����ص�������Ŀ����
-
-
-                           ��cordova���ӵ�androidƽ̨
-
-
-
-
-���磺
-
- cordova create cordova02
-
- cd  cordova02
-
- cordova platform add android
-</code></pre><p>6.������Ŀ</p>
-<pre><code>1.����adt������eclipse
-
-
-2.������Ŀ
-
-    File-&gt;import-&gt;�ҵ�android  �Լ����ڵ�android��Ŀ-&gt;ѡ��������Ŀ-&gt;��һ��
-
-    3.�ҵ�MainActivity �����Ҽ�     run  as android  application
-
-
-ע���������ԣ�
-
-    1.�ֻ����������������� 
-    2.�ֻ����뿪������ģʽ���ٶ�����XXX�ֻ���������ģʽ��
-    3.���������ⲿ��������װ
-
-ע��ģ�������ԣ�
-
-    1.����ģ��
-
-
-ע�⣺��ʱ������������ ���� HBuilder ����360   Ӧ�ñ���ռ�������ֻ��Ķ˿� �� �ص���Щ�������ԡ�
-</code></pre><p>7.�޸���Ŀ</p>
-<pre><code>�޸� ��ĿĿ¼������www�����Ĵ���
-
-
-�޸������Ժ�Ҫ����  cordova prepare
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">phonegap</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/cordova//" class="article-tag-list-link color3">cordova</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/phonegap.coedova操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mongodb的增删改查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/mongodb的增删改查/">mongodb</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/mongodb的增删改查/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#mongodb</p>
-<p>mongodb   ����<br>��װ   ���ӻ�������<br> mongod -dbpath �������ݿ����ݵ��ļ�  //����mongo</p>
-<p>show dbs    //�г����е����ݿ�<br>use ���ݿ���     //ʹ��ĳ�����ݿ�   ����û���������ݿ�����������ʱ�ᴴ��һ�����ݿ�<br>show collections   //�鿴��ǰ���ݿ����ж��ٱ�</p>
-<p>db.����.insert({“username”:’zhangsan’})   //������һ�����ݲ�������һ����</p>
-<p>db.����.find()     //��ѯ��������</p>
-<p>db.user.find({��������})     //������������</p>
-<p>����age��20�ļ�¼<br>db.����.find({“age”:{$gt:20}});   $gt���Ǵ���</p>
-<p>����age&lt;20�ļ�¼<br>db.����.find({“age”:{$lt:20}})</p>
-<p>����age&gt;=20�ļ�¼<br>db.����.find({“age”:{$gte:20}})</p>
-<p>����age��=20�ļ�¼<br>db.����.find({“age”:{$lte:20}})</p>
-<p>����age&gt;=20�Ĳ�age��=30�ļ�¼<br>db.����.find({“age”:{$gte:20,$lte:30}})</p>
-<p>ģ����ѯ     ���ִ�aaa��     ����aaa�Ķ��ᱻ��ѯ��<br>db.����.find({“username”:/aaa/});</p>
-<p>��ѯ��ʲô��ͷ��    ������aaa��ͷ��<br>db.����.find({“username”:/^aaa/});</p>
-<p>ָ����ѯname��age������       �������ֶ����Ͳ��ᱻ��ʾ<br>db.����.find({},{“name:1,age:1”});</p>
-<p>db.����.find().count();    //��ѯ�ж���������</p>
-<p>db.����.find().skip(10).limit(5);   //����ǰ10�����ݲ�ѯ5������<br>��ҳ��������</p>
-<p>db.����.find().sort({age:1});    ����������������<br>db.����.find().sort({age:-1});    �����������н���</p>
-<p>db.����.find().remove({“name”:”zhangsan”,”age”:20});  //ɾ������Ϊ��������������20������</p>
-<p>db.����.update({“name”:”lisi”},{$set:{“age”:30}});    //�鵽lisi�Ĳ��Ұ�age���ó�30</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mongodb//" class="article-tag-list-link color3">mongodb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/mongodb的增删改查/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/react/">react</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/react/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line">1.react相当于MVC中的V：view</div><div class="line">数据单向绑定（比较不同，使用diff算法比较不同，进行修改）</div><div class="line">组件化</div><div class="line">2.内部数据state在模板中访问</div><div class="line">    &lt;h1&gt;&#123;this.state.title&#125;&lt;/h1&gt;</div><div class="line">3.修改state</div><div class="line">	this.setState(&#123;title: <span class="string">'需要修改的值'</span>&#125;);</div><div class="line">4.事件：事件需要使用驼峰命名</div><div class="line">&lt;button onClick=&#123;this.btnAction&#125;&gt;按钮&lt;/button&gt;</div><div class="line">5.自定义事件this指向问题</div><div class="line">    指向是null，解决方法使用<span class="built_in">bind</span>（this）</div><div class="line">    &lt;button onClick=&#123;this.btnAction.bind(this)&#125;&gt;按钮&lt;/button&gt;</div><div class="line">6.虚拟DOM</div><div class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> res=<span class="string">"in"</span> /&gt;</div><div class="line">    js获取表单的值:this.refs.in.value</div><div class="line">7.父子组件传值</div><div class="line">    7.1.父向子级传递数据</div><div class="line">         属性传递</div><div class="line">        &lt;Son data=&#123;this.state.data&#125;/&gt;</div><div class="line">        子组件使用</div><div class="line">		this.props.data</div><div class="line">    7.2.子向父级传递数据</div><div class="line">        自定义事件传递给子级的属性，子级调用属性()传递数据</div><div class="line">        &lt;Son send=&#123;this.getData.bind(this)&#125;/&gt;</div><div class="line">        子级调用</div><div class="line">        this.props.getData(<span class="string">'需要传递的数据'</span>);</div><div class="line">8.属性校验</div><div class="line">&lt;!--more--&gt;</div><div class="line">import PT from <span class="string">'prop-types'</span></div><div class="line">//校验</div><div class="line">Son.propTypes = &#123;</div><div class="line">	s: PT.string.isRequired,//必须的</div><div class="line">	a: PT.array,//数组</div><div class="line">	f: PT.func//函数</div><div class="line">&#125;</div><div class="line">8.在jsx语法中的dom控制</div><div class="line">遍历</div><div class="line">	&lt;ul&gt;</div><div class="line">		&#123;this.state.arr.map((item, index)=&gt;&#123;</div><div class="line">			<span class="built_in">return</span> (</div><div class="line">				&lt;li&gt;</div><div class="line">					&#123;item&#125;</div><div class="line">				&lt;/li&gt;</div><div class="line">			)</div><div class="line">		&#125;)&#125;</div><div class="line">	&lt;/ul&gt; </div><div class="line">9.标签和标签的显示控制</div><div class="line">	<span class="built_in">let</span> boxEle = this.state.isShow? &lt;div class=<span class="string">"box"</span>&gt;&lt;/div&gt;: null;	</div><div class="line">	dom展示:</div><div class="line">		&lt;div&gt;</div><div class="line">			&#123;boxEle&#125;</div><div class="line">		&lt;/div&gt;</div><div class="line">    <span class="built_in">let</span> boxStyle = this.state.isShow? &#123;&#125; : &#123;display:<span class="string">'none'</span>&#125;;</div><div class="line">	dom展示:</div><div class="line">		&lt;div class=<span class="string">"box"</span> style=&#123;boxStyle&#125;&gt;&lt;/div&gt;</div><div class="line">10.style的写法：</div><div class="line">	const boxStyle = &#123;</div><div class="line">			height: <span class="string">'80px'</span>,</div><div class="line">			borderBottom: <span class="string">'1px solid #ddd'</span>,</div><div class="line">			display: <span class="string">'flex'</span></div><div class="line">		&#125;;</div><div class="line">	&lt;div style=&#123;boxStyle&#125;&gt;&lt;/div&gt;</div><div class="line">11.class的写法：</div><div class="line">	当成普通属性绑定</div><div class="line">	&lt;div class=&#123;index==this.state.selectIndex?<span class="string">'active'</span>:<span class="string">''</span>&#125;&gt;&lt;/div&gt;</div><div class="line">12.定义一个DOM结构 用花括号进行解析</div><div class="line">	<span class="built_in">let</span> banner=&lt;div&gt;</div><div class="line">				111</div><div class="line">		&lt;/div&gt;	</div><div class="line">	解析&#123;banner&#125;</div></pre></td></tr></table></figure>
-<h3 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1.componentWillMount</div><div class="line">    在react组件加载完之前立即执行，此时还不能访问到真实的dom结构.（一般用于请求数据）</div><div class="line">2.componentDidMount</div><div class="line">    在挂载发生后被立即调用。 需要DOM node的初始化应该放在这里。如果你要获取真的dom结构，应该是写在componentDidMount之后的任何时间内。</div><div class="line">3.componentWillReceiveProps</div><div class="line">    当挂载的组件接收到新的props时被调用。此方法应该被用于比较this.props 和 nextProps以用于使用this.setState()执行状态转换。这句话的意思是，你可以在这里写一些判断来接收传递过来的props来设置当前组件的state，这是很有用的一个事件，因为理论上是每个组件的state应该是独立的，如果调用者想要改变组件的state，就必须通过传递props方式，这时候的转化就发生在componentWillReceiveProps()中了（props的值发生变化时可以在这里进行比较，然后进行操作）</div><div class="line">        componentWillReceiveProps(newProps) &#123;</div><div class="line">            console.log(newProps.isShow, this.state.isShow);</div><div class="line">            <span class="keyword">if</span> (newProps.isShow &amp;&amp; !this.state.isShow) &#123;</div><div class="line">            this.show(newProps);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!newProps.isShow &amp;&amp; this.state.isShow) &#123;</div><div class="line">            this.hide(newProps);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">4.shouldComponentUpdate</div><div class="line">    当组件决定任何改变是否要更新到DOM时被调用。作为一个优化实现比较this.props 和 nextProps 、this.state 和 nextState ，如果React应该跳过更新，返回<span class="literal">false</span>。</div><div class="line">    这个事件的用处是我们可以控制react的更新频率，很多时候，并不是任何的state改变，我们都需要对整个组件进行render的，虽然react提供了很好的虚拟dom对比机制，但我们仍然可以在这里做进一步的优化。</div></pre></td></tr></table></figure>
-<h3 id="组件创造和更新的过程"><a href="#组件创造和更新的过程" class="headerlink" title="组件创造和更新的过程"></a>组件创造和更新的过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"> 组件的创建过程： Mounting</div><div class="line">	constructor()  构造函数</div><div class="line">	componentWillMount()  将要创建组件</div><div class="line">	render()  渲染组件结构</div><div class="line">	componentDidMount()  创建完成</div><div class="line">	</div><div class="line">	componentWillMount():</div><div class="line">		在这个函数中才开始可以访问props</div><div class="line">		即如果props上的数据需要赋值给state，就在这个函数上执行setState()进行赋值</div><div class="line">		</div><div class="line">	componentDidMount():</div><div class="line">		在这个函数之后组件才有结构，那么dom结构操作都是在这个函数之后才能起作用。如ref</div><div class="line">	</div><div class="line">组件数据更新：Updating (state, props)</div><div class="line">	componentWillReceiveProps()  将要接收到外部数据props</div><div class="line">	shouldComponentUpdate()  是否应该更新dom结构</div><div class="line">	componentWillUpdate()  将要更新</div><div class="line">	render()  渲染组件结构</div><div class="line">	componentDidUpdate()  已经更新完毕</div><div class="line">	</div><div class="line">	state更新</div><div class="line">		情况1：</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		componentWillUpdate()</div><div class="line">		render()</div><div class="line">		componentDidUpdate()</div><div class="line">		情况2：</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">		</div><div class="line">	props更新	</div><div class="line">		情况1：</div><div class="line">		componentWillReceiveProps()</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">		情况2：</div><div class="line">		componentWillReceiveProps()</div><div class="line">		shouldComponentUpdate() <span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		componentWillUpdate()</div><div class="line">		render()</div><div class="line">		componentDidUpdate()</div><div class="line">	</div><div class="line">	componentWillReceiveProps()</div><div class="line">		在这个函数的参数能够接收到改变后的数据，但是this.props还是原数据</div><div class="line">	shouldComponentUpdate()</div><div class="line">		这个函数是控制组件dom是否应该更新，数据是一定会发生变化的。</div><div class="line">		在这个函数中可以优化组件更新</div><div class="line"></div><div class="line">销毁：Unmounting</div><div class="line">	componentWillUnmount()  将要销毁</div><div class="line">		释放内存</div></pre></td></tr></table></figure>
-<h3 id="react路由"><a href="#react路由" class="headerlink" title="react路由"></a>react路由</h3><p> 文档地址:<a href="http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/" target="_blank" rel="external">http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">1.安装路由</div><div class="line">    cnpm install react-router-dom -S</div><div class="line">2.路由容器</div><div class="line">    import &#123;BrowserRouter&#125; from <span class="string">'react-router-dom'</span></div><div class="line">	注意：包裹整个项目，只能有一个子节点</div><div class="line"></div><div class="line">3.路由页面</div><div class="line">    import &#123;Route&#125; from <span class="string">'react-router-dom'</span></div><div class="line">4.路由触发</div><div class="line">    import &#123;Link&#125; from <span class="string">'react-router-dom'</span></div><div class="line">    import &#123;NavLink&#125; from <span class="string">'react-router-dom'</span>  </div><div class="line">5.Route的三中方式</div><div class="line">    5.1 &lt;Route component&gt;</div><div class="line">         import &#123; BrowserRouter as Router, Route &#125; from <span class="string">'react-router-dom'</span></div><div class="line">            &lt;Router&gt;</div><div class="line">                &lt;div&gt;</div><div class="line">                    &lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</div><div class="line">                    &lt;Route path=<span class="string">"/news"</span> component=&#123;NewsFeed&#125;/&gt;</div><div class="line">                &lt;/div&gt;</div><div class="line">            &lt;/Router&gt;</div><div class="line">    5.2&lt;Route render&gt;</div><div class="line">        &lt;Route path=<span class="string">"/home"</span> render=&#123;() =&gt; &lt;div&gt;Home&lt;/div&gt;&#125;/&gt;</div><div class="line">    5.3&lt;Route children&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><p> 文档地址:<a href="http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/" target="_blank" rel="external">http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import &#123;createStore&#125; from <span class="string">'redux'</span></div><div class="line"></div><div class="line">//state(全局状态)</div><div class="line">//	外部方法访问state，执行store.getState()</div><div class="line"></div><div class="line">//action(操作全局状态的事件)</div><div class="line">//	外部调用action，执行store.dispatch();</div><div class="line"></div><div class="line">//外部监听state</div><div class="line">//var unsubscribe = store.subscribe(<span class="function"><span class="title">function</span></span>()&#123; 监听函数 &#125;);</div><div class="line">//移除监听 unsubscribe();</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">依赖</a>
         		</li>
       		
 		</ul>
@@ -1344,7 +1285,95 @@ cordova -v
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/react/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/react-dev/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-rem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/rem/">rem</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/rem/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="通过监听屏蔽变化改变根元素fontsize的大小"><a href="#通过监听屏蔽变化改变根元素fontsize的大小" class="headerlink" title="通过监听屏蔽变化改变根元素fontsize的大小"></a>通过监听屏蔽变化改变根元素fontsize的大小</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by qiangxl on 2017/7/18 0018.</div><div class="line"> */</div><div class="line">//监听屏幕宽度发变化，和横竖屏变化，重新这是html的fontsize</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getRootFontSize</span></span>()&#123;</div><div class="line">	var root = document.documentElement;</div><div class="line">	var clientWidth = root.clientWidth;</div><div class="line">	console.log(clientWidth)</div><div class="line">	root.style.fontSize = clientWidth*100/750+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line">window.addEventListener(<span class="string">'orientationchange'</span>, getRootFontSize);</div><div class="line">window.addEventListener(<span class="string">'resize'</span>, getRootFontSize);</div><div class="line">getRootFontSize();</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">rem</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/rem//" class="article-tag-list-link color4">rem</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/rem/">展开全文 >></a>
         </p>
       
 
@@ -1475,6 +1504,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
@@ -1483,27 +1516,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1515,15 +1536,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1532,6 +1553,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">依赖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1551,19 +1584,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
