@@ -153,19 +153,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-移动端" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue基本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/移动端/">移动端</a>
+      <a class="article-title" href="/2016/06/01/vue基本/">vue的基本</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/移动端/" class="archive-article-date">
+        <a href="/2016/06/01/vue基本/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -173,30 +173,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>rem 作单位rem是根据页面的根元素的font-size的一个相对的单位<br>添加视口    禁止缩放  viewport</p>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=0">
-
-<p>html最好设置成625%    懒得计算<br>body设置小点的字体</p>
-<p>禁用a,button,input,optgroup,select,textarea 等标签背景变暗<br>在移动端点击后 会出现”暗色”的背景，这时候我们需要在css加入如下代码即可：</p>
-<p>a,button,input,optgroup,select,textarea{<br>    -webkit-tap-highlight-color: rgba(0,0,0,0);<br>}</p>
-<p>2.忽略将页面中的数字识别为电话号码<br>  <meta name="format-detection" content="telephone=no"></p>
-<ol>
-<li>忽略Android平台中对邮箱地址的识别<meta name="format-detection" content="email=no">
-
-
-</li>
-</ol>
-<ol>
-<li><p>当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari</p>
-<meta name="apple-mobile-web-app-capable" content="yes">
-</li>
-<li><p>将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式</p>
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-</li>
-</ol>
-<p>五：在android或者IOS下 拨打电话代码如下：</p>
-<p><a href="tel:15602512356" target="_blank" rel="external">打电话给:15602512356</a></p>
+        <h1 id="vue的基本使用搭建及流程"><a href="#vue的基本使用搭建及流程" class="headerlink" title="vue的基本使用搭建及流程"></a>vue的基本使用搭建及流程</h1><h3 id="构建用户界面的渐进式框架-MVVM框架"><a href="#构建用户界面的渐进式框架-MVVM框架" class="headerlink" title="构建用户界面的渐进式框架 MVVM框架"></a>构建用户界面的渐进式框架 MVVM框架</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 全局安装 vue-cli</span></div><div class="line">$ npm install --global vue-cli</div><div class="line"><span class="comment"># 创建一个基于 webpack 模板的新项目</span></div><div class="line">$ vue init webpack my-project   很少用开启语法检查是否配置路由</div><div class="line">$ vue init webpack-simple my-project    用这个</div><div class="line"><span class="comment"># 安装依赖，走你</span></div><div class="line">$ <span class="built_in">cd</span> my-project</div><div class="line">$ npm install</div><div class="line">$ npm run dev</div></pre></td></tr></table></figure>
+<h3 id="vue组件-script标签里"><a href="#vue组件-script标签里" class="headerlink" title="vue组件     script标签里"></a>vue组件     script标签里</h3><p>不能和HTML标签重名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">定义组件    第一种写法</div><div class="line">var Header=&#123;</div><div class="line">//没有分号</div><div class="line">	template:<span class="string">"&lt;div&gt;头部&lt;/div&gt;"</span></div><div class="line">&#125;</div><div class="line">注册组件</div><div class="line"></div><div class="line">Vue.component(<span class="string">'v-header'</span>,Header);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">组合写  第二种写法</div><div class="line">Vue.component(<span class="string">'v-header'</span>,&#123;</div><div class="line">//没有分号</div><div class="line">	template:<span class="string">"&lt;div&gt;头部&lt;/div&gt;"</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">定义组件   第三种写法</div><div class="line">var News=&#123;</div><div class="line">//没有分号</div><div class="line">	template:<span class="string">"&lt;div&gt;新闻&lt;/div&gt;"</span></div><div class="line">&#125;</div><div class="line">var vm=new Vue(&#123;   //****常用****</div><div class="line">	el:<span class="string">"#xxx"</span>,</div><div class="line">	data:&#123;   &#125;,</div><div class="line">	components:&#123;</div><div class="line">		<span class="string">'v-news'</span>:News     //注册组件</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="vue-父子组件之间的传值"><a href="#vue-父子组件之间的传值" class="headerlink" title="vue 父子组件之间的传值"></a>vue 父子组件之间的传值</h3><p>例：一个header和new组件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">1、</div><div class="line">var Header=&#123;</div><div class="line">        template:<span class="string">"#header"</span>,</div><div class="line">        <span class="function"><span class="title">data</span></span>()&#123;</div><div class="line">            <span class="built_in">return</span>&#123;</div><div class="line">                msg:<span class="string">'header'</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">            <span class="function"><span class="title">headerrun</span></span>()&#123;</div><div class="line">                alert(<span class="string">"子组件的方法"</span>+this.m)</div><div class="line">                this.run()</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        props:[<span class="string">'m'</span>,<span class="string">'run'</span>]</div><div class="line">	//new绑定数据  header接收数据 props</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var New=&#123;</div><div class="line">        template:<span class="string">"#new"</span>,</div><div class="line">        <span class="function"><span class="title">data</span></span>()&#123;</div><div class="line">            <span class="built_in">return</span> &#123;</div><div class="line">                msg:<span class="string">"this is news"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">            <span class="function"><span class="title">run</span></span>()&#123;</div><div class="line">                alert(this.msg+<span class="string">"父组件的方法"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        components:&#123;</div><div class="line">            <span class="string">'v-header'</span>:Header</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var app=new Vue(&#123;</div><div class="line">        el:<span class="string">"#app"</span>,</div><div class="line">        data:&#123;</div><div class="line">            //数据</div><div class="line">            name:<span class="string">"zhangsan"</span></div><div class="line">        &#125;,</div><div class="line">        components:&#123;</div><div class="line">            //注册组件</div><div class="line">            <span class="string">'v-new'</span>:New</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line"></div><div class="line">2、</div><div class="line">在body里面   在定义的视口下面组件里面的HTML代码</div><div class="line">&lt;template id=<span class="string">"header"</span>&gt;</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;h2&gt;这是头部子组件---&#123;&#123;msg&#125;&#125;--&#123;&#123;m&#125;&#125;-&lt;/h2&gt;</div><div class="line">                &lt;button @click=<span class="string">"headerrun"</span>&gt;头部按钮&lt;/button&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/template&gt;</div><div class="line">        &lt;template id=<span class="string">"new"</span>&gt;</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;h2&gt;&#123;&#123;msg&#125;&#125;----&lt;/h2&gt;</div><div class="line">                &lt;button @click=<span class="string">"run"</span>&gt;父组件&lt;/button&gt;</div><div class="line">                &lt;hr&gt;</div><div class="line"></div><div class="line">                &lt;v-header :m=<span class="string">"msg"</span> :run=<span class="string">"run"</span>&gt;&lt;/v-header&gt;</div><div class="line">		//****表示在header组件里面绑定new里面的  msg 和run方法</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/template&gt;</div><div class="line"></div><div class="line">3、最后在渲染到视口里面  </div><div class="line">``` </div><div class="line"><span class="comment">### vue-resource  和   axios</span></div><div class="line">安装：   vue-resource </div><div class="line">主文件引入：   import VueResource from <span class="string">'vue-resource'</span></div><div class="line">主文件使用：   Vue.use(VueResource)</div><div class="line">``` bash</div><div class="line"></div><div class="line">&#123;//请求数据</div><div class="line">  // GET /someUrl</div><div class="line">  this.<span class="variable">$http</span>.get(<span class="string">'/someUrl'</span>).<span class="keyword">then</span>(response =&gt; &#123;</div><div class="line"></div><div class="line">    // get body data</div><div class="line">    this.someData = response.body;</div><div class="line"></div><div class="line">  &#125;, response =&gt; &#123;</div><div class="line">    // error callback</div><div class="line">  &#125;);</div><div class="line">&#125; </div><div class="line"></div><div class="line"></div><div class="line">axios  请求数据差不多</div></pre></td></tr></table></figure></p>
 
       
 
@@ -210,7 +189,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -222,7 +201,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/移动端//" class="article-tag-list-link color4">移动端</a>
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -231,7 +210,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/移动端/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/vue基本/">展开全文 >></a>
         </p>
       
 
@@ -362,6 +341,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
@@ -374,15 +361,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">iscroll</a>
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -394,23 +377,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">依赖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,11 +401,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,18 +417,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -462,11 +425,27 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
             
             <div class="clearfix"></div>
