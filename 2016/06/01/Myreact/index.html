@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SmallWen的博客">
 <meta property="og:description" content="React 是一个用于构建用户界面的 JAVASCRIPT 库。React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。 React 特点1.声明式设计 −React采用声明范">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-20T13:27:43.297Z">
+<meta property="og:updated_time" content="2019-12-20T15:28:08.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="myreact">
 <meta name="twitter:description" content="React 是一个用于构建用户界面的 JAVASCRIPT 库。React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。 React 特点1.声明式设计 −React采用声明范">
@@ -183,22 +183,27 @@
 
 注意：选择15.3--15.5的版本，这里面有列子。
 </code></pre><p>安装下载看demo</p>
-<p>引入<br>  react.js<br>  react-dom.js<br>  browser.min.js</p>
-<p>react的js类型</p>
+<p>引入</p>
+<pre><code>react.js
+react-dom.js
+browser.min.js
+</code></pre><p>react的js类型</p>
 <script type="text/babel"></script>
 
 <p>//定义组件  组件的名称首字母一定要大写</p>
-<p>例：var Header=React.createClass({   /<em>对象</em>/<br>            render:function(){</p>
-<pre><code>        return (
- /*模板必须要被根节点包含起来*/
+<pre><code>例：var Header=React.createClass({   /*对象*/
+        render:function(){
 
-            &lt;div&gt;
-                &lt;h2&gt;这是一个头部组件&lt;/h2&gt;
-            &lt;/div&gt;
-        )
-    }
+            return (
+     /*模板必须要被根节点包含起来*/
 
-})
+                &lt;div&gt;
+                    &lt;h2&gt;这是一个头部组件&lt;/h2&gt;
+                &lt;/div&gt;
+            )
+        }
+
+    })
 </code></pre><p> ReactDOM.render(） // 渲染</p>
 <p>1.安装脚手架工具   （单文件组件项目生成工具）   只需要安装一次</p>
 <pre><code>https://facebook.github.io/react/docs/installation.html
@@ -217,13 +222,33 @@ npm start  运行项目
 
 
 npm run build 生成项目
-</code></pre><p>react 脚手架    创建项目<br> npm install -g create-react-app<br> create-react-app myapp<br> cd myapp<br> npm start<br> react run build</p>
-<p>父子组件</p>
-<p>axios    react的请求数据模块<br>下载安装<br>cnpm install axios –save<br>引入axios<br>import axiox from ‘axios’<br>看官方文档  demo</p>
-<p>生命周期函数     刷新就执行   不用做其他操作</p>
-<p>使用swiper<br>cnpm install swiper –save<br>import swiper from ‘swiper’<br>引入swipercss<br>加载自己的css</p>
-<p>react<br>andt的css样式要拿出来手动引入<br>ANTd DESIGN   插件     <strong><em>*</em></strong>好用</p>
+</code></pre><p>react 脚手架    创建项目</p>
+<pre><code>npm install -g create-react-app 
+create-react-app myapp
+cd myapp
+npm start
+react run build
+</code></pre><p>父子组件</p>
+<pre><code>axios    react的请求数据模块
+下载安装  
+cnpm install axios --save 
+引入axios
+import axiox from &apos;axios&apos;
+看官方文档  demo
+</code></pre><p>生命周期函数     刷新就执行   不用做其他操作</p>
+<pre><code>使用swiper
+cnpm install swiper --save
+import swiper from &apos;swiper&apos;
+引入swipercss
+加载自己的css
 
+
+
+
+react
+andt的css样式要拿出来手动引入
+ANTd DESIGN   插件     *******好用
+</code></pre>
       
 
       
@@ -348,8 +373,8 @@ npm run build 生成项目
     </a>
   
   
-    <a href="/2016/06/01/vue路由/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue路由</div>
+    <a href="/2016/06/01/vue基本/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue的基本</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -392,7 +417,7 @@ npm run build 生成项目
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 SmallWen
+    		&copy; 2019 SmallWen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -479,18 +504,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
@@ -503,7 +516,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,15 +524,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">地图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,15 +548,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,14 +576,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -579,11 +584,35 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">地图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">gulp3.0</a>
               </li>
             
             <div class="clearfix"></div>

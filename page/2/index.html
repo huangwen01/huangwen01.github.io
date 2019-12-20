@@ -153,19 +153,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-h5和c3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-react基础复习 以及路由配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/h5和c3/">h5和css3</a>
+      <a class="article-title" href="/2016/06/01/react基础复习 以及路由配置/">react和jq</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/h5和c3/" class="archive-article-date">
+        <a href="/2016/06/01/react基础复习 以及路由配置/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -173,173 +173,327 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>转自：<a href="http://www.cnblogs.com/star91/p/5659134.html" target="_blank" rel="external">http://www.cnblogs.com/star91/p/5659134.html</a><br>HTML5<br>1.HTML5 新元素</p>
-<p>HTML5提供了新的元素来创建更好的页面结构：<br>标签<br>描述</p>
-<p><article><br>定义页面独立的内容区域。</article></p>
-<p><aside><br>定义页面的侧边栏内容。<br><bdi><br>允许您设置一段文本，使其脱离其父元素的文本方向设置。</bdi></aside></p>
-<p><command><br>定义命令按钮，比如单选按钮、复选框或按钮</p>
-<p><details><br>用于描述文档或文档某个部分的细节</details></p>
-<p><dialog><br>定义对话框，比如提示框</dialog></p>
-<p><summary><br>标签包含 details 元素的标题</summary></p>
-<p><figure><br>规定独立的流内容（图像、图表、照片、代码等等）。</figure></p>
-<p><figcaption><br>定义 <figure> 元素的标题</figure></figcaption></p>
-<p><footer><br>定义 section 或 document 的页脚。</footer></p>
-<p><header><br>定义了文档的头部区域<br><mark><br>定义带有记号的文本。</mark></header></p>
-<p><meter><br>定义度量衡。仅用于已知最大和最小值的度量。</meter></p>
-<p><nav><br>定义导航链接的部分。</nav></p>
-<p><progress><br>定义任何类型的任务的进度。<br><ruby><br>定义 ruby 注释（中文注音或字符）。<br><rt><br>定义字符（中文注音或字符）的解释或发音。<br><rp><br>在 ruby 注释中使用，定义不支持 ruby 元素的浏览器所显示的内容。</rp></rt></ruby></progress></p>
-<p><section><br>定义文档中的节（section、区段）。<br><time><br>定义日期或时间。<br><wbr><br>规定在文本中的何处适合添加换行符。<br>2.HTML5 Canvas</time></section></p>
-<p>HTML5 <canvas> 元素用于图形的绘制，通过脚本 (通常是JavaScript)来完成.</canvas></p>
-<p><canvas> 标签只是图形容器，您必须使用脚本来绘制图形。</canvas></p>
-<p><canvas>简单实例如下:</canvas></p>
-<p><canvasid="mycanvas"width="200"height="100"><br>使用 JavaScript 来绘制图像<br>canvas 元素本身是没有绘图能力的。所有的绘制工作必须在 JavaScript 内部完成：</canvasid="mycanvas"width="200"height="100"></p>
-<script>
-var c=document.getElementById("myCanvas");
-var ctx=c.getContext("2d");
-ctx.fillStyle="#FF0000";
-ctx.fillRect(0,0,150,75);
-</script> 
-3.HTML5 拖放
+        <p>1.react 和jq的区别？</p>
+<p>2.为什么要用react 写项目？</p>
+<pre><code>单页面应用 运行速度快
+</code></pre><p>3.React 语法基于jsx   、  javascript xml      （nodejs里面的模板ejs）</p>
+<pre><code>ReactDOM.render(
+        &lt;div&gt;
+            &lt;h2&gt;你和React&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;列表1&lt;/li&gt;
+                &lt;li&gt;列表1&lt;/li&gt;
+                &lt;li&gt;列表1&lt;/li&gt;
+            &lt;/ul&gt;           
+        &lt;/div&gt;
+        ,
+        document.getElementById(&apos;box&apos;)
 
- 拖放是一种常见的特性，即抓取对象以后拖到另一个位置。在 HTML5 中，拖放是标准的一部分，任何元素都能够拖放。
-设置元素为可拖放
-首先，为了使元素可拖动，把 draggable 属性设置为 true ：
-<imgdraggable="true">
-拖动什么 - ondragstart 和 setData()
-放到何处 - ondragover
-进行放置 - ondrop
-4.HTML5 地理定位
+    )
+</code></pre><ol>
+<li>模板里面渲染数据   {}</li>
+</ol>
+<p>5.定义数据</p>
+<p>es5 </p>
+<pre><code>getInitialState:function(){  
+    return{  
 
- HTML5 Geolocation API 用于获得用户的地理位置。
-鉴于该特性可能侵犯用户的隐私，除非用户同意，否则用户位置信息是不可用的。
+        msg:&apos;这是InitialState里面的数据&apos;,
+        name:&apos;张三&apos;,
+        list:&apos;&apos;
+    }
 
-<script>
-var x=document.getElementById("demo");
-function getLocation()
-{
-if(navigator.geolocation)
-{
-    navigator.geolocation.getCurrentPosition(showPosition);
 }
-else{x.innerHTML="该浏览器不支持获取地理位置。";}
+
+
+用这里的数据： this.state.数据名称
+</code></pre><p>es6 </p>
+<pre><code>  constructor(props){
+
+    super(props);    
+
+    this.state={
+
+        msg:&apos;这是Life的msg&apos;,
+        name:&apos;张三&apos;,
+        list:&apos;&apos;
+    }    
+}     
+
+
+用这里的数据：this.state.数据名称
+</code></pre><p>6.定义模板</p>
+<pre><code>render(){
+
+    return(
+        &lt;div&gt;
+
+            &lt;h2&gt;这是一个内容组件-{this.state.msg}--{this.state.name}&lt;/h2&gt;
+        &lt;/div&gt;
+    )
 }
-function showPosition(position)
-{
-  x.innerHTML="Latitude: "+ position.coords.latitude +
-"<br>Longitude: "+ position.coords.longitude;
+</code></pre><p>6.定义组件</p>
+<pre><code>es5 
+    var Header=React.createClass({
+
+        getInitialState:function(){  
+            return{  
+
+                msg:&apos;这是InitialState里面的数据&apos;,
+                name:&apos;张三&apos;,
+                list:&apos;&apos;
+            }
+
+        },
+
+        render(){
+
+            return (
+                &lt;div&gt;&lt;/div&gt;
+            )
+        }
+    })
+</code></pre><p>es6 </p>
+<pre><code>class Header extends React.Component{
+
+           constructor(props){
+
+                       super(props);
+
+                       //数据
+
+                       this.state={
+
+                           msg:&apos;这是一个头部组件&apos;
+                       }
+
+               }
+               render(){
+
+                   return (
+
+                       &lt;div&gt;&lt;/div&gt;
+                   )
+               }
+
+
 }
-</script>
 
-<p>5.HTML5  Audio(音频)、Video(视频)</p>
-<p> HTML5 规定了在网页上嵌入音频元素的标准，即使用 <audio> 元素。</audio></p>
-<p><audiocontrols></audiocontrols></p>
-<p><sourcesrc="horse.ogg"type="audio ogg"=""></sourcesrc="horse.ogg"type="audio></p>
-<p><sourcesrc="horse.mp3"type="audio mpeg"=""><br>您的浏览器不支持 audio 元素。<br></sourcesrc="horse.mp3"type="audio></p>
-<p> HTML5 规定了一种通过 video 元素来包含视频的标准方法。</p>
-<p><videowidth="320"height="240"controls></videowidth="320"height="240"controls></p>
-<p><sourcesrc="movie.mp4"type="video mp4"=""></sourcesrc="movie.mp4"type="video></p>
-<p><sourcesrc="movie.ogg"type="video ogg"=""><br>您的浏览器不支持Video标签。<br></sourcesrc="movie.ogg"type="video></p>
-<p>6.HTML5 Input 类型</p>
-<p> HTML5 拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证。<br>color、date、datetime、datetime-local、email、month、number、range、search、tel、time、url、week</p>
-<p><inputtype="range"name="points"min="1"max="10"><br>Search Google: <inputtype="search"name="googlesearch"><br>电话号码: <inputtype="tel"name="usrtel"></inputtype="tel"name="usrtel"></inputtype="search"name="googlesearch"></inputtype="range"name="points"min="1"max="10"></p>
-<p>7.HTML5 表单元素</p>
-<p> HTML5 有以下新的表单元素:<br>标签    描述</p>
-<datalist>    </datalist><input>标签定义选项列表。请与 input 元素配合使用该元素，来定义 input 可能的值。<br><keygen>    &gt;<keygen> 标签规定用于表单的密钥对生成器字段。<br><output>    <output> 标签定义不同类型的输出，比如脚本的输出。<br> <datalist> 元素规定输入域的选项列表。<br></datalist><datalist> 属性规定 form 或 input 域应该拥有自动完成功能。当用户在自动完成域中开始输入时，浏览器应该在该域中显示填写的选项：<br>使用 </datalist><input> 元素的列表属性与 <datalist> 元素绑定.<br><inputlist="browsers"><br><datalistid="browsers"><br><optionvalue="internet explorer"=""><br><optionvalue="firefox"><br><optionvalue="chrome"><br><optionvalue="opera"><br><optionvalue="safari"><br></optionvalue="safari"></optionvalue="opera"></optionvalue="chrome"></optionvalue="firefox"></optionvalue="internet></datalistid="browsers"></inputlist="browsers"></datalist>
+暴露:
 
-<p>8.HTML5 表单属性</p>
-<p> HTML5 的 <form> 和 <input>标签添加了几个新属性.</form></p>
-<p><form>新属性：<br>autocomplete、novalidate</form></p>
-<p><input>新属性：<br>autocomplete、autofocus、form、formaction、formenctype、formmethod、formnovalidate、formtarget、height and width、list、min and max、multiple、pattern (regexp)、placeholder、required、step</p>
-<p>9.HTML5 语义元素</p>
-<p> HTML5提供了新的语义元素来明确一个Web页面的不同部分:</p>
-<p><header></header></p>
-<p><nav></nav></p>
-<p><section></section></p>
-<p><article></article></p>
-<p><aside></aside></p>
-<p><figcaption></figcaption></p>
-<p><figure></figure></p>
-<footer>
+export default Header;
 
 
 
+其他地方引入：
+
+import Header from &apos;./Header.js&apos;;  //引入 js
+</code></pre><p>7.模板里面执行方式</p>
+<pre><code>onClick    注意大小写  注意不要写引号  不要写()
+
+onClick={this.run}
+
+onChange  
 
 
+传值：
 
+onClick={this.run.bind(this,&apos;传递的数据&apos;)}
+</code></pre><p>8.获取数据 以及更改数据</p>
+<pre><code>获取
+this.state.数据
 
+更改
 
+this.setState({
 
+    msg:&apos;更改后的数据&apos;
+})
+</code></pre><p>9.input 框  onChange事件会传递一个事件对象</p>
+<pre><code>&lt;input onChange={this.方法}     /&gt;
 
+ console.log(e);
 
+方法(){
 
+    e.target.value
 
+}
+</code></pre><p>10.ref  获取dom节点</p>
+<pre><code>给元素加ref属性   比如： &lt;div ref=&apos;home&apos;&gt;&lt;/div&gt;     
 
+this.refs.home  获取dom节点
+</code></pre><ol>
+<li><p>给模板里面的元素加属性</p>
+<p>注意：</p>
+<p> className 设置class</p>
+<p> htmlFor   设置for  </p>
+<p> style=”对象”</p>
+ <div><br>    <label htmlfor="user">用户名： </label><br>    <input type="text" id="user" placeholder="用户名"><br> </div>
 
-<p>10.HTML5 Web 存储</p>
-<p> Web Storage DOM API 为Web应用提供了一个能够替代cookie的Javascript解决方案<br>sessionStorage—客户端数据存储，只能维持在当前会话范围内。<br>             sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。<br>localStorage—客户端数据存储，能维持在多个会话范围内。<br>             localStorage 对象存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。<br>对于大量复杂数据结构，一般使用IndexDB</p>
-<p>11.HTML5 离线Web应用（应用程序缓存）</p>
-<p> HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。<br>应用程序缓存为应用带来三个优势：<br>离线浏览 - 用户可在应用离线时使用它们<br>速度 - 已缓存资源加载得更快<br>减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。<br>HTML5 Cache Manifest 实例<br>下面的例子展示了带有 cache manifest 的 HTML 文档（供离线浏览）：<br>&lt;!DOCTYPE HTML&gt;</p>
-<p><htmlmanifest="demo.appcache"></htmlmanifest="demo.appcache"></p>
-<p><body><br>The content of the document……<br></body><br><br>Manifest 文件<br>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。<br>manifest 文件可分为三个部分：<br>CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存<br>NETWORK - 在此标题下列出的文件需要与服务器的连接，且不会被缓存<br>FALLBACK - 在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面<br>CACHE MANIFEST</p>
-<h1 id="2012-02-21-v1-0-0"><a href="#2012-02-21-v1-0-0" class="headerlink" title="2012-02-21 v1.0.0"></a>2012-02-21 v1.0.0</h1><p>/theme.css<br>/logo.gif<br>/main.js<br>NETWORK:<br>login.php<br>FALLBACK:<br>/html/ /offline.html</p>
-<p>12.HTML5 Web Workers</p>
-<p> 当在 HTML 页面中执行脚本时，页面的状态是不可响应的，直到脚本已完成。<br>web worker 是运行在后台的 JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等，而此时 web worker 在后台运行。（相当于实现多线程并发）</p>
-<p>13.HTML5 SSE</p>
-<p> Server-Sent 事件指的是网页自动获取来自服务器的更新。<br>以前也可能做到这一点，前提是网页不得不询问是否有可用的更新。通过服务器发送事件，更新能够自动到达。<br>例子：Facebook/Twitter 更新、估价更新、新的博文、赛事结果等。<br>EventSource 对象用于接收服务器发送事件通知：<br>var source=newEventSource(“demo_sse.php”);<br>source.onmessage=function(event)<br>{<br>    document.getElementById(“result”).innerHTML+=event.data +”<br>“;<br>};<br>为了让上面的例子可以运行，您还需要能够发送数据更新的服务器（比如 PHP 和 ASP）。<br>&lt;?php<br>header(‘Content-Type: text/event-stream’);<br>header(‘Cache-Control: no-cache’);<br>$time = date(‘r’);<br>echo “data: The server time is: {$time}nn”;<br>flush();<br>?&gt;</p>
-<p>14.HTML5 WebSocket</p>
-<p> WebSocket是HTML5开始提供的一种在单个 TCP 连接上进行全双工通讯的协议。在WebSocket API中，浏览器和服务器只需要做一个握手的动作，然后，浏览器和服务器之间就形成了一条快速通道。两者之间就直接可以数据互相传送。浏览器通过 JavaScript 向服务器发出建立 WebSocket 连接的请求，连接建立以后，客户端和服务器端就可以通过 TCP 连接直接交换数据。当你获取 Web Socket 连接后，你可以通过 send() 方法来向服务器发送数据，并通过 onmessage 事件来接收服务器返回的数据。以下 API 用于创建 WebSocket 对象。</p>
-<p>CSS3<br>CSS3选择器</p>
-<p>选择器    示例    示例说明    CSS<br>.class    .intro    选择所有class=”intro”的元素    1</p>
-<p>#id    #firstname    选择所有id=”firstname”的元素    1</p>
-<ul>
-<li><ul>
-<li>选择所有元素    2<br>element    p    选择所有<p>元素    1<br>element,element    div,p    选择所有<div>元素和<p>元素    1<br>element element    div p    选择<div>元素内的所有<p>元素    1<br>element&gt;element    div&gt;p    选择所有父级是 <div> 元素的 <p> 元素    2<br>element+element    div+p    选择所有紧接着<div>元素之后的<p>元素    2<br>[attribute]    [target]    选择所有带有target属性元素    2<br>[attribute=value]    [target=-blank]    选择所有使用target=”-blank”的元素    2<br>[attribute~=value]    [title~=flower]    选择标题属性包含单词”flower”的所有元素    2<br>[attribute|=language]    [lang|=en]    选择一个lang属性的起始值=”EN”的所有元素    2<br>:link    a:link    选择所有未访问链接    1<br>:visited    a:visited    选择所有访问过的链接    1<br>:active    a:active    选择活动链接    1<br>:hover    a:hover    选择鼠标在链接上面时    1<br>:focus    input:focus    选择具有焦点的输入元素    2<br>:first-letter    p:first-letter    选择每一个</p><p>元素的第一个字母    1<br>:first-line    p:first-line    选择每一个</p><p>元素的第一行    1<br>:first-child    p:first-child    指定只有当</p><p>元素是其父级的第一个子级的样式。    2<br>:before    p:before    在每个</p><p>元素之前插入内容    2<br>:after    p:after    在每个</p><p>元素之后插入内容    2<br>:lang(language)    p:lang(it)    选择一个lang属性的起始值=”it”的所有</p><p>元素    2<br>element1~element2    p~ul    选择p元素之后的每一个ul元素    3<br>[attribute^=value]    a[src^=”https”]    选择每一个src属性的值以”https”开头的元素    3<br>[attribute$=value]    a[src$=”.pdf”]    选择每一个src属性的值以”.pdf”结尾的元素    3<br>[attribute<em>=value]    a[src</em>=”44lan”]    选择每一个src属性的值包含子字符串”44lan”的元素    3<br>:first-of-type    p:first-of-type    选择每个p元素是其父级的第一个p元素    3<br>:last-of-type    p:last-of-type    选择每个p元素是其父级的最后一个p元素    3<br>:only-of-type    p:only-of-type    选择每个p元素是其父级的唯一p元素    3<br>:only-child    p:only-child    选择每个p元素是其父级的唯一子元素    3<br>:nth-child(n)    p:nth-child(2)    选择每个p元素是其父级的第二个子元素    3<br>:nth-last-child(n)    p:nth-last-child(2)    选择每个p元素的是其父级的第二个子元素，从最后一个子项计数    3<br>:nth-of-type(n)    p:nth-of-type(2)    选择每个p元素是其父级的第二个p元素    3<br>:nth-last-of-type(n)    p:nth-last-of-type(2)    选择每个p元素的是其父级的第二个p元素，从最后一个子项计数    3<br>:last-child    p:last-child    选择每个p元素是其父级的最后一个子级。    3<br>:root    :root    选择文档的根元素    3<br>:empty    p:empty    选择每个没有任何子级的p元素（包括文本节点）    3<br>:target    #news:target    选择当前活动的#news元素（包含该锚名称的点击的URL）    3<br>:enabled    input:enabled    选择每一个已启用的输入元素    3<br>:disabled    input:disabled    选择每一个禁用的输入元素    3<br>:checked    input:checked    选择每个选中的输入元素    3<br>:not(selector)    :not(p)    选择每个并非p元素的元素    3<br>::selection    ::selection    匹配元素中被用户选中或处于高亮状态的部分    3<br>:out-of-range    :out-of-range    匹配值在指定区间之外的input元素    3<br>:in-range    :in-range    匹配值在指定区间之内的input元素    3<br>:read-write    :read-write    用于匹配可读及可写的元素    3<br>:read-only    :read-only    用于匹配设置 “readonly”（只读） 属性的元素    3<br>:optional    :optional    用于匹配可选的输入元素    3<br>:required    :required    用于匹配设置了 “required” 属性的元素    3<br>:valid    :valid    用于匹配输入值为合法的元素    3<br>:invalid    :invalid    用于匹配输入值为非法的元素</p></div></p></div></p></div></p></div></p></li>
-</ul>
+<p>其他的以前怎么写还是怎么写  id</p>
 </li>
-</ul>
-<p>CSS3 边框（Borders）</p>
-<p> 用CSS3，你可以创建圆角边框，添加阴影框，并作为边界的形象而不使用设计程序<br>属性    说明    CSS<br>border-image    设置所有边框图像的速记属性。    3<br>border-radius    一个用于设置所有四个边框- *-半径属性的速记属性    3<br>box-shadow    附加一个或多个下拉框的阴影    3<br>div<br>{<br>  border:2px solid;<br>  border-radius:25px;<br>  box-shadow:10px10px5px#888888;<br>  border-image:url(border.png)3030 round;<br>}</p>
-<p>CSS3 背景</p>
-<p> CSS3中包含几个新的背景属性，提供更大背景元素控制。<br>顺序    描述    CSS<br>background-clip    规定背景的绘制区域。    3<br>background-origin    规定背景图片的定位区域。    3<br>background-size    规定背景图片的尺寸。    3<br>div<br>{<br>  background:url(img_flwr.gif);<br>  background-repeat:no-repeat;<br>  background-size:100%100%;<br>  background-origin:content-box;<br>}<br>多背景<br>body<br>{<br>  background-image:url(img_flwr.gif),url(img_tree.gif);<br>}<br>CSS3 渐变</p>
-<p>CSS3 定义了两种类型的渐变（gradients）：<br>线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向<br> background: linear-gradient(direction, color-stop1, color-stop2,…);</p>
-<p>径向渐变（Radial Gradients）- 由它们的中心定义<br> background: radial-gradient(center, shape size, start-color,…,last-color);</p>
-<p>CSS3 文本效果</p>
-<p>属性    描述    CSS<br>hanging-punctuation    规定标点字符是否位于线框之外。    3<br>punctuation-trim    规定是否对标点字符进行修剪。    3<br>text-align-last    设置如何对齐最后一行或紧挨着强制换行符之前的行。    3<br>text-emphasis    向元素的文本应用重点标记以及重点标记的前景色。    3<br>text-justify    规定当 text-align 设置为 “justify” 时所使用的对齐方法。    3<br>text-outline    规定文本的轮廓。    3<br>text-overflow    规定当文本溢出包含元素时发生的事情。    3<br>text-shadow    向文本添加阴影。    3<br>text-wrap    规定文本的换行规则。    3<br>word-break    规定非中日韩文本的换行规则。    3<br>word-wrap    允许对长的不可分割的单词进行分割并换行到下一行。    3</p>
-<p>CSS3 字体</p>
-<p> 以前CSS3的版本，网页设计师不得不使用用户计算机上已经安装的字体。使用CSS3，网页设计师可以使用他/她喜欢的任何字体。当你发现您要使用的字体文件时，只需简单的将字体文件包含在网站中，它会自动下载给需要的用户。您所选择的字体在新的CSS3版本有关于@font-face规则描述。您”自己的”的字体是在 CSS3 @font-face 规则中定义的。</p>
-<style>
-@font-face
-{
- font-family: myFirstFont;
- src: url(sansation_light.woff);
-}
-div
-{
- font-family:myFirstFont;
-}
-</style>
+</ol>
+<p>12.父子组件传值</p>
+<pre><code>1.父组件给子组件传值，子组件获取父组件的数据和方法
 
-<p>CSS3 转换和变形</p>
-<p>2D新转换属性<br>以下列出了所有的转换属性:<br>Property    描述    CSS<br>transform    适用于2D或3D转换的元素    3<br>transform-origin    允许您更改转化元素位置<br>2D 转换方法<br>函数    描述<br>matrix(n,n,n,n,n,n)    定义 2D 转换，使用六个值的矩阵。<br>translate(x,y)    定义 2D 转换，沿着 X 和 Y 轴移动元素。<br>translateX(n)    定义 2D 转换，沿着 X 轴移动元素。<br>translateY(n)    定义 2D 转换，沿着 Y 轴移动元素。<br>scale(x,y)    定义 2D 缩放转换，改变元素的宽度和高度。<br>scaleX(n)    定义 2D 缩放转换，改变元素的宽度。<br>scaleY(n)    定义 2D 缩放转换，改变元素的高度。<br>rotate(angle)    定义 2D 旋转，在参数中规定角度。<br>skew(x-angle,y-angle)    定义 2D 倾斜转换，沿着 X 和 Y 轴。<br>skewX(angle)    定义 2D 倾斜转换，沿着 X 轴。<br>skewY(angle)    定义 2D 倾斜转换，沿着 Y 轴。</p>
-<p>3D转换属性<br>下表列出了所有的转换属性：<br>属性    描述    CSS<br>transform    向元素应用 2D 或 3D 转换。    3<br>transform-origin    允许你改变被转换元素的位置。    3<br>transform-style    规定被嵌套元素如何在 3D 空间中显示。    3<br>perspective    规定 3D 元素的透视效果。    3<br>perspective-origin    规定 3D 元素的底部位置。    3<br>backface-visibility    定义元素在不面对屏幕时是否可见。    3<br>3D 转换方法<br>函数    描述<br>matrix3d(n,n,n,n,n,n,<br>n,n,n,n,n,n,n,n,n,n)    定义 3D 转换，使用 16 个值的 4x4 矩阵。<br>translate3d(x,y,z)    定义 3D 转化。<br>translateX(x)    定义 3D 转化，仅使用用于 X 轴的值。<br>translateY(y)    定义 3D 转化，仅使用用于 Y 轴的值。<br>translateZ(z)    定义 3D 转化，仅使用用于 Z 轴的值。<br>scale3d(x,y,z)    定义 3D 缩放转换。<br>scaleX(x)    定义 3D 缩放转换，通过给定一个 X 轴的值。<br>scaleY(y)    定义 3D 缩放转换，通过给定一个 Y 轴的值。<br>scaleZ(z)    定义 3D 缩放转换，通过给定一个 Z 轴的值。<br>rotate3d(x,y,z,angle)    定义 3D 旋转。<br>rotateX(angle)    定义沿 X 轴的 3D 旋转。<br>rotateY(angle)    定义沿 Y 轴的 3D 旋转。<br>rotateZ(angle)    定义沿 Z 轴的 3D 旋转。<br>perspective(n)    定义 3D 转换元素的透视视图。</p>
-<p>CSS3 过渡</p>
-<p>过渡属性<br>下表列出了所有的过渡属性:<br>属性    描述    CSS<br>transition    简写属性，用于在一个属性中设置四个过渡属性。    3<br>transition-property    规定应用过渡的 CSS 属性的名称。    3<br>transition-duration    定义过渡效果花费的时间。默认是 0。    3<br>transition-timing-function    规定过渡效果的时间曲线。默认是 “ease”。    3<br>transition-delay    规定过渡效果何时开始。默认是 0。    3<br>div<br>{<br> transition-property: width;<br> transition-duration:1s;<br> transition-timing-function: linear;<br> transition-delay:2s;<br>/<em> Safari </em>/<br> -webkit-transition-property:width;<br> -webkit-transition-duration:1s;<br> -webkit-transition-timing-function:linear;<br> -webkit-transition-delay:2s;<br>}</p>
-<p>CSS3 动画</p>
-<p> 要创建CSS3动画，你需要了解@keyframes规则。@keyframes规则是创建动画。 @keyframes规则内指定一个CSS样式和动画将逐步从目前的样式更改为新的样式。<br>实例<br>当动画为 25% 及 50% 时改变背景色，然后当动画 100% 完成时再次改变：<br>@keyframes myfirst<br>{<br> 0%{background: red;}<br> 25%{background: yellow;}<br> 50%{background: blue;}<br> 100%{background: green;}<br>}<br>下面的表格列出了 @keyframes 规则和所有动画属性：<br>属性    描述    CSS<br>@keyframes    规定动画。    3<br>animation    所有动画属性的简写属性，除了 animation-play-state 属性。    3<br>animation-name    规定 @keyframes 动画的名称。    3<br>animation-duration    规定动画完成一个周期所花费的秒或毫秒。默认是 0。    3<br>animation-timing-function    规定动画的速度曲线。默认是 “ease”。    3<br>animation-delay    规定动画何时开始。默认是 0。    3<br>animation-iteration-count    规定动画被播放的次数。默认是 1。    3<br>animation-direction    规定动画是否在下一周期逆向地播放。默认是 “normal”。    3<br>animation-play-state    规定动画是否正在运行或暂停。默认是 “running”。    3</p>
-<p>div<br>{<br> animation-name: myfirst;<br> animation-duration:5s;<br> animation-timing-function: linear;<br> animation-delay:2s;<br> animation-iteration-count: infinite;<br> animation-direction: alternate;<br> animation-play-state: running;<br>/<em> Safari and Chrome: </em>/<br> -webkit-animation-name: myfirst;<br> -webkit-animation-duration:5s;<br> -webkit-animation-timing-function: linear;<br> -webkit-animation-delay:2s;<br> -webkit-animation-iteration-count: infinite;<br> -webkit-animation-direction: alternate;<br> -webkit-animation-play-state: running;<br>}</p>
-<p>CSS3 多列</p>
-<p>下表列出了所有 CSS3 的多列属性：<br>属性    描述<br>column-count    指定元素应该被分割的列数。<br>column-fill    指定如何填充列<br>column-gap    指定列与列之间的间隙<br>column-rule    所有 column-rule-* 属性的简写<br>column-rule-color    指定两列间边框的颜色<br>column-rule-style    指定两列间边框的样式<br>column-rule-width    指定两列间边框的厚度<br>column-span    指定元素要跨越多少列<br>column-width    指定列的宽度<br>columns    设置 column-width 和 column-count 的简写</p>
-<p>CSS3 盒模型</p>
-<p> 在 CSS3 中, 增加了一些新的用户界面特性来调整元素尺寸，框尺寸和外边框，主要包括以下用户界面属性：<br>resize：none | both | horizontal | vertical | inherit<br>box-sizing: content-box | border-box | inherit<br>outline:outline-color outline-style outline-width outine-offset<br>resize属性指定一个元素是否应该由用户去调整大小。<br>box-sizing 属性允许您以确切的方式定义适应某个区域的具体内容。<br>outline-offset 属性对轮廓进行偏移，并在超出边框边缘的位置绘制轮廓。</p>
-<p>CSS3伸缩布局盒模型(弹性盒)</p>
-<p> CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。<br>引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间。<br> 下表列出了在弹性盒子中常用到的属性:<br>属性    描述<br>display    指定 HTML 元素盒子类型。<br>flex-direction    指定了弹性容器中子元素的排列方式<br>justify-content    设置弹性盒子元素在主轴（横轴）方向上的对齐方式。<br>align-items    设置弹性盒子元素在侧轴（纵轴）方向上的对齐方式。<br>flex-wrap    设置弹性盒子的子元素超出父容器时是否换行。<br>align-content    修改 flex-wrap 属性的行为，类似 align-items, 但不是设置子元素对齐，而是设置行对齐<br>flex-flow    flex-direction 和 flex-wrap 的简写<br>order    设置弹性盒子的子元素排列顺序。<br>align-self    在弹性子元素上使用。覆盖容器的 align-items 属性。<br>flex    设置弹性盒子的子元素如何分配空间。</p>
-<p>CSS3 多媒体查询</p>
-<p>从 CSS 版本 2 开始，就可以通过媒体类型在 CSS 中获得媒体支持。如果您曾经使用过打印样式表，那么您可能已经使用过媒体类型。清单 1 展示了一个示例。<br>清单 1. 使用媒体类型</p>
-<p><linkrel="stylesheet"type="text css"href="site.css" media="screen"></linkrel="stylesheet"type="text></p>
-<p><linkrel="stylesheet"type="text css"href="print.css" media="print"><br>清单 2. 媒体查询规则<br>@media all and(min-width:800px){…}<br>@media all 是媒体类型，也就是说，将此 CSS 应用于所有媒体类型。<br>(min-width:800px) 是包含媒体查询的表达式，如果浏览器的最小宽度为 800 像素，则会告诉浏览器只运用下列 CSS。<br>清单 3. and 条件<br>@media(min-width:800px)and(max-width:1200px)and(orientation:portrait){…}</linkrel="stylesheet"type="text></p>
-<p>清单 4. or 关键词<br>@media(min-width:800px)or(orientation:portrait){…}</p>
-<p>清单 5. 使用 not<br>@media(not min-width:800px){…}</p>
-</footer></output></output></imgdraggable="true">
+    1.父组件  调用子组件的时候传值    
+        &lt;Header msg=&apos;这是一个数据&apos; h={this} /&gt;
+
+    2.子组件获取父亲组件的数据
+
+        this.props.msg
+
+ 2.子组件给父组件传值 ，父组件获取子组件的数据和方法
+
+     1.父组件调用子组件的时候定义ref
+         &lt;Header ref=&apos;header&apos; /&gt;
+
+     2.this.refs.header拿到了子组件的对象。可以获取子组件的数据和方法
+</code></pre><p>13.父子给组件传值的时候 propTypes  defaultProps</p>
+<pre><code>子组件里面通过 propTypes  可以验证父组件传递数据的合法性
+
+
+defaultProps 父组件不给子组件传值的时候的默认值
+
+
+
+Header.propTypes = {
+  text: PropTypes.string   /*指定 text是字符串类型*/
+};
+
+//不传值的时候  给props一个默认值
+Header.defaultProps = {
+  username: &apos;张三&apos;
+};
+</code></pre><p>14.生命周期函数</p>
+<pre><code>生命周期函数：
+
+   组件加载之前  加载完成    更新数据   销毁组件触发的一系列的方法就是生命周期函数
+
+
+componentWillMount   
+
+
+componentDidMount  
+
+
+https://facebook.github.io/react/docs/react-component.html
+</code></pre><p>15.axios请求数据</p>
+<pre><code>https://github.com/mzabriskie/axios
+
+
+1.安装
+2.引入   
+3.使用
+
+//1.cnpm install axios  --save
+
+//2.import axios from &apos;axios&apos;; 
+
+//3.看官方文档使用
+</code></pre><p>16.创建单文件组件</p>
+<pre><code>https://facebook.github.io/react/docs/installation.html
+
+
+
+1.安装脚手架 （ 项目生成工具）    只需要安装一次
+
+
+npm install -g create-react-app    /  cnpm install -g create-react-app
+
+
+2.创建项目  （可以创建）
+
+create-react-app  项目名称
+
+cd 项目名称
+
+npm start 运行项目
+
+
+例如:
+
+create-react-app reactdemo01
+
+cd reactdemo01  
+
+npm start 执行项目
+
+
+3.运行  打开项目
+
+npm start
+
+
+4.正式打包 
+
+npm run build
+</code></pre><p>17.路由配置  （老版本）</p>
+<pre><code>1.安装react-router 
+    注意要指定版本安装
+
+    npm info react-router  查看路由的版本
+
+
+
+    cnpm install react-router@2.8.1    老版本的稳定版本
+
+2.引入import { Router, Route, Link } from &apos;react-router&apos;    
+
+(index.js  App.js)
+
+
+3.定义组件  首页 Home组件  新闻 News组件
+
+
+
+4.配置路由 （ index.js）
+
+
+
+    /  加载APP组件
+
+
+    /home   加载Home组件
+
+    /news  加载News组件
+
+    ReactDOM.render((
+      &lt;Router&gt;
+        &lt;Route path=&quot;/&quot; component={App}&gt;
+          &lt;Route path=&quot;home&quot; component={Home} /&gt;
+          &lt;Route path=&quot;news&quot; component={Inbox}&gt;     
+          &lt;/Route&gt;
+        &lt;/Route&gt;
+      &lt;/Router&gt;
+    ), document.body)
+
+
+
+
+5.配置 加载的组件 的显示的地方   （App.js）
+
+
+  {this.props.children}
+
+
+6.页面跳转 （组件的跳转）   (任何的组件里面都可以写)
+
+     &lt;ul&gt;
+      &lt;li&gt;&lt;Link to=&quot;/about&quot;&gt;About&lt;/Link&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;Link to=&quot;/inbox&quot;&gt;Inbox&lt;/Link&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+
+ 7.Link动态传值
+
+     &lt;Link to={{pathname:'newscontent/'+this.state.aid,query:{name:'zhangsan'}}}&gt;跳转新闻详情&lt;/Link&gt;
+
+ 8.获取动态传值
+
+      {this.props.params.aid}
+</code></pre>
       
 
       
@@ -352,15 +506,11 @@ div
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">h5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">css3</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">jq</a>
         		</li>
       		
 		</ul>
@@ -370,7 +520,7 @@ div
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/h5和c3/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/react基础复习 以及路由配置/">展开全文 >></a>
         </p>
       
 
@@ -400,19 +550,19 @@ div
 
 
   
-    <article id="post-rem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-es6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/rem/">rem</a>
+      <a class="article-title" href="/2016/06/01/es6/">JavaScript</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/rem/" class="archive-article-date">
+        <a href="/2016/06/01/es6/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -420,95 +570,12 @@ div
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="通过监听屏蔽变化改变根元素fontsize的大小"><a href="#通过监听屏蔽变化改变根元素fontsize的大小" class="headerlink" title="通过监听屏蔽变化改变根元素fontsize的大小"></a>通过监听屏蔽变化改变根元素fontsize的大小</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by qiangxl on 2017/7/18 0018.</div><div class="line"> */</div><div class="line">//监听屏幕宽度发变化，和横竖屏变化，重新这是html的fontsize</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getRootFontSize</span></span>()&#123;</div><div class="line">	var root = document.documentElement;</div><div class="line">	var clientWidth = root.clientWidth;</div><div class="line">	console.log(clientWidth)</div><div class="line">	root.style.fontSize = clientWidth*100/750+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line">window.addEventListener(<span class="string">'orientationchange'</span>, getRootFontSize);</div><div class="line">window.addEventListener(<span class="string">'resize'</span>, getRootFontSize);</div><div class="line">getRootFontSize();</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">rem</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/rem//" class="article-tag-list-link color4">rem</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/rem/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/vue-router/">vue-router</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/vue-router/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">https://router.vuejs.org/zh-cn/essentials/getting-started.html</div><div class="line">1.&lt;router-view&gt;&lt;/router-view&gt;:&lt;!-- 路由匹配到的组件将渲染在这里 --&gt;</div><div class="line">2.&lt;router-link to=<span class="string">"/bar"</span>&gt;Go to Bar&lt;/router-link&gt;: to后面的是路由配置的路径如3所示</div><div class="line">&lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签</div><div class="line">3.动态路由传参</div><div class="line">const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">	 routes: [</div><div class="line">		&#123;</div><div class="line">		path:<span class="string">"/home"</span>,  //路径</div><div class="line">		component:Home,// 组件</div><div class="line">		children:[//子组件</div><div class="line">			&#123;</div><div class="line">				path:<span class="string">"ads/:id"</span>,// 动态路径参数 以冒号开头</div><div class="line">				component:Address</div><div class="line">			&#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line">如果需要获取传的参数可以在链接页面加载时 使用 this.<span class="variable">$router</span>.params.id  可以获得传入的id</div><div class="line">id是路由配置是写入的参数</div><div class="line">4,命名路由传值</div><div class="line">路由器配置：const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      path: <span class="string">'/user/:userId'</span>,//与上面一样 都是配置接收传值的参数</div><div class="line">      name: <span class="string">'user'</span>,//name给路由设置一个名字</div><div class="line">      component: User</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line"></div><div class="line">传入产生方式：这两种方式都会把路由导航到 /user/123 路径。</div><div class="line">&lt;router-link :to=<span class="string">"&#123; name: 'user', params: &#123; userId: 123 &#125;&#125;"</span>&gt;User&lt;/router-link&gt;</div><div class="line">router.push(&#123; name: <span class="string">'user'</span>, params: &#123; userId: 123 &#125;&#125;)</div></pre></td></tr></table></figure>
+        <h1 id="es6-http-es6-ruanyifeng-com-docs-let"><a href="#es6-http-es6-ruanyifeng-com-docs-let" class="headerlink" title="es6  http://es6.ruanyifeng.com/#docs/let"></a>es6  <a href="http://es6.ruanyifeng.com/#docs/let" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/let</a></h1><h3 id="let-const"><a href="#let-const" class="headerlink" title="let const"></a>let const</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">一.<span class="built_in">let</span> 块级作用域  </div><div class="line">1.let 不会变量提前</div><div class="line">    // var 的情况</div><div class="line">    console.log(foo); // 输出undefined</div><div class="line">    var foo = 2;</div><div class="line">    // <span class="built_in">let</span> 的情况</div><div class="line">    console.log(bar); // 报错ReferenceError</div><div class="line">    <span class="built_in">let</span> bar = 2;</div><div class="line">2.暂时性死区</div><div class="line">    只要块级作用域内存在<span class="built_in">let</span>命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。</div><div class="line">    var tmp = 123;+</div><div class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">    tmp = <span class="string">'abc'</span>; // ReferenceError</div><div class="line">    <span class="built_in">let</span> tmp;</div><div class="line">    &#125;</div><div class="line">3. 在同一作用域不允许重复声明</div><div class="line">    <span class="built_in">let</span>不允许在相同作用域内，重复声明同一个变量。</div><div class="line">二、const 常亮</div><div class="line">    声明的变量不能改变 改变就报错</div></pre></td></tr></table></figure>
+<h3 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">1.数组  没有的就是undefined</div><div class="line">    <span class="built_in">let</span> [foo, [[bar], baz]] = [1, [[2], 3]];</div><div class="line">    foo // 1</div><div class="line">    bar // 2</div><div class="line">    baz // 3</div><div class="line">    <span class="built_in">let</span> [ , , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</div><div class="line">    third // <span class="string">"baz"</span></div><div class="line">2.对象的结构赋值：</div><div class="line">    对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</div><div class="line">    <span class="built_in">let</span> &#123; bar, foo &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</div><div class="line">    foo // <span class="string">"aaa"</span></div><div class="line">    bar // <span class="string">"bbb"</span></div><div class="line"></div><div class="line">    <span class="built_in">let</span> &#123; baz &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</div><div class="line">    baz // undefined</div><div class="line">3.字符串结构</div><div class="line">    字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</div><div class="line">    const [a, b, c, d, e] = <span class="string">'hello'</span>;</div><div class="line">    a // <span class="string">"h"</span></div><div class="line">    b // <span class="string">"e"</span></div><div class="line">    c // <span class="string">"l"</span></div><div class="line">    d // <span class="string">"l"</span></div><div class="line">    e // <span class="string">"o"</span></div><div class="line">    类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</div><div class="line">    <span class="built_in">let</span> &#123;length : len&#125; = <span class="string">'hello'</span>;</div><div class="line">    len // 5</div><div class="line">4.函数参数的解构赋值</div><div class="line">    <span class="keyword">function</span> add([x, y])&#123;</div><div class="line">    <span class="built_in">return</span> x + y;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    add([1, 2]); // 3</div></pre></td></tr></table></figure>
+<h3 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1.字符串的遍历器接口  <span class="keyword">for</span> ...of</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> codePoint of <span class="string">'foo'</span>) &#123;</div><div class="line">        console.log(codePoint)</div><div class="line">    &#125;</div><div class="line">    // <span class="string">"f"</span></div><div class="line">    // <span class="string">"o"</span></div><div class="line">    // <span class="string">"o"</span></div><div class="line">2.字符串模板</div><div class="line">    starsWith（abc）判断字符串是不是开头</div><div class="line">    endsWith（abc）判断是不是abc结尾</div></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.Array.from() </div><div class="line">    可以用于深拷贝数组</div><div class="line">2.Array.of() 将一组数值转换为数组</div><div class="line">    Array.of(3, 11, 8) // [3,11,8]</div><div class="line">    Array.of(3) // [3]</div><div class="line">    Array.of(3).length // 1</div></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1.可以在函数里面传参</div><div class="line">    <span class="keyword">function</span> <span class="built_in">log</span>(x, y) &#123;</div><div class="line">        y = y || <span class="string">'World'</span>;</div><div class="line">        console.log(x, y);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">function</span> <span class="built_in">log</span>(x, y = <span class="string">'World'</span>) &#123;</div><div class="line">        console.log(x, y);</div><div class="line">    &#125;</div><div class="line">2.可以在函数内部开启严格模式</div><div class="line">    <span class="keyword">function</span> doSomething(a, b) &#123;</div><div class="line">    <span class="string">'use strict'</span>;</div><div class="line">    // code</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">新的数据类型</div><div class="line">ES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</div></pre></td></tr></table></figure>
 
       
 
@@ -522,11 +589,11 @@ div
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue-router</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
         		</li>
       		
 		</ul>
@@ -538,7 +605,7 @@ div
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        			<a href="/categories/es6//" class="article-tag-list-link color4">es6</a>
         		</li>
       		
 		</ul>
@@ -547,7 +614,7 @@ div
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/vue-router/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/es6/">展开全文 >></a>
         </p>
       
 
@@ -705,22 +772,27 @@ div
 
 注意：选择15.3--15.5的版本，这里面有列子。
 </code></pre><p>安装下载看demo</p>
-<p>引入<br>  react.js<br>  react-dom.js<br>  browser.min.js</p>
-<p>react的js类型</p>
+<p>引入</p>
+<pre><code>react.js
+react-dom.js
+browser.min.js
+</code></pre><p>react的js类型</p>
 <script type="text/babel"></script>
 
 <p>//定义组件  组件的名称首字母一定要大写</p>
-<p>例：var Header=React.createClass({   /<em>对象</em>/<br>            render:function(){</p>
-<pre><code>        return (
- /*模板必须要被根节点包含起来*/
+<pre><code>例：var Header=React.createClass({   /*对象*/
+        render:function(){
 
-            &lt;div&gt;
-                &lt;h2&gt;这是一个头部组件&lt;/h2&gt;
-            &lt;/div&gt;
-        )
-    }
+            return (
+     /*模板必须要被根节点包含起来*/
 
-})
+                &lt;div&gt;
+                    &lt;h2&gt;这是一个头部组件&lt;/h2&gt;
+                &lt;/div&gt;
+            )
+        }
+
+    })
 </code></pre><p> ReactDOM.render(） // 渲染</p>
 <p>1.安装脚手架工具   （单文件组件项目生成工具）   只需要安装一次</p>
 <pre><code>https://facebook.github.io/react/docs/installation.html
@@ -739,13 +811,33 @@ npm start  运行项目
 
 
 npm run build 生成项目
-</code></pre><p>react 脚手架    创建项目<br> npm install -g create-react-app<br> create-react-app myapp<br> cd myapp<br> npm start<br> react run build</p>
-<p>父子组件</p>
-<p>axios    react的请求数据模块<br>下载安装<br>cnpm install axios –save<br>引入axios<br>import axiox from ‘axios’<br>看官方文档  demo</p>
-<p>生命周期函数     刷新就执行   不用做其他操作</p>
-<p>使用swiper<br>cnpm install swiper –save<br>import swiper from ‘swiper’<br>引入swipercss<br>加载自己的css</p>
-<p>react<br>andt的css样式要拿出来手动引入<br>ANTd DESIGN   插件     <strong><em>*</em></strong>好用</p>
+</code></pre><p>react 脚手架    创建项目</p>
+<pre><code>npm install -g create-react-app 
+create-react-app myapp
+cd myapp
+npm start
+react run build
+</code></pre><p>父子组件</p>
+<pre><code>axios    react的请求数据模块
+下载安装  
+cnpm install axios --save 
+引入axios
+import axiox from &apos;axios&apos;
+看官方文档  demo
+</code></pre><p>生命周期函数     刷新就执行   不用做其他操作</p>
+<pre><code>使用swiper
+cnpm install swiper --save
+import swiper from &apos;swiper&apos;
+引入swipercss
+加载自己的css
 
+
+
+
+react
+andt的css样式要拿出来手动引入
+ANTd DESIGN   插件     *******好用
+</code></pre>
       
 
       
@@ -780,327 +872,6 @@ npm run build 生成项目
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/06/01/Myreact/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue路由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/vue路由/">vue路由</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/vue路由/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vue-router 路由/也可以自动生成路由模块<br>安装<br>引入的模块   都要Vue.use一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import VueRouter from <span class="string">'vue-router'</span></div><div class="line">Vue.use(VuewRouter)</div><div class="line">npm/cnpm install vue-router --save</div></pre></td></tr></table></figure></p>
-<p>创建组件，引入组件<br>import Home from ‘…./Home.vue’</p>
-<h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">const routes=[</div><div class="line">		&#123;</div><div class="line">			path:<span class="string">'/home'</span>,component:Home,</div><div class="line">				//子路由</div><div class="line">				//子路由要显示 都要在副路由渲染下面加  &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">			children:[</div><div class="line">				&#123; path:<span class="string">'/homecontent'</span>,component:HomeConent&#125;</div><div class="line">				.....	</div><div class="line">			]</div><div class="line">		&#125;</div><div class="line">		,</div><div class="line">		......</div><div class="line">	]</div><div class="line">const router=new VueRouter(&#123;</div><div class="line">		routes   //es6缩写    routes:routes</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">挂载到vue视图上面 </div><div class="line">new Vue(&#123;</div><div class="line">		el:<span class="string">"#app"</span>,</div><div class="line">		router,</div><div class="line">		render:h=&gt;h(App)</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue路由</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue路由//" class="article-tag-list-link color1">vue路由</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/vue路由/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-phonegap.coedova操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/phonegap.coedova操作/">phonegap/cordova</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/phonegap.coedova操作/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.phonegap/cordova是什么?</p>
-<pre><code>1.可以把我们用html css  js写的移动端页面打包成移动app的一个框架
-2.可以让我们用js来调用原生的api，包括地理定位，加速器，联系人，声音和振动等
-</code></pre><p>2.JDK的安装？</p>
-<pre><code>介绍：JDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。
-
-
-1.找到jdk 下一步下一步安装
-
-2.配置环境变量
-
-    2.1在我的电脑右键-属性-&gt;高级系统设置-高级 -找到环境变量-&gt;系统变量
-
-
-    2.2 在系统变量里面--新建环境变量   变量名：JAVA_HOME    变量值：C:\Program Files\Java\jdk1.8.0_31。点击确定
-
-
-    2.3 在系统变量里面找到path环境变量，在path环境变量后面追加。
-
-        ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin
-
-
-    注意:    ;英文的      不能有个空格 
-
-
-
-    点击 确定  确定 确定
-
-
-
-3.重新打开cmd   输入 java   能出来东西，在输入javac也能出来说明配置成功。
-</code></pre><p>3.安装ADT     </p>
-<pre><code>介绍：Android Developer Tools   ，有eclipse   sdk 
-
-1.减压到你的任何一个盘，注意盘符不能有中文 空格
-
-2.找到系统变量里面的path环境变量，在path后面追加,环境变量和环境变量之间用;隔开
-
-
-    系统变量 Path   后面添加：  注意不能有中文
-
-     D:\Program Files\ADT\sdk\tools;
-     D:\Program Files\ADT\sdk\platform-tools;
-
-
-     D:\Program Files\ADT 你的adt的目录
-
-
-     比如我的：  ;F:\adt\sdk\tools;F:\adt\sdk\platform-tools
-
-
-
-    3.重新打开cmd   输入android    如果能出来android的sdk管理器说明成功了。   -----android的sdk管理器不用管
-</code></pre><p>4.安装cordova</p>
-<pre><code>前提：nodejs需要安装
-
-介绍：就是phonegpa
-
-
-1.打开cnd  输入 npm install -g cordova  或者 cnpm install -g cordova
-
-
-    cordova -v  7.1的版本
-
-
-
-    7.1的版本有bug
-
-
-
-
-2.降低cordova的版本    *****************************
-
-     cnpm install -g cordova@6.3.1  
-
-
-
-3.如果有些人安装了最新版本。
-
-    3.1卸载最新的版本
-
-       npm uninstall cordova  -g
-
-        3.2   重新运行 
-
-
-       cnpm install -g cordova@6.3.1  
-
-
-
-4.看成功没有成功 输入
-
-cordova -v
-</code></pre><p>5.创建项目<br>    1.找到你自己的项目目录  C:\cordova_demo</p>
-<pre><code>2.cd 到这个目录
-
-3.cordova create 项目名称    
-
-    比如创建cordova01的项目
-
-
-  cordova create cordova01
-
-
-4.cd 到项目里面    cd cordova01
-
-
-5.cordova platform add android             -- 把android开发相关的包下载到我们项目里面
-
-
-                           把cordova添加到android平台
-
-
-
-
-例如：
-
- cordova create cordova02
-
- cd  cordova02
-
- cordova platform add android
-</code></pre><p>6.导入项目</p>
-<pre><code>1.打开adt下面的eclipse
-
-
-2.导入项目
-
-    File-&gt;import-&gt;找到android  以及存在的android项目-&gt;选择你的项目-&gt;下一步
-
-    3.找到MainActivity 点击右键     run  as android  application
-
-
-注意真机调试：
-
-    1.手机必须连到电脑上面 
-    2.手机必须开启调试模式（百度搜索XXX手机开启调试模式）
-    3.运行来自外部的软件安装
-
-注意模拟器调试：
-
-    1.打开模拟
-
-
-注意：有时候其他的软件 比如 HBuilder 比如360   应用宝会占用连接手机的端口 。 关掉这些软件重试。
-</code></pre><p>7.修改项目</p>
-<pre><code>修改 项目目录下面的www里面的代码
-
-
-修改完成以后要运行  cordova prepare
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">phonegap</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/cordova//" class="article-tag-list-link color3">cordova</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/phonegap.coedova操作/">展开全文 >></a>
         </p>
       
 
@@ -1317,6 +1088,93 @@ cordova -v
 
 
   
+    <article id="post-vue路由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/vue路由/">vue路由</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/vue路由/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vue-router 路由/也可以自动生成路由模块<br>安装<br>引入的模块   都要Vue.use一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import VueRouter from <span class="string">'vue-router'</span></div><div class="line">Vue.use(VuewRouter)</div><div class="line">npm/cnpm install vue-router --save</div></pre></td></tr></table></figure></p>
+<p>创建组件，引入组件<br>import Home from ‘…./Home.vue’</p>
+<h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">const routes=[</div><div class="line">		&#123;</div><div class="line">			path:<span class="string">'/home'</span>,component:Home,</div><div class="line">				//子路由</div><div class="line">				//子路由要显示 都要在副路由渲染下面加  &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">			children:[</div><div class="line">				&#123; path:<span class="string">'/homecontent'</span>,component:HomeConent&#125;</div><div class="line">				.....	</div><div class="line">			]</div><div class="line">		&#125;</div><div class="line">		,</div><div class="line">		......</div><div class="line">	]</div><div class="line">const router=new VueRouter(&#123;</div><div class="line">		routes   //es6缩写    routes:routes</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">挂载到vue视图上面 </div><div class="line">new Vue(&#123;</div><div class="line">		el:<span class="string">"#app"</span>,</div><div class="line">		router,</div><div class="line">		render:h=&gt;h(App)</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue路由</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue路由//" class="article-tag-list-link color1">vue路由</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/vue路由/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-微信小程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1340,9 +1198,10 @@ cordova -v
         <p>微信小程序基本使用</p>
 <p>app.json文件来对微信小程序进行全局配置,决定页面文件的路径、窗口表现、设置网络超时时间、设置多 tab 等</p>
 <p>app.json里面的page用来注册页面</p>
-<p>  /**</p>
 <ul>
-<li>生命周期函数–监听页面加载<br>*/<br>onLoad:加载后做的操作</li>
+<li><p>生命周期函数–监听页面加载</p>
+<p>onLoad:加载后做的操作</p>
+</li>
 </ul>
 <p>wxml  数据绑定<br>    例：<view class=""><br>        <br>        </view><br>列表渲染<br>wx:for<br>在组件上使用 wx:for     index和item都是自动生成的 </p>
 <view wx:for=""><br>  : <br></view>
@@ -1351,18 +1210,13 @@ cordova -v
 <view wx:if="false"> 1 </view><br><view wx:elif="false"> 2 </view><br><view wx:else=""> 3 </view>
 
 
-<p>定义模板  name定义模板<br>使用name属性，作为模板的名字。然后在<template>内定义代码片段，如：</template></p>
-<p><template name="a"><br>    <view>aaaa</view><br></template></p>
-<p><template name="b"><br>    <view>bbb</view><br></template><br>要是用哪个模板   is使用哪个模板</p>
-<template is="b">
+<p>定义模板  name定义模板<br>使用name属性，作为模板的名字。然后在’template’内定义代码片段，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;template name=<span class="string">"a"</span>&gt;</div><div class="line">	&lt;view&gt;aaaa&lt;/view&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;template name=<span class="string">"b"</span>&gt;</div><div class="line">	&lt;view&gt;bbb&lt;/view&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure></p>
+<p>要是用哪个模板   is使用哪个模板<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;template is=<span class="string">"b"</span>/&gt;</div></pre></td></tr></table></figure></p>
+<p>事件的使用方式<br>在组件中绑定一个事件处理函数。<br>如bindtap<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;view id=<span class="string">"tapTest"</span> bindtap=<span class="string">"tapName"</span>&gt; 点击触发&lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>WXML的冒泡事件列表：   还有的看官方文档<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">touchstart	手指触摸动作开始</div><div class="line">touchmove	手指触摸后移动</div><div class="line">touchcancel	手指触摸动作被打断，如来电提醒，弹窗</div><div class="line">touchend	手指触摸动作结束</div><div class="line">tap	手指触摸后马上离开</div><div class="line">longtap	手指触摸后，超过350ms再离开</div></pre></td></tr></table></figure></p>
+<p>尺寸单位    一般我们用iphone6的比例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">iPhone5	1rpx = 0.42px	1px = 2.34rpx</div><div class="line">iPhone6	1rpx = 0.5px	1px = 2rpx</div><div class="line">iPhone6 Plus	1rpx = 0.552px	1px = 1.81rpx</div></pre></td></tr></table></figure></p>
+<p>样式导入<br>使用@import语句可以导入外联样式表，@import后跟需要导入的外联样式表的相对路径，用;表示语句结束。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@import <span class="string">"common.wxss"</span>;</div></pre></td></tr></table></figure></p>
 
-<p>事件的使用方式<br>在组件中绑定一个事件处理函数。<br>如bindtap</p>
-<view id="tapTest" bindtap="tapName"> 点击触发</view>
-
-<p>WXML的冒泡事件列表：   还有的看官方文档<br>touchstart    手指触摸动作开始<br>touchmove    手指触摸后移动<br>touchcancel    手指触摸动作被打断，如来电提醒，弹窗<br>touchend    手指触摸动作结束<br>tap    手指触摸后马上离开<br>longtap    手指触摸后，超过350ms再离开</p>
-<p>尺寸单位    一般我们用iphone6的比例<br>iPhone5    1rpx = 0.42px    1px = 2.34rpx<br>iPhone6    1rpx = 0.5px    1px = 2rpx<br>iPhone6 Plus    1rpx = 0.552px    1px = 1.81rpx</p>
-<p>样式导入<br>使用@import语句可以导入外联样式表，@import后跟需要导入的外联样式表的相对路径，用;表示语句结束。<br>@import “common.wxss”;</p>
-</template>
       
 
       
@@ -1426,6 +1280,196 @@ cordova -v
 
 
   
+    <article id="post-移动端" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/移动端/">移动端</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/移动端/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>rem 作单位rem是根据页面的根元素的font-size的一个相对的单位<br>添加视口    禁止缩放  viewport<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=0"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>html最好设置成625%    懒得计算<br>body设置小点的字体</p>
+<p>禁用a,button,input,optgroup,select,textarea 等标签背景变暗<br>在移动端点击后 会出现”暗色”的背景，这时候我们需要在css加入如下代码即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a,button,input,optgroup,select,textarea&#123;</div><div class="line">    -webkit-tap-highlight-color: rgba(0,0,0,0);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.忽略将页面中的数字识别为电话号码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"format-detection"</span> content=<span class="string">"telephone=no"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>忽略Android平台中对邮箱地址的识别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"format-detection"</span> content=<span class="string">"email=no"</span> /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"apple-mobile-web-app-capable"</span> content=<span class="string">"yes"</span> /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"apple-mobile-web-app-status-bar-style"</span> content=<span class="string">"black"</span> /&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>五：在android或者IOS下 拨打电话代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"tel:15602512356"</span>&gt;打电话给:15602512356&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/移动端//" class="article-tag-list-link color4">移动端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/移动端/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-navigator.geolocation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/navigator.geolocation/">HTML5</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/navigator.geolocation/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="地图定位"><a href="#地图定位" class="headerlink" title="地图定位"></a>地图定位</h1><h3 id="H5提供了地理定位-navigator-geolocation"><a href="#H5提供了地理定位-navigator-geolocation" class="headerlink" title="H5提供了地理定位 navigator.geolocation"></a>H5提供了地理定位 navigator.geolocation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">1.地理位置对象：navigator.geolocation</div><div class="line">2. 执行方法： </div><div class="line">	getCurrentPostion(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	watchPosition(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	clearWatch(监听对象)</div><div class="line">3.进行定位</div><div class="line">	navigator.geolocation.getCurrentPosition(</div><div class="line">		<span class="keyword">function</span>(position)&#123;//定位成功回调</div><div class="line">			console.log(position)</div><div class="line">		&#125;,</div><div class="line">		<span class="keyword">function</span>(error)&#123;//定位失败回调</div><div class="line">			//失败的编号</div><div class="line">			//error.code</div><div class="line">			//0: 其他错误</div><div class="line">			//1：用户拒绝获取位置</div><div class="line">			//2：用户允许了，但是获取位置失败</div><div class="line">			//3：定位超时</div><div class="line">			console.log(<span class="string">'定位失败'</span>)</div><div class="line">			console.log(error)</div><div class="line">		&#125;, &#123;</div><div class="line">			timeout: 10000, //请求超时时间</div><div class="line">			enableHighAccuracy: <span class="literal">true</span>, //是否获得更精确的经纬度和海拔</div><div class="line">			maximumAge: 100000 //定位出来的位置可以缓存的最大时间， 默认为0</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">3.进行监听</div><div class="line">	var watcher = null;</div><div class="line">	<span class="keyword">function</span> <span class="function"><span class="title">btnAction1</span></span>()&#123;//触发的事件</div><div class="line">		watcher = navigator.geolocation.watchPosition(</div><div class="line">			<span class="keyword">function</span>(position)&#123;</div><div class="line">				console.log(<span class="string">'监听'</span>);</div><div class="line">				console.log(position);</div><div class="line">			&#125;,</div><div class="line">			<span class="keyword">function</span>(error)&#123;</div><div class="line">				console.log(error);</div><div class="line">			&#125;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">4.移除监听</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">btnAction2</span></span>()&#123;//触发的事件</div><div class="line">		navigator.geolocation.clearWatch(watcher);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="百度的地图"><a href="#百度的地图" class="headerlink" title="百度的地图"></a>百度的地图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.进入百度地图生成秘钥</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥"</span>&gt;&lt;/script&gt;</div><div class="line">2.然后直接看示例dom使用或者看api文档</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">地图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/地图//" class="article-tag-list-link color3">地图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/navigator.geolocation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1440,7 +1484,7 @@ cordova -v
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 SmallWen
+    		&copy; 2019 SmallWen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1527,18 +1571,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
@@ -1551,7 +1583,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1559,15 +1591,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">地图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1583,15 +1615,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1611,14 +1643,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -1627,11 +1651,35 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">地图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">gulp3.0</a>
               </li>
             
             <div class="clearfix"></div>
