@@ -250,19 +250,19 @@
 
 
   
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-rem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/vue-router/">vue-router</a>
+      <a class="article-title" href="/2016/06/01/rem/">rem</a>
     </h1>
   
 
         
-        <a href="/2016/06/01/vue-router/" class="archive-article-date">
+        <a href="/2016/06/01/rem/" class="archive-article-date">
   	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
 </a>
         
@@ -270,8 +270,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">https://router.vuejs.org/zh-cn/essentials/getting-started.html</div><div class="line">1.&lt;router-view&gt;&lt;/router-view&gt;:&lt;!-- 路由匹配到的组件将渲染在这里 --&gt;</div><div class="line">2.&lt;router-link to=<span class="string">"/bar"</span>&gt;Go to Bar&lt;/router-link&gt;: to后面的是路由配置的路径如3所示</div><div class="line">&lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签</div><div class="line">3.动态路由传参</div><div class="line">const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">	 routes: [</div><div class="line">		&#123;</div><div class="line">		path:<span class="string">"/home"</span>,  //路径</div><div class="line">		component:Home,// 组件</div><div class="line">		children:[//子组件</div><div class="line">			&#123;</div><div class="line">				path:<span class="string">"ads/:id"</span>,// 动态路径参数 以冒号开头</div><div class="line">				component:Address</div><div class="line">			&#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line">如果需要获取传的参数可以在链接页面加载时 使用 this.<span class="variable">$router</span>.params.id  可以获得传入的id</div><div class="line">id是路由配置是写入的参数</div><div class="line">4,命名路由传值</div><div class="line">路由器配置：const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      path: <span class="string">'/user/:userId'</span>,//与上面一样 都是配置接收传值的参数</div><div class="line">      name: <span class="string">'user'</span>,//name给路由设置一个名字</div><div class="line">      component: User</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line"></div><div class="line">传入产生方式：这两种方式都会把路由导航到 /user/123 路径。</div><div class="line">&lt;router-link :to=<span class="string">"&#123; name: 'user', params: &#123; userId: 123 &#125;&#125;"</span>&gt;User&lt;/router-link&gt;</div><div class="line">router.push(&#123; name: <span class="string">'user'</span>, params: &#123; userId: 123 &#125;&#125;)</div></pre></td></tr></table></figure>
-
+        <h3 id="通过监听屏蔽变化改变根元素fontsize的大小"><a href="#通过监听屏蔽变化改变根元素fontsize的大小" class="headerlink" title="通过监听屏蔽变化改变根元素fontsize的大小"></a>通过监听屏蔽变化改变根元素fontsize的大小</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by qiangxl on 2017/7/18 0018.</div><div class="line"> */</div><div class="line">//监听屏幕宽度发变化，和横竖屏变化，重新这是html的fontsize</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getRootFontSize</span></span>()&#123;</div><div class="line">	var root = document.documentElement;</div><div class="line">	var clientWidth = root.clientWidth;</div><div class="line">	console.log(clientWidth)</div><div class="line">	root.style.fontSize = clientWidth*100/750+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line">window.addEventListener(<span class="string">'orientationchange'</span>, getRootFontSize);</div><div class="line">window.addEventListener(<span class="string">'resize'</span>, getRootFontSize);</div><div class="line">getRootFontSize();</div></pre></td></tr></table></figure>
       
 
       
@@ -284,11 +283,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">rem</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue-router</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
         		</li>
       		
 		</ul>
@@ -300,7 +299,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        			<a href="/categories/rem//" class="article-tag-list-link color4">rem</a>
         		</li>
       		
 		</ul>
@@ -309,7 +308,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/vue-router/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/06/01/rem/">展开全文 >></a>
         </p>
       
 
@@ -605,6 +604,199 @@
 
 
   
+    <article id="post-mongodb的增删改查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/mongodb的增删改查/">mongodb</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/mongodb的增删改查/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#mongodb</p>
+<p>mongodb   数据<br>安装   添加环境变量<br>mongod -dbpath 存放数据库数据的文件  //开启mongo</p>
+<p>show dbs    //列出所有的数据库<br>use 数据库名     //使用某个数据库   如果没有这个数据库再添加数据时会创建一个数据库<br>show collections   //查看当前数据库下有多少表</p>
+<p>db.表名.insert({“username”:’zhangsan’})   //插入了一条数据并创建了一个表</p>
+<p>db.表名.find()     //查询表内数据</p>
+<p>db.user.find({查找条件})     //根据条件查找</p>
+<p>查找age》20的记录<br>db.表名.find({“age”:{$gt:20}});   $gt就是大于</p>
+<p>查找age&lt;20的记录<br>db.表名.find({“age”:{$lt:20}})</p>
+<p>查找age&gt;=20的记录<br>db.表名.find({“age”:{$gte:20}})</p>
+<p>查找age《=20的记录<br>db.表名.find({“age”:{$lte:20}})</p>
+<p>查找age&gt;=20的并age《=30的记录<br>db.表名.find({“age”:{$gte:20,$lte:30}})</p>
+<p>模糊查询     名字带aaa的     带有aaa的都会被查询出<br>db.表名.find({“username”:/aaa/});</p>
+<p>查询以什么开头的    例：以aaa开头的<br>db.表名.find({“username”:/^aaa/});</p>
+<p>指定查询name或age的数据       其他的字段名就不会被显示<br>db.表名.find({},{“name:1,age:1”});</p>
+<p>db.表名.find().count();    //查询有多少条数据</p>
+<p>db.表名.find().skip(10).limit(5);   //跳过前10条数据查询5条数据<br>分页就是这样</p>
+<p>db.表名.find().sort({age:1});    按照年龄进行升序<br>db.表名.find().sort({age:-1});    按照年龄进行降序</p>
+<p>db.表名.find().remove({“name”:”zhangsan”,”age”:20});  //删除名字为张三并且年龄是20的数据</p>
+<p>db.表名.update({“name”:”lisi”},{$set:{“age”:30}});    //查到lisi的并且把age设置成30</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mongodb//" class="article-tag-list-link color3">mongodb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/mongodb的增删改查/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-navigator.geolocation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/navigator.geolocation/">HTML5</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/navigator.geolocation/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="地图定位"><a href="#地图定位" class="headerlink" title="地图定位"></a>地图定位</h1><h3 id="H5提供了地理定位-navigator-geolocation"><a href="#H5提供了地理定位-navigator-geolocation" class="headerlink" title="H5提供了地理定位 navigator.geolocation"></a>H5提供了地理定位 navigator.geolocation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">1.地理位置对象：navigator.geolocation</div><div class="line">2. 执行方法： </div><div class="line">	getCurrentPostion(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	watchPosition(定位成功回调，定位失败回调，数据收集方式的配置)</div><div class="line">	clearWatch(监听对象)</div><div class="line">3.进行定位</div><div class="line">	navigator.geolocation.getCurrentPosition(</div><div class="line">		<span class="keyword">function</span>(position)&#123;//定位成功回调</div><div class="line">			console.log(position)</div><div class="line">		&#125;,</div><div class="line">		<span class="keyword">function</span>(error)&#123;//定位失败回调</div><div class="line">			//失败的编号</div><div class="line">			//error.code</div><div class="line">			//0: 其他错误</div><div class="line">			//1：用户拒绝获取位置</div><div class="line">			//2：用户允许了，但是获取位置失败</div><div class="line">			//3：定位超时</div><div class="line">			console.log(<span class="string">'定位失败'</span>)</div><div class="line">			console.log(error)</div><div class="line">		&#125;, &#123;</div><div class="line">			timeout: 10000, //请求超时时间</div><div class="line">			enableHighAccuracy: <span class="literal">true</span>, //是否获得更精确的经纬度和海拔</div><div class="line">			maximumAge: 100000 //定位出来的位置可以缓存的最大时间， 默认为0</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">3.进行监听</div><div class="line">	var watcher = null;</div><div class="line">	<span class="keyword">function</span> <span class="function"><span class="title">btnAction1</span></span>()&#123;//触发的事件</div><div class="line">		watcher = navigator.geolocation.watchPosition(</div><div class="line">			<span class="keyword">function</span>(position)&#123;</div><div class="line">				console.log(<span class="string">'监听'</span>);</div><div class="line">				console.log(position);</div><div class="line">			&#125;,</div><div class="line">			<span class="keyword">function</span>(error)&#123;</div><div class="line">				console.log(error);</div><div class="line">			&#125;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">4.移除监听</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">btnAction2</span></span>()&#123;//触发的事件</div><div class="line">		navigator.geolocation.clearWatch(watcher);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="百度的地图"><a href="#百度的地图" class="headerlink" title="百度的地图"></a>百度的地图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.进入百度地图生成秘钥</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥"</span>&gt;&lt;/script&gt;</div><div class="line">2.然后直接看示例dom使用或者看api文档</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">地图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/地图//" class="article-tag-list-link color3">地图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/navigator.geolocation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-phonegap.coedova操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -839,109 +1031,6 @@ cordova -v
 
 
   
-    <article id="post-mongodb的增删改查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/mongodb的增删改查/">mongodb</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/mongodb的增删改查/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#mongodb</p>
-<p>mongodb   数据<br>安装   添加环境变量<br>mongod -dbpath 存放数据库数据的文件  //开启mongo</p>
-<p>show dbs    //列出所有的数据库<br>use 数据库名     //使用某个数据库   如果没有这个数据库再添加数据时会创建一个数据库<br>show collections   //查看当前数据库下有多少表</p>
-<p>db.表名.insert({“username”:’zhangsan’})   //插入了一条数据并创建了一个表</p>
-<p>db.表名.find()     //查询表内数据</p>
-<p>db.user.find({查找条件})     //根据条件查找</p>
-<p>查找age》20的记录<br>db.表名.find({“age”:{$gt:20}});   $gt就是大于</p>
-<p>查找age&lt;20的记录<br>db.表名.find({“age”:{$lt:20}})</p>
-<p>查找age&gt;=20的记录<br>db.表名.find({“age”:{$gte:20}})</p>
-<p>查找age《=20的记录<br>db.表名.find({“age”:{$lte:20}})</p>
-<p>查找age&gt;=20的并age《=30的记录<br>db.表名.find({“age”:{$gte:20,$lte:30}})</p>
-<p>模糊查询     名字带aaa的     带有aaa的都会被查询出<br>db.表名.find({“username”:/aaa/});</p>
-<p>查询以什么开头的    例：以aaa开头的<br>db.表名.find({“username”:/^aaa/});</p>
-<p>指定查询name或age的数据       其他的字段名就不会被显示<br>db.表名.find({},{“name:1,age:1”});</p>
-<p>db.表名.find().count();    //查询有多少条数据</p>
-<p>db.表名.find().skip(10).limit(5);   //跳过前10条数据查询5条数据<br>分页就是这样</p>
-<p>db.表名.find().sort({age:1});    按照年龄进行升序<br>db.表名.find().sort({age:-1});    按照年龄进行降序</p>
-<p>db.表名.find().remove({“name”:”zhangsan”,”age”:20});  //删除名字为张三并且年龄是20的数据</p>
-<p>db.表名.update({“name”:”lisi”},{$set:{“age”:30}});    //查到lisi的并且把age设置成30</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mongodb//" class="article-tag-list-link color3">mongodb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/mongodb的增删改查/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-react-dev" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1126,94 +1215,6 @@ cordova -v
 
 
   
-    <article id="post-rem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/rem/">rem</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/rem/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="通过监听屏蔽变化改变根元素fontsize的大小"><a href="#通过监听屏蔽变化改变根元素fontsize的大小" class="headerlink" title="通过监听屏蔽变化改变根元素fontsize的大小"></a>通过监听屏蔽变化改变根元素fontsize的大小</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by qiangxl on 2017/7/18 0018.</div><div class="line"> */</div><div class="line">//监听屏幕宽度发变化，和横竖屏变化，重新这是html的fontsize</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getRootFontSize</span></span>()&#123;</div><div class="line">	var root = document.documentElement;</div><div class="line">	var clientWidth = root.clientWidth;</div><div class="line">	console.log(clientWidth)</div><div class="line">	root.style.fontSize = clientWidth*100/750+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line">window.addEventListener(<span class="string">'orientationchange'</span>, getRootFontSize);</div><div class="line">window.addEventListener(<span class="string">'resize'</span>, getRootFontSize);</div><div class="line">getRootFontSize();</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">rem</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/rem//" class="article-tag-list-link color4">rem</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/rem/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1339,11 +1340,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">地图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1359,15 +1368,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1387,15 +1396,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">gulp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1407,11 +1416,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">地图</a>
+                <a href="javascript:void(0)" class="js-tag color3">gulp3.0</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1420,10 +1425,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">gulp3.0</a>
               </li>
             
             <div class="clearfix"></div>
