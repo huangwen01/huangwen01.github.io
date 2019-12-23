@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SmallWen的博客">
 <meta property="og:description" content="vue.jsVue的版本12341.2013年12月有Vue  2.2015年10月发布1.0版本3.2016年6月发布2.0测试版4.2016年10月发布2.0正式版 常见指令1234561.v-for 循环  2.v-model 用于input3.v-on 事件的绑定 简写 ：@4.v-bind:事件绑定 简写 ： 冒号  ：4.@click.stop阻止事件冒泡5.@contextmenu.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-04T14:35:07.868Z">
+<meta property="og:updated_time" content="2019-12-23T14:52:17.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue">
 <meta name="twitter:description" content="vue.jsVue的版本12341.2013年12月有Vue  2.2015年10月发布1.0版本3.2016年6月发布2.0测试版4.2016年10月发布2.0正式版 常见指令1234561.v-for 循环  2.v-model 用于input3.v-on 事件的绑定 简写 ：@4.v-bind:事件绑定 简写 ： 冒号  ：4.@click.stop阻止事件冒泡5.@contextmenu.">
@@ -176,14 +176,14 @@
         <h1 id="vue-js"><a href="#vue-js" class="headerlink" title="vue.js"></a>vue.js</h1><h3 id="Vue的版本"><a href="#Vue的版本" class="headerlink" title="Vue的版本"></a>Vue的版本</h3><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.2013年12月有Vue  </div><div class="line">2.2015年10月发布1.0版本</div><div class="line">3.2016年6月发布2.0测试版</div><div class="line">4.2016年10月发布2.0正式版</div></pre></td></tr></table></figure>
 </code></pre><h3 id="常见指令"><a href="#常见指令" class="headerlink" title="常见指令"></a>常见指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.v-for 循环  </div><div class="line">2.v-model 用于input</div><div class="line">3.v-on 事件的绑定 简写 ：@</div><div class="line">4.v-bind:事件绑定 简写 ： 冒号  ：</div><div class="line">4.@click.stop阻止事件冒泡</div><div class="line">5.@contextmenu.prevent 阻止浏览器默认行为</div></pre></td></tr></table></figure>
 <p>### </p>
-<h3 id="methods和computed的区别"><a href="#methods和computed的区别" class="headerlink" title="methods和computed的区别"></a>methods和computed的区别</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">例:&lt;p&gt;Reversed message: <span class="string">"&#123;&#123; reversedMessage() &#125;&#125;"</span>&lt;/p&gt;</div><div class="line">// <span class="keyword">in</span> component</div><div class="line">	methods: &#123;</div><div class="line">	  reversedMessage: <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">	    <span class="built_in">return</span> this.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</div><div class="line">	  &#125;</div><div class="line">	&#125;</div><div class="line">1.计算属性是基于它们的依赖进行缓存的</div><div class="line">2.计算属性只有在它的相关依赖发生改变时才会重新求值。(如果message没有发生变化，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。)</div><div class="line">3.相比而言，只要发生重新渲染，method 调用总会执行该函数。</div></pre></td></tr></table></figure>
+<h3 id="methods和computed的区别"><a href="#methods和computed的区别" class="headerlink" title="methods和computed的区别"></a>methods和computed的区别</h3><h4 id="methods一些正常的自定义方法，computed发生改变时才会重新执行"><a href="#methods一些正常的自定义方法，computed发生改变时才会重新执行" class="headerlink" title="methods一些正常的自定义方法，computed发生改变时才会重新执行"></a>methods一些正常的自定义方法，computed发生改变时才会重新执行</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">例:&lt;p&gt;Reversed message: <span class="string">"&#123;&#123; reversedMessage() &#125;&#125;"</span>&lt;/p&gt;</div><div class="line">// <span class="keyword">in</span> component</div><div class="line">	methods: &#123;</div><div class="line">	  reversedMessage: <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">	    <span class="built_in">return</span> this.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</div><div class="line">	  &#125;</div><div class="line">	&#125;</div><div class="line">1.计算属性是基于它们的依赖进行缓存的</div><div class="line">2.计算属性只有在它的相关依赖发生改变时才会重新求值。(如果message没有发生变化，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。)</div><div class="line">3.相比而言，只要发生重新渲染，method 调用总会执行该函数。</div></pre></td></tr></table></figure>
 <h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">例:vm.<span class="variable">$wacth</span>(<span class="string">"msg"</span>,<span class="keyword">function</span>(newVal,oldVal)&#123;</div><div class="line">		console.log(<span class="string">'发生了变化'</span>);</div><div class="line">		console.log(newVal)</div><div class="line">		console.log(oldVal)	</div><div class="line">	&#125;)</div><div class="line">1.参数1：需要监听的值(必须是跟vm实例有关的值)</div><div class="line">2.参数2：当发生了变化，会调用的函数</div><div class="line">3.newVal新的值 oldVal发生变化之前的值</div></pre></td></tr></table></figure>
 <h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">例:&lt;div id=<span class="string">"app"</span>&gt;</div><div class="line">		价格：&#123;&#123;price | currency&#125;&#125;</div><div class="line">		数量： &#123;&#123;count&#125;&#125;</div><div class="line">		总价： &#123;&#123;price * count | currency&#125;&#125;</div><div class="line">	&lt;/div&gt;</div><div class="line">	Vue.filter(<span class="string">'currency'</span>, <span class="keyword">function</span>(val)&#123;//val用于接收需要过滤的值</div><div class="line">			</div><div class="line">			console.log(<span class="string">'过滤器触发了'</span>);</div><div class="line">			//保留两位小数</div><div class="line">			var res = Math.floor(val*100);</div><div class="line">			res = res / 100.0;</div><div class="line">			</div><div class="line">			//加上货币符号</div><div class="line">			res = <span class="string">'¥'</span>+res;</div><div class="line">			</div><div class="line">			console.log(res)</div><div class="line">			<span class="built_in">return</span> res;</div><div class="line">		&#125;)</div><div class="line">		var vm = new Vue(&#123;</div><div class="line">			el: <span class="string">'#app'</span>,</div><div class="line">			data: &#123;</div><div class="line">				price: 99.99999,</div><div class="line">				count: 5</div><div class="line">			&#125;</div><div class="line">		&#125;)</div><div class="line">1.参数1：过滤器的名字</div><div class="line">2.参数2：过滤器执行的方法</div></pre></td></tr></table></figure>
 <h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">例题://创建自定义指令</div><div class="line">		//参数1：指令名字</div><div class="line">		//参数2：指令的实现内容</div><div class="line">		Vue.directive(<span class="string">'color'</span>, <span class="keyword">function</span>(el, info)&#123;</div><div class="line">			//el:是指令作用的标签</div><div class="line">			//info：指令的信息</div><div class="line">			console.log(info)</div><div class="line">			el.style.background = info.value;</div><div class="line">		&#125;)</div><div class="line">		</div><div class="line">		//作业</div><div class="line">		Vue.directive(<span class="string">'drag'</span>, <span class="keyword">function</span>(el, info)&#123;</div><div class="line">			//当dom结构加上了这个v-drag指令，就可以拖拽</div><div class="line">		&#125;)</div><div class="line">1.第一个参数：指令名称</div><div class="line">2.第二个参数：回调函数，回调函数可以获取到添加指令的元素</div></pre></td></tr></table></figure>
-<h3 id="生命周期-钩子函数"><a href="#生命周期-钩子函数" class="headerlink" title="生命周期(钩子函数)"></a>生命周期(钩子函数)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">beforeCreate() 创建之前</div><div class="line">created()创建完成</div><div class="line">beforeMount()跟DOM挂载之前</div><div class="line">mounted()跟dom结构挂载完成：mounted</div><div class="line">beforeUpdate()数据发生变化前：beforeUpdate</div><div class="line">updated()数据发生变化：updated</div><div class="line">beforeDestroy()实例销毁前：beforeDestroy</div><div class="line">destroyed()实例销毁后：destroyed</div></pre></td></tr></table></figure>
+<h3 id="生命周期-钩子函数"><a href="#生命周期-钩子函数" class="headerlink" title="生命周期(钩子函数)"></a>生命周期(钩子函数)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">beforeCreate() vue实例创建之前</div><div class="line">created()Vue实例创建完成</div><div class="line">beforeMount()跟DOM挂载之前</div><div class="line">mounted()跟dom结构挂载完成：mounted</div><div class="line">beforeUpdate()数据发生变化前：beforeUpdate</div><div class="line">updated()数据发生变化：updated</div><div class="line">beforeDestroy()实例销毁前：beforeDestroy</div><div class="line">	beforeDestroy一般用于清除一些定时器和一些监听事件</div><div class="line">destroyed()实例销毁后：destroyed</div></pre></td></tr></table></figure>
 <h3 id="全局组件"><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">例:var liItem = &#123;</div><div class="line">			template: //组件的dom结构</div><div class="line">				`&lt;li class=<span class="string">"item"</span>&gt;</div><div class="line">					&lt;button @click=<span class="string">"btnAction"</span>&gt;按钮&lt;/button&gt;</div><div class="line">				&lt;/li&gt;`,</div><div class="line">			//接收外部传入的属性</div><div class="line">			props: [<span class="string">'testdata'</span>],</div><div class="line">			methods: &#123;</div><div class="line">				<span class="function"><span class="title">btnAction</span></span>()&#123;</div><div class="line">					console.log(this.testdata);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">	&#125;</div><div class="line">//参数1:组件名字 参数2：</div><div class="line">//组件所用的对象</div><div class="line">Vue.component(<span class="string">'li-item'</span>, liItem);//全局组件的声明方式</div></pre></td></tr></table></figure>
 <h3 id="局部组件"><a href="#局部组件" class="headerlink" title="局部组件"></a>局部组件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//声明方式 实在实例对象或另一个组件里面</div><div class="line">var app = new Vue(&#123;</div><div class="line">			el: <span class="string">"#app"</span>,</div><div class="line">			methods: &#123;</div><div class="line">			&#125;,</div><div class="line">			//声明这个app的vue实例对象，有什么子组件</div><div class="line">			components: &#123;</div><div class="line">				//key：使用组件时的标签名字，value值组件所用的对象</div><div class="line">				<span class="string">'li-item'</span>: liItem</div><div class="line">			&#125;</div><div class="line">		&#125;)</div></pre></td></tr></table></figure>
-<h3 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">1.父-子</div><div class="line">	自定义事件：在父组件data里面的数据 </div><div class="line">	&lt;son-com v-bind:data=<span class="string">"sendData"</span> :data1=<span class="string">"inputVal1"</span>&gt;&lt;/son-com&gt;</div><div class="line">子接收:props: &#123;</div><div class="line">				data1: Number//属性验证 传过来的值 必须是字符串</div><div class="line">			&#125;</div><div class="line">或 props：[<span class="string">"data1"</span>] 直接接收</div><div class="line">2. 子-父</div><div class="line">	子：&lt;button @click=<span class="string">"sendAction"</span>&gt;将数据传给父组件&lt;/button&gt;</div><div class="line">		<span class="function"><span class="title">sendAction</span></span>()&#123;</div><div class="line">			//需要将数据传递给父组件</div><div class="line">			//调起父组件事件getSonData---》》get-data</div><div class="line">			//触发自定义事件：get-data</div><div class="line">			//参数1：事件名字</div><div class="line">			//参数2：触发事件时的事件参数</div><div class="line">			this.<span class="variable">$emit</span>(<span class="string">'get-data'</span>, this.inputVal);</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		$</div><div class="line">	父：	&lt;son-com @get-data=<span class="string">"getSonData"</span>&gt;&lt;/son-com&gt;</div><div class="line">		methods: &#123;</div><div class="line">				getSonData(val)&#123;</div><div class="line">					console.log(<span class="string">'父组件事件触发了'</span>);</div><div class="line">					console.log(val)</div><div class="line">					this.sonData = val;</div><div class="line">				&#125;</div><div class="line">		&#125;</div><div class="line">3.不相关的两个组件传值</div><div class="line">	使用一个空vue空实例</div><div class="line">	//处理非父子组件的通信</div><div class="line">	var Event = new Vue();</div><div class="line">	Vue.prototype.<span class="variable">$eventHandle</span> = Event;//可以直接加到vue实例的原型上</div><div class="line">	// 发送的组件</div><div class="line">	this.<span class="variable">$emit</span>(<span class="string">'get-address'</span>, this.inputVal);</div><div class="line">	//监听地址改变的事件接收</div><div class="line">	this.<span class="variable">$eventHandle</span>.<span class="variable">$on</span>(<span class="string">'get-address'</span>, (val)=&gt;&#123;</div><div class="line">		console.log(<span class="string">'home接收到了新地址'</span>+val);</div><div class="line">		this.address = val;</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<h3 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">1.父 =&gt; 子</div><div class="line">	自定义事件：在父组件data里面的数据 </div><div class="line">	&lt;son-com v-bind:data=<span class="string">"sendData"</span> :data1=<span class="string">"inputVal1"</span>&gt;&lt;/son-com&gt;</div><div class="line">子接收:props: &#123; </div><div class="line">				data1: Number//属性验证 传过来的值 必须是字符串</div><div class="line">			&#125;</div><div class="line">或 props：[<span class="string">"data1"</span>] 直接接收</div><div class="line">2. 子 =&gt; 父</div><div class="line">	子：&lt;button @click=<span class="string">"sendAction"</span>&gt;将数据传给父组件&lt;/button&gt;</div><div class="line">		<span class="function"><span class="title">sendAction</span></span>()&#123;</div><div class="line">			//需要将数据传递给父组件</div><div class="line">			//调起父组件事件getSonData---》》get-data</div><div class="line">			//触发自定义事件：get-data</div><div class="line">			//参数1：事件名字</div><div class="line">			//参数2：触发事件时的事件参数</div><div class="line">			this.<span class="variable">$emit</span>(<span class="string">'get-data'</span>, this.inputVal);</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		$</div><div class="line">	父：	&lt;son-com @get-data=<span class="string">"getSonData"</span>&gt;&lt;/son-com&gt;</div><div class="line">		methods: &#123;</div><div class="line">				getSonData(val)&#123;</div><div class="line">					console.log(<span class="string">'父组件事件触发了'</span>);</div><div class="line">					console.log(val)</div><div class="line">					this.sonData = val;</div><div class="line">				&#125;</div><div class="line">		&#125;</div><div class="line">3.不相关的两个组件传值</div><div class="line">	使用一个空vue空实例</div><div class="line">	//处理非父子组件的通信</div><div class="line">	var Event = new Vue();</div><div class="line">	Vue.prototype.<span class="variable">$eventHandle</span> = Event;//可以直接加到vue实例的原型上</div><div class="line">	// 发送的组件</div><div class="line">	this.<span class="variable">$emit</span>(<span class="string">'get-address'</span>, this.inputVal);</div><div class="line">	//监听地址改变的事件接收</div><div class="line">	this.<span class="variable">$eventHandle</span>.<span class="variable">$on</span>(<span class="string">'get-address'</span>, (val)=&gt;&#123;</div><div class="line">		console.log(<span class="string">'home接收到了新地址'</span>+val);</div><div class="line">		this.address = val;</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
       
 
       
@@ -302,18 +302,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/06/01/vue-router/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/01/rem/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          vue-router
+          rem
         
       </div>
     </a>
   
   
-    <a href="/2016/06/01/Myreact/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">myreact</div>
+    <a href="/2016/06/01/vue基本/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue的基本</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -439,18 +439,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">myreact</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -463,11 +451,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">myreact</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,10 +467,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
@@ -491,11 +475,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,19 +495,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,11 +515,31 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
               <li class="article-tag-list-item">

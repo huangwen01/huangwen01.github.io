@@ -153,6 +153,460 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue基本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/vue基本/">vue的基本</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/vue基本/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue的基本使用搭建及流程"><a href="#vue的基本使用搭建及流程" class="headerlink" title="vue的基本使用搭建及流程"></a>vue的基本使用搭建及流程</h1><h3 id="构建用户界面的渐进式框架-MVVM框架"><a href="#构建用户界面的渐进式框架-MVVM框架" class="headerlink" title="构建用户界面的渐进式框架 MVVM框架"></a>构建用户界面的渐进式框架 MVVM框架</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 全局安装 vue-cli</span></div><div class="line">$ npm install --global vue-cli</div><div class="line"><span class="comment"># 创建一个基于 webpack 模板的新项目</span></div><div class="line">$ vue init webpack my-project   很少用开启语法检查是否配置路由</div><div class="line">$ vue init webpack-simple my-project    用这个</div><div class="line"><span class="comment"># 安装依赖，走你</span></div><div class="line">$ <span class="built_in">cd</span> my-project</div><div class="line">$ npm install</div><div class="line">$ npm run dev</div></pre></td></tr></table></figure>
+<h3 id="vue组件-script标签里"><a href="#vue组件-script标签里" class="headerlink" title="vue组件     script标签里"></a>vue组件     script标签里</h3><p>不能和HTML标签重名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">定义组件    第一种写法</div><div class="line">var Header=&#123;</div><div class="line">//没有分号</div><div class="line">	template:<span class="string">"&lt;div&gt;头部&lt;/div&gt;"</span></div><div class="line">&#125;</div><div class="line">注册组件</div><div class="line"></div><div class="line">Vue.component(<span class="string">'v-header'</span>,Header);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">组合写  第二种写法</div><div class="line">Vue.component(<span class="string">'v-header'</span>,&#123;</div><div class="line">//没有分号</div><div class="line">	template:<span class="string">"&lt;div&gt;头部&lt;/div&gt;"</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">定义组件   第三种写法</div><div class="line">var News=&#123;</div><div class="line">//没有分号</div><div class="line">	template:<span class="string">"&lt;div&gt;新闻&lt;/div&gt;"</span></div><div class="line">&#125;</div><div class="line">var vm=new Vue(&#123;   //****常用****</div><div class="line">	el:<span class="string">"#xxx"</span>,</div><div class="line">	data:&#123;   &#125;,</div><div class="line">	components:&#123;</div><div class="line">		<span class="string">'v-news'</span>:News     //注册组件</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="vue-父子组件之间的传值"><a href="#vue-父子组件之间的传值" class="headerlink" title="vue 父子组件之间的传值"></a>vue 父子组件之间的传值</h3><p>例：一个header和new组件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">1、</div><div class="line">var Header=&#123;</div><div class="line">        template:<span class="string">"#header"</span>,</div><div class="line">        <span class="function"><span class="title">data</span></span>()&#123;</div><div class="line">            <span class="built_in">return</span>&#123;</div><div class="line">                msg:<span class="string">'header'</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">            <span class="function"><span class="title">headerrun</span></span>()&#123;</div><div class="line">                alert(<span class="string">"子组件的方法"</span>+this.m)</div><div class="line">                this.run()</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        props:[<span class="string">'msg'</span>,<span class="string">'run'</span>]</div><div class="line">	//new绑定数据  header接收数据 props</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var New=&#123;</div><div class="line">        template:<span class="string">"#new"</span>,</div><div class="line">        <span class="function"><span class="title">data</span></span>()&#123;</div><div class="line">            <span class="built_in">return</span> &#123;</div><div class="line">                msg:<span class="string">"this is news"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">            <span class="function"><span class="title">run</span></span>()&#123;</div><div class="line">                alert(this.msg+<span class="string">"父组件的方法"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        components:&#123;</div><div class="line">            <span class="string">'v-header'</span>:Header</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var app=new Vue(&#123;</div><div class="line">        el:<span class="string">"#app"</span>,</div><div class="line">        data:&#123;</div><div class="line">            //数据</div><div class="line">            name:<span class="string">"zhangsan"</span></div><div class="line">        &#125;,</div><div class="line">        components:&#123;</div><div class="line">            //注册组件</div><div class="line">            <span class="string">'v-new'</span>:New</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line"></div><div class="line">2、</div><div class="line">在body里面   在定义的视口下面组件里面的HTML代码</div><div class="line">&lt;template id=<span class="string">"header"</span>&gt;</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;h2&gt;这是头部子组件---&#123;&#123;msg&#125;&#125;--&#123;&#123;m&#125;&#125;-&lt;/h2&gt;</div><div class="line">                &lt;button @click=<span class="string">"headerrun"</span>&gt;头部按钮&lt;/button&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/template&gt;</div><div class="line">        &lt;template id=<span class="string">"new"</span>&gt;</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;h2&gt;&#123;&#123;msg&#125;&#125;----&lt;/h2&gt;</div><div class="line">                &lt;button @click=<span class="string">"run"</span>&gt;父组件&lt;/button&gt;</div><div class="line">                &lt;hr&gt;</div><div class="line"></div><div class="line">                &lt;v-header :m=<span class="string">"msg"</span> :run=<span class="string">"run"</span>&gt;&lt;/v-header&gt;</div><div class="line">		//****表示在header组件里面绑定new里面的  msg 和run方法</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/template&gt;</div><div class="line"></div><div class="line">3、最后在渲染到视口里面  </div><div class="line">``` </div><div class="line"><span class="comment">### vue-resource  和   axios</span></div><div class="line">安装：   vue-resource </div><div class="line">主文件引入：   import VueResource from <span class="string">'vue-resource'</span></div><div class="line">主文件使用：   Vue.use(VueResource)</div><div class="line">``` bash</div><div class="line"></div><div class="line">&#123;//请求数据</div><div class="line">  // GET /someUrl</div><div class="line">  this.<span class="variable">$http</span>.get(<span class="string">'/someUrl'</span>).<span class="keyword">then</span>(response =&gt; &#123;</div><div class="line"></div><div class="line">    // get body data</div><div class="line">    this.someData = response.body;</div><div class="line"></div><div class="line">  &#125;, response =&gt; &#123;</div><div class="line">    // error callback</div><div class="line">  &#125;);</div><div class="line">&#125; </div><div class="line"></div><div class="line"></div><div class="line">axios  请求数据差不多</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/vue基本/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-isroll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/isroll/">iscroll插件</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/isroll/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iscroll"><a href="#iscroll" class="headerlink" title="iscroll"></a>iscroll</h1><h3 id="iscroll初始化"><a href="#iscroll初始化" class="headerlink" title="iscroll初始化"></a>iscroll初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var myScroll = new IScroll(<span class="string">'.content'</span>, &#123;</div><div class="line">	bounce: <span class="literal">true</span>, //开启弹簧效果</div><div class="line">	click: <span class="literal">true</span>, //在iscroll中，为了性能优化，没有将点击事件传递下去</div><div class="line">	tap: <span class="literal">true</span>, //tap事件相当于移动端的click</div><div class="line">	startY: -100, //startX,startY设置起始位置</div><div class="line">	scrollY: <span class="literal">true</span>,//Y轴是否可以滚动</div><div class="line">	scrollX: <span class="literal">false</span>,//x轴是否可以滚动</div><div class="line">	freeScroll: <span class="literal">true</span>,//自由滚动</div><div class="line">	scrollbars: <span class="literal">true</span>, //是否显示滚动条</div><div class="line">	fadeScrollbars: <span class="literal">true</span>, //滚动时才显示滚动条</div><div class="line">	probeType: 3</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="iscroll方法"><a href="#iscroll方法" class="headerlink" title="iscroll方法"></a>iscroll方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">myScroll.on(<span class="string">'beforeScrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始前'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scrollStart'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动开始了'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	myScroll.on(<span class="string">'scroll'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'正在滚动。。。。'</span>);</div><div class="line">	&#125;)</div><div class="line">	</div><div class="line">	//主动的停止</div><div class="line">	myScroll.on(<span class="string">'scrollEnd'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'停止了滚动'</span>);</div><div class="line">	&#125;)</div><div class="line">	//被动的，来电，来短信，接收通知，app退出后台</div><div class="line">	myScroll.on(<span class="string">'scrollCancel'</span>, ()=&gt;&#123;</div><div class="line">		console.log(<span class="string">'滚动取消'</span>);</div><div class="line">	&#125;)</div><div class="line">			</div><div class="line">	//滚动最大范围</div><div class="line">	console.log(myScroll.maxScrollY)</div><div class="line">	console.log(myScroll.maxScrollX)</div><div class="line">	//刷新滚动视图，让滚动视图重新识别容器大小</div><div class="line">	myScroll.refresh();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">iscroll</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/iscroll//" class="article-tag-list-link color3">iscroll</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/isroll/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/git/">git</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/git/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#git</p>
+<h3 id="git是什么"><a href="#git是什么" class="headerlink" title="git是什么"></a>git是什么</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">目前世界上最先进的分布式版本控制系统</div></pre></td></tr></table></figure>
+<h3 id="git对比-svn"><a href="#git对比-svn" class="headerlink" title="git对比 svn"></a>git对比 svn</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git 是分布式的，svn 是集中式的。</div><div class="line">git 的分支操作非常方便，</div><div class="line">git 高端大气上档次</div></pre></td></tr></table></figure>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">•	直接去官网下载安装文件，安装即可。</div><div class="line">•	安装完成，会有一个 git bash 的命令行工具</div><div class="line">•	打开这个命令行工具，运行下面两行代码</div><div class="line"></div><div class="line">git config --global user.name <span class="string">"Your Name"</span> </div><div class="line">git config --global user.email <span class="string">"email@example.com"</span></div></pre></td></tr></table></figure>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">git init	初始化git仓库</div><div class="line">git add	添加到暂存区</div><div class="line">git commit	提交版本</div><div class="line">git status	查看当前仓库状态</div><div class="line">git diff	查看文件是怎么修改的</div><div class="line">git <span class="built_in">log</span>	显示从最近到最远的提交日志</div><div class="line">git reset --hard HEAD^	回退到上一个版本</div><div class="line">git reflog	显示记录的我的每一次命令</div><div class="line">git checkout -- &lt;filename&gt;	丢弃工作区的修改</div><div class="line">git reset HEAD &lt;filename&gt;	撤销暂存区的修改</div><div class="line">git checkout -b 分支名	创建并切换分支</div><div class="line">git checkout 分支名	切换分支</div><div class="line">git branch	查看所有分支</div><div class="line">git merge 分支名	将某分支的最新内容合并到当前所在分支</div><div class="line">git branch -d 分支名	删除某分支</div><div class="line">git push	推送到远程仓库</div><div class="line">git pull	更新本地仓库，让其跟远程仓库保持一致</div><div class="line">git <span class="built_in">clone</span>	克隆某个分支到本地</div><div class="line">git remote	远程仓库相关操作</div></pre></td></tr></table></figure>
+<h3 id="git忽略文件-gitignore"><a href="#git忽略文件-gitignore" class="headerlink" title="git忽略文件 .gitignore"></a>git忽略文件 .gitignore</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">有些文件，不能让git管理起来，比如保存了一些敏感信息的配置文件，或者 node_modules 这种超大文件，再或者一些编辑器生成的配置文件等。这时，我们就得配置 git忽略文件</div></pre></td></tr></table></figure>
+<h3 id="操作及注意事项"><a href="#操作及注意事项" class="headerlink" title="操作及注意事项"></a>操作及注意事项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">撤销工作区的修改   git checkout -- 文件名</div><div class="line"></div><div class="line">添加到暂存区了。还想撤销。</div><div class="line">	1. git reset HEAD 文件名	</div><div class="line">	2. git checkout -- 文件名</div><div class="line">如果提交到了 版本库里面，回退版本</div><div class="line"></div><div class="line">1. 初始化一个 git 之后，默认所在的 分支 是 master  干净整洁</div><div class="line"></div><div class="line">2. 不要在 master 上 写代码，master 上只做  git push   git pull   git merg</div><div class="line">创建一个 分支 </div><div class="line">git checkout -b dev</div><div class="line">做登录的页面</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">''</span></div><div class="line">回到 master</div><div class="line">将 dev 上面做的 登录给合并到 master</div><div class="line">git merge dev</div><div class="line">推送到远程</div><div class="line">git push </div><div class="line">将某个本地分支推送到远程</div><div class="line">git push origin dev</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/git/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-webpack和gulp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/webpack和gulp/">webpack和gulp的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/webpack和gulp/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>webpack模块化管理和打包工具<br>模块的相互依赖打包成js文件</p>
+<p>npm/cnpm安装   –save-dev</p>
+<p> css-loader   模块<br> style-loader  模块</p>
+<h2 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h2><p>Gulp就是为了规范前端开发流程，实现前后端分离、模块化开发、版本控制、文件合并与压缩、mock数据等功能的一个前端自动化构建工具。<br>………</p>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、AMD 模块、ES6 模块、CSS、图片、JSON、Coffeescript、LESS 等。</p>
+<p>Webpack就是需要通过其配置文件（webpack.config.js）中entry配置的一个入口文件（JS文件）,如下图<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> entry: &#123;</div><div class="line">      app:__dirname + <span class="string">"/src/scripts/app.js"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后Webpack进入该app.js文件进行解析，app.js文件如下图：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//引入scss文件</div><div class="line">   import <span class="string">'../style/app.scss'</span>;</div><div class="line">  </div><div class="line">//引入依赖模块</div><div class="line">   var greeter = require(<span class="string">'./Greeter.js'</span>);</div><div class="line">   </div><div class="line">document.getElementById(<span class="string">'root'</span>).appendChild(greeter());</div></pre></td></tr></table></figure></p>
+<p>解析过程中，发现一个app.scss文件，然后根据webpack.config.js配置文件中的module.loaders属性去查找处理.scss文件的loader进行处理，处理app.scss文件过程中，如果发现该文件还有其他依赖文件，则继续处理app.scss文件的依赖文件，直至处理完成该“链路”上的依赖文件，然后又遇到一个Greeter.js模块，于是像之前一样继续去查找对应的loader去处理…<br>所以，Webpack中对资源文件的处理是通过入口文件产生的依赖形成的，不会像Gulp那样，配置好路径后，该路径下所有规定的文件都会受影响。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/webpack/gulp//" class="article-tag-list-link color5">gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/webpack和gulp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue路由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/vue路由/">vue路由</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/vue路由/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vue-router 路由/也可以自动生成路由模块<br>安装<br>引入的模块   都要Vue.use一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import VueRouter from <span class="string">'vue-router'</span></div><div class="line">Vue.use(VuewRouter)</div><div class="line">npm/cnpm install vue-router --save</div></pre></td></tr></table></figure></p>
+<p>创建组件，引入组件<br>import Home from ‘…./Home.vue’</p>
+<h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">const routes=[</div><div class="line">		&#123;</div><div class="line">			path:<span class="string">'/home'</span>,component:Home,</div><div class="line">				//子路由</div><div class="line">				//子路由要显示 都要在副路由渲染下面加  &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">			children:[</div><div class="line">				&#123; path:<span class="string">'/homecontent'</span>,component:HomeConent&#125;</div><div class="line">				.....	</div><div class="line">			]</div><div class="line">		&#125;</div><div class="line">		,</div><div class="line">		......</div><div class="line">	]</div><div class="line">const router=new VueRouter(&#123;</div><div class="line">		routes   //es6缩写    routes:routes</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">挂载到vue视图上面 </div><div class="line">new Vue(&#123;</div><div class="line">		el:<span class="string">"#app"</span>,</div><div class="line">		router,</div><div class="line">		render:h=&gt;h(App)</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue路由</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue路由//" class="article-tag-list-link color1">vue路由</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/vue路由/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-react基础复习 以及路由配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -644,626 +1098,6 @@ npm run build
 
 
   
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/vue-router/">vue-router</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/vue-router/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">https://router.vuejs.org/zh-cn/essentials/getting-started.html</div><div class="line">1.&lt;router-view&gt;&lt;/router-view&gt;:&lt;!-- 路由匹配到的组件将渲染在这里 --&gt;</div><div class="line">2.&lt;router-link to=<span class="string">"/bar"</span>&gt;Go to Bar&lt;/router-link&gt;: to后面的是路由配置的路径如3所示</div><div class="line">&lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签</div><div class="line">3.动态路由传参</div><div class="line">const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">	 routes: [</div><div class="line">		&#123;</div><div class="line">		path:<span class="string">"/home"</span>,  //路径</div><div class="line">		component:Home,// 组件</div><div class="line">		children:[//子组件</div><div class="line">			&#123;</div><div class="line">				path:<span class="string">"ads/:id"</span>,// 动态路径参数 以冒号开头</div><div class="line">				component:Address</div><div class="line">			&#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line">如果需要获取传的参数可以在链接页面加载时 使用 this.<span class="variable">$router</span>.params.id  可以获得传入的id</div><div class="line">id是路由配置是写入的参数</div><div class="line">4,命名路由传值</div><div class="line">路由器配置：const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      path: <span class="string">'/user/:userId'</span>,//与上面一样 都是配置接收传值的参数</div><div class="line">      name: <span class="string">'user'</span>,//name给路由设置一个名字</div><div class="line">      component: User</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line"></div><div class="line">传入产生方式：这两种方式都会把路由导航到 /user/123 路径。</div><div class="line">&lt;router-link :to=<span class="string">"&#123; name: 'user', params: &#123; userId: 123 &#125;&#125;"</span>&gt;User&lt;/router-link&gt;</div><div class="line">router.push(&#123; name: <span class="string">'user'</span>, params: &#123; userId: 123 &#125;&#125;)</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue-router</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/vue-router/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/vue/">vue</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/vue/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="vue-js"><a href="#vue-js" class="headerlink" title="vue.js"></a>vue.js</h1><h3 id="Vue的版本"><a href="#Vue的版本" class="headerlink" title="Vue的版本"></a>Vue的版本</h3><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.2013年12月有Vue  </div><div class="line">2.2015年10月发布1.0版本</div><div class="line">3.2016年6月发布2.0测试版</div><div class="line">4.2016年10月发布2.0正式版</div></pre></td></tr></table></figure>
-</code></pre><h3 id="常见指令"><a href="#常见指令" class="headerlink" title="常见指令"></a>常见指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.v-for 循环  </div><div class="line">2.v-model 用于input</div><div class="line">3.v-on 事件的绑定 简写 ：@</div><div class="line">4.v-bind:事件绑定 简写 ： 冒号  ：</div><div class="line">4.@click.stop阻止事件冒泡</div><div class="line">5.@contextmenu.prevent 阻止浏览器默认行为</div></pre></td></tr></table></figure>
-<p>### </p>
-<h3 id="methods和computed的区别"><a href="#methods和computed的区别" class="headerlink" title="methods和computed的区别"></a>methods和computed的区别</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">例:&lt;p&gt;Reversed message: <span class="string">"&#123;&#123; reversedMessage() &#125;&#125;"</span>&lt;/p&gt;</div><div class="line">// <span class="keyword">in</span> component</div><div class="line">	methods: &#123;</div><div class="line">	  reversedMessage: <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">	    <span class="built_in">return</span> this.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</div><div class="line">	  &#125;</div><div class="line">	&#125;</div><div class="line">1.计算属性是基于它们的依赖进行缓存的</div><div class="line">2.计算属性只有在它的相关依赖发生改变时才会重新求值。(如果message没有发生变化，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。)</div><div class="line">3.相比而言，只要发生重新渲染，method 调用总会执行该函数。</div></pre></td></tr></table></figure>
-<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">例:vm.<span class="variable">$wacth</span>(<span class="string">"msg"</span>,<span class="keyword">function</span>(newVal,oldVal)&#123;</div><div class="line">		console.log(<span class="string">'发生了变化'</span>);</div><div class="line">		console.log(newVal)</div><div class="line">		console.log(oldVal)	</div><div class="line">	&#125;)</div><div class="line">1.参数1：需要监听的值(必须是跟vm实例有关的值)</div><div class="line">2.参数2：当发生了变化，会调用的函数</div><div class="line">3.newVal新的值 oldVal发生变化之前的值</div></pre></td></tr></table></figure>
-<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">例:&lt;div id=<span class="string">"app"</span>&gt;</div><div class="line">		价格：&#123;&#123;price | currency&#125;&#125;</div><div class="line">		数量： &#123;&#123;count&#125;&#125;</div><div class="line">		总价： &#123;&#123;price * count | currency&#125;&#125;</div><div class="line">	&lt;/div&gt;</div><div class="line">	Vue.filter(<span class="string">'currency'</span>, <span class="keyword">function</span>(val)&#123;//val用于接收需要过滤的值</div><div class="line">			</div><div class="line">			console.log(<span class="string">'过滤器触发了'</span>);</div><div class="line">			//保留两位小数</div><div class="line">			var res = Math.floor(val*100);</div><div class="line">			res = res / 100.0;</div><div class="line">			</div><div class="line">			//加上货币符号</div><div class="line">			res = <span class="string">'¥'</span>+res;</div><div class="line">			</div><div class="line">			console.log(res)</div><div class="line">			<span class="built_in">return</span> res;</div><div class="line">		&#125;)</div><div class="line">		var vm = new Vue(&#123;</div><div class="line">			el: <span class="string">'#app'</span>,</div><div class="line">			data: &#123;</div><div class="line">				price: 99.99999,</div><div class="line">				count: 5</div><div class="line">			&#125;</div><div class="line">		&#125;)</div><div class="line">1.参数1：过滤器的名字</div><div class="line">2.参数2：过滤器执行的方法</div></pre></td></tr></table></figure>
-<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">例题://创建自定义指令</div><div class="line">		//参数1：指令名字</div><div class="line">		//参数2：指令的实现内容</div><div class="line">		Vue.directive(<span class="string">'color'</span>, <span class="keyword">function</span>(el, info)&#123;</div><div class="line">			//el:是指令作用的标签</div><div class="line">			//info：指令的信息</div><div class="line">			console.log(info)</div><div class="line">			el.style.background = info.value;</div><div class="line">		&#125;)</div><div class="line">		</div><div class="line">		//作业</div><div class="line">		Vue.directive(<span class="string">'drag'</span>, <span class="keyword">function</span>(el, info)&#123;</div><div class="line">			//当dom结构加上了这个v-drag指令，就可以拖拽</div><div class="line">		&#125;)</div><div class="line">1.第一个参数：指令名称</div><div class="line">2.第二个参数：回调函数，回调函数可以获取到添加指令的元素</div></pre></td></tr></table></figure>
-<h3 id="生命周期-钩子函数"><a href="#生命周期-钩子函数" class="headerlink" title="生命周期(钩子函数)"></a>生命周期(钩子函数)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">beforeCreate() 创建之前</div><div class="line">created()创建完成</div><div class="line">beforeMount()跟DOM挂载之前</div><div class="line">mounted()跟dom结构挂载完成：mounted</div><div class="line">beforeUpdate()数据发生变化前：beforeUpdate</div><div class="line">updated()数据发生变化：updated</div><div class="line">beforeDestroy()实例销毁前：beforeDestroy</div><div class="line">destroyed()实例销毁后：destroyed</div></pre></td></tr></table></figure>
-<h3 id="全局组件"><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">例:var liItem = &#123;</div><div class="line">			template: //组件的dom结构</div><div class="line">				`&lt;li class=<span class="string">"item"</span>&gt;</div><div class="line">					&lt;button @click=<span class="string">"btnAction"</span>&gt;按钮&lt;/button&gt;</div><div class="line">				&lt;/li&gt;`,</div><div class="line">			//接收外部传入的属性</div><div class="line">			props: [<span class="string">'testdata'</span>],</div><div class="line">			methods: &#123;</div><div class="line">				<span class="function"><span class="title">btnAction</span></span>()&#123;</div><div class="line">					console.log(this.testdata);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">	&#125;</div><div class="line">//参数1:组件名字 参数2：</div><div class="line">//组件所用的对象</div><div class="line">Vue.component(<span class="string">'li-item'</span>, liItem);//全局组件的声明方式</div></pre></td></tr></table></figure>
-<h3 id="局部组件"><a href="#局部组件" class="headerlink" title="局部组件"></a>局部组件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//声明方式 实在实例对象或另一个组件里面</div><div class="line">var app = new Vue(&#123;</div><div class="line">			el: <span class="string">"#app"</span>,</div><div class="line">			methods: &#123;</div><div class="line">			&#125;,</div><div class="line">			//声明这个app的vue实例对象，有什么子组件</div><div class="line">			components: &#123;</div><div class="line">				//key：使用组件时的标签名字，value值组件所用的对象</div><div class="line">				<span class="string">'li-item'</span>: liItem</div><div class="line">			&#125;</div><div class="line">		&#125;)</div></pre></td></tr></table></figure>
-<h3 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">1.父-子</div><div class="line">	自定义事件：在父组件data里面的数据 </div><div class="line">	&lt;son-com v-bind:data=<span class="string">"sendData"</span> :data1=<span class="string">"inputVal1"</span>&gt;&lt;/son-com&gt;</div><div class="line">子接收:props: &#123;</div><div class="line">				data1: Number//属性验证 传过来的值 必须是字符串</div><div class="line">			&#125;</div><div class="line">或 props：[<span class="string">"data1"</span>] 直接接收</div><div class="line">2. 子-父</div><div class="line">	子：&lt;button @click=<span class="string">"sendAction"</span>&gt;将数据传给父组件&lt;/button&gt;</div><div class="line">		<span class="function"><span class="title">sendAction</span></span>()&#123;</div><div class="line">			//需要将数据传递给父组件</div><div class="line">			//调起父组件事件getSonData---》》get-data</div><div class="line">			//触发自定义事件：get-data</div><div class="line">			//参数1：事件名字</div><div class="line">			//参数2：触发事件时的事件参数</div><div class="line">			this.<span class="variable">$emit</span>(<span class="string">'get-data'</span>, this.inputVal);</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		$</div><div class="line">	父：	&lt;son-com @get-data=<span class="string">"getSonData"</span>&gt;&lt;/son-com&gt;</div><div class="line">		methods: &#123;</div><div class="line">				getSonData(val)&#123;</div><div class="line">					console.log(<span class="string">'父组件事件触发了'</span>);</div><div class="line">					console.log(val)</div><div class="line">					this.sonData = val;</div><div class="line">				&#125;</div><div class="line">		&#125;</div><div class="line">3.不相关的两个组件传值</div><div class="line">	使用一个空vue空实例</div><div class="line">	//处理非父子组件的通信</div><div class="line">	var Event = new Vue();</div><div class="line">	Vue.prototype.<span class="variable">$eventHandle</span> = Event;//可以直接加到vue实例的原型上</div><div class="line">	// 发送的组件</div><div class="line">	this.<span class="variable">$emit</span>(<span class="string">'get-address'</span>, this.inputVal);</div><div class="line">	//监听地址改变的事件接收</div><div class="line">	this.<span class="variable">$eventHandle</span>.<span class="variable">$on</span>(<span class="string">'get-address'</span>, (val)=&gt;&#123;</div><div class="line">		console.log(<span class="string">'home接收到了新地址'</span>+val);</div><div class="line">		this.address = val;</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/vue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Myreact" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/Myreact/">myreact</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/Myreact/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>React 是一个用于构建用户界面的 JAVASCRIPT 库。<br>React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。<br>React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。<br>React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。</p>
-<p>React 特点<br>1.声明式设计 −React采用声明范式，可以轻松描述应用。<br>2.高效 −React通过对DOM的模拟，最大限度地减少与DOM的交互。<br>3.灵活 −React可以与已知的库或框架很好地配合。<br>4.JSX − JSX 是 JavaScript 语法的扩展。React 开发不一定使用 JSX ，但我们建议使用它。<br>5.组件 − 通过 React 构建组件，使得代码更加容易得到复用，能够很好的应用在大项目的开发中。<br>6.单向响应的数据流 − React 实现了单向响应的数据流，从而减少了重复代码，这也是它为什么比传统数据绑定更简单。</p>
-<p>开始:</p>
-<pre><code>React 的安装包，可以到官网下载。不过，React Demos 已经自带 React 源码，不用另外安装，
-
-只需把这个库拷贝到你的硬盘就行了。 
-
-
-注意：选择15.3--15.5的版本，这里面有列子。
-</code></pre><p>安装下载看demo</p>
-<p>引入</p>
-<pre><code>react.js
-react-dom.js
-browser.min.js
-</code></pre><p>react的js类型</p>
-<script type="text/babel"></script>
-
-<p>//定义组件  组件的名称首字母一定要大写</p>
-<pre><code>例：var Header=React.createClass({   /*对象*/
-        render:function(){
-
-            return (
-     /*模板必须要被根节点包含起来*/
-
-                &lt;div&gt;
-                    &lt;h2&gt;这是一个头部组件&lt;/h2&gt;
-                &lt;/div&gt;
-            )
-        }
-
-    })
-</code></pre><p> ReactDOM.render(） // 渲染</p>
-<p>1.安装脚手架工具   （单文件组件项目生成工具）   只需要安装一次</p>
-<pre><code>https://facebook.github.io/react/docs/installation.html
-
-
-npm install -g create-react-app   /  cnpm install -g create-react-app
-</code></pre><p>2.创建项目   （可能创建多次）</p>
-<pre><code>找到项目要创建的目录：
-
-create-react-app reactdemo
-</code></pre><p>3.cd  到项目里面    </p>
-<pre><code>cd  reactdemo
-
-
-npm start  运行项目
-
-
-npm run build 生成项目
-</code></pre><p>react 脚手架    创建项目</p>
-<pre><code>npm install -g create-react-app 
-create-react-app myapp
-cd myapp
-npm start
-react run build
-</code></pre><p>父子组件</p>
-<pre><code>axios    react的请求数据模块
-下载安装  
-cnpm install axios --save 
-引入axios
-import axiox from &apos;axios&apos;
-看官方文档  demo
-</code></pre><p>生命周期函数     刷新就执行   不用做其他操作</p>
-<pre><code>使用swiper
-cnpm install swiper --save
-import swiper from &apos;swiper&apos;
-引入swipercss
-加载自己的css
-
-
-
-
-react
-andt的css样式要拿出来手动引入
-ANTd DESIGN   插件     *******好用
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">myreact</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/myreact//" class="article-tag-list-link color3">myreact</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/Myreact/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue基本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/vue基本/">vue的基本</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/vue基本/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="vue的基本使用搭建及流程"><a href="#vue的基本使用搭建及流程" class="headerlink" title="vue的基本使用搭建及流程"></a>vue的基本使用搭建及流程</h1><h3 id="构建用户界面的渐进式框架-MVVM框架"><a href="#构建用户界面的渐进式框架-MVVM框架" class="headerlink" title="构建用户界面的渐进式框架 MVVM框架"></a>构建用户界面的渐进式框架 MVVM框架</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 全局安装 vue-cli</span></div><div class="line">$ npm install --global vue-cli</div><div class="line"><span class="comment"># 创建一个基于 webpack 模板的新项目</span></div><div class="line">$ vue init webpack my-project   很少用开启语法检查是否配置路由</div><div class="line">$ vue init webpack-simple my-project    用这个</div><div class="line"><span class="comment"># 安装依赖，走你</span></div><div class="line">$ <span class="built_in">cd</span> my-project</div><div class="line">$ npm install</div><div class="line">$ npm run dev</div></pre></td></tr></table></figure>
-<h3 id="vue组件-script标签里"><a href="#vue组件-script标签里" class="headerlink" title="vue组件     script标签里"></a>vue组件     script标签里</h3><p>不能和HTML标签重名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">定义组件    第一种写法</div><div class="line">var Header=&#123;</div><div class="line">//没有分号</div><div class="line">	template:<span class="string">"&lt;div&gt;头部&lt;/div&gt;"</span></div><div class="line">&#125;</div><div class="line">注册组件</div><div class="line"></div><div class="line">Vue.component(<span class="string">'v-header'</span>,Header);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">组合写  第二种写法</div><div class="line">Vue.component(<span class="string">'v-header'</span>,&#123;</div><div class="line">//没有分号</div><div class="line">	template:<span class="string">"&lt;div&gt;头部&lt;/div&gt;"</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">定义组件   第三种写法</div><div class="line">var News=&#123;</div><div class="line">//没有分号</div><div class="line">	template:<span class="string">"&lt;div&gt;新闻&lt;/div&gt;"</span></div><div class="line">&#125;</div><div class="line">var vm=new Vue(&#123;   //****常用****</div><div class="line">	el:<span class="string">"#xxx"</span>,</div><div class="line">	data:&#123;   &#125;,</div><div class="line">	components:&#123;</div><div class="line">		<span class="string">'v-news'</span>:News     //注册组件</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<h3 id="vue-父子组件之间的传值"><a href="#vue-父子组件之间的传值" class="headerlink" title="vue 父子组件之间的传值"></a>vue 父子组件之间的传值</h3><p>例：一个header和new组件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">1、</div><div class="line">var Header=&#123;</div><div class="line">        template:<span class="string">"#header"</span>,</div><div class="line">        <span class="function"><span class="title">data</span></span>()&#123;</div><div class="line">            <span class="built_in">return</span>&#123;</div><div class="line">                msg:<span class="string">'header'</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">            <span class="function"><span class="title">headerrun</span></span>()&#123;</div><div class="line">                alert(<span class="string">"子组件的方法"</span>+this.m)</div><div class="line">                this.run()</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        props:[<span class="string">'m'</span>,<span class="string">'run'</span>]</div><div class="line">	//new绑定数据  header接收数据 props</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var New=&#123;</div><div class="line">        template:<span class="string">"#new"</span>,</div><div class="line">        <span class="function"><span class="title">data</span></span>()&#123;</div><div class="line">            <span class="built_in">return</span> &#123;</div><div class="line">                msg:<span class="string">"this is news"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">            <span class="function"><span class="title">run</span></span>()&#123;</div><div class="line">                alert(this.msg+<span class="string">"父组件的方法"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        components:&#123;</div><div class="line">            <span class="string">'v-header'</span>:Header</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var app=new Vue(&#123;</div><div class="line">        el:<span class="string">"#app"</span>,</div><div class="line">        data:&#123;</div><div class="line">            //数据</div><div class="line">            name:<span class="string">"zhangsan"</span></div><div class="line">        &#125;,</div><div class="line">        components:&#123;</div><div class="line">            //注册组件</div><div class="line">            <span class="string">'v-new'</span>:New</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line"></div><div class="line">2、</div><div class="line">在body里面   在定义的视口下面组件里面的HTML代码</div><div class="line">&lt;template id=<span class="string">"header"</span>&gt;</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;h2&gt;这是头部子组件---&#123;&#123;msg&#125;&#125;--&#123;&#123;m&#125;&#125;-&lt;/h2&gt;</div><div class="line">                &lt;button @click=<span class="string">"headerrun"</span>&gt;头部按钮&lt;/button&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/template&gt;</div><div class="line">        &lt;template id=<span class="string">"new"</span>&gt;</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;h2&gt;&#123;&#123;msg&#125;&#125;----&lt;/h2&gt;</div><div class="line">                &lt;button @click=<span class="string">"run"</span>&gt;父组件&lt;/button&gt;</div><div class="line">                &lt;hr&gt;</div><div class="line"></div><div class="line">                &lt;v-header :m=<span class="string">"msg"</span> :run=<span class="string">"run"</span>&gt;&lt;/v-header&gt;</div><div class="line">		//****表示在header组件里面绑定new里面的  msg 和run方法</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/template&gt;</div><div class="line"></div><div class="line">3、最后在渲染到视口里面  </div><div class="line">``` </div><div class="line"><span class="comment">### vue-resource  和   axios</span></div><div class="line">安装：   vue-resource </div><div class="line">主文件引入：   import VueResource from <span class="string">'vue-resource'</span></div><div class="line">主文件使用：   Vue.use(VueResource)</div><div class="line">``` bash</div><div class="line"></div><div class="line">&#123;//请求数据</div><div class="line">  // GET /someUrl</div><div class="line">  this.<span class="variable">$http</span>.get(<span class="string">'/someUrl'</span>).<span class="keyword">then</span>(response =&gt; &#123;</div><div class="line"></div><div class="line">    // get body data</div><div class="line">    this.someData = response.body;</div><div class="line"></div><div class="line">  &#125;, response =&gt; &#123;</div><div class="line">    // error callback</div><div class="line">  &#125;);</div><div class="line">&#125; </div><div class="line"></div><div class="line"></div><div class="line">axios  请求数据差不多</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/vue基本/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue路由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/vue路由/">vue路由</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/vue路由/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vue-router 路由/也可以自动生成路由模块<br>安装<br>引入的模块   都要Vue.use一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import VueRouter from <span class="string">'vue-router'</span></div><div class="line">Vue.use(VuewRouter)</div><div class="line">npm/cnpm install vue-router --save</div></pre></td></tr></table></figure></p>
-<p>创建组件，引入组件<br>import Home from ‘…./Home.vue’</p>
-<h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">const routes=[</div><div class="line">		&#123;</div><div class="line">			path:<span class="string">'/home'</span>,component:Home,</div><div class="line">				//子路由</div><div class="line">				//子路由要显示 都要在副路由渲染下面加  &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">			children:[</div><div class="line">				&#123; path:<span class="string">'/homecontent'</span>,component:HomeConent&#125;</div><div class="line">				.....	</div><div class="line">			]</div><div class="line">		&#125;</div><div class="line">		,</div><div class="line">		......</div><div class="line">	]</div><div class="line">const router=new VueRouter(&#123;</div><div class="line">		routes   //es6缩写    routes:routes</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">挂载到vue视图上面 </div><div class="line">new Vue(&#123;</div><div class="line">		el:<span class="string">"#app"</span>,</div><div class="line">		router,</div><div class="line">		render:h=&gt;h(App)</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue路由</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue路由//" class="article-tag-list-link color1">vue路由</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/vue路由/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-webpack和gulp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/webpack和gulp/">webpack和gulp的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/01/webpack和gulp/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>webpack模块化管理和打包工具<br>模块的相互依赖打包成js文件</p>
-<p>npm/cnpm安装   –save-dev</p>
-<p> css-loader   模块<br> style-loader  模块</p>
-<h2 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h2><p>Gulp就是为了规范前端开发流程，实现前后端分离、模块化开发、版本控制、文件合并与压缩、mock数据等功能的一个前端自动化构建工具。<br>………</p>
-<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、AMD 模块、ES6 模块、CSS、图片、JSON、Coffeescript、LESS 等。</p>
-<p>Webpack就是需要通过其配置文件（webpack.config.js）中entry配置的一个入口文件（JS文件）,如下图<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> entry: &#123;</div><div class="line">      app:__dirname + <span class="string">"/src/scripts/app.js"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后Webpack进入该app.js文件进行解析，app.js文件如下图：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//引入scss文件</div><div class="line">   import <span class="string">'../style/app.scss'</span>;</div><div class="line">  </div><div class="line">//引入依赖模块</div><div class="line">   var greeter = require(<span class="string">'./Greeter.js'</span>);</div><div class="line">   </div><div class="line">document.getElementById(<span class="string">'root'</span>).appendChild(greeter());</div></pre></td></tr></table></figure></p>
-<p>解析过程中，发现一个app.scss文件，然后根据webpack.config.js配置文件中的module.loaders属性去查找处理.scss文件的loader进行处理，处理app.scss文件过程中，如果发现该文件还有其他依赖文件，则继续处理app.scss文件的依赖文件，直至处理完成该“链路”上的依赖文件，然后又遇到一个Greeter.js模块，于是像之前一样继续去查找对应的loader去处理…<br>所以，Webpack中对资源文件的处理是通过入口文件产生的依赖形成的，不会像Gulp那样，配置好路径后，该路径下所有规定的文件都会受影响。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/webpack/gulp//" class="article-tag-list-link color5">gulp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/01/webpack和gulp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-微信小程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1469,6 +1303,95 @@ ANTd DESIGN   插件     *******好用
 
 
   
+    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/vue-router/">vue-router</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/01/vue-router/" class="archive-article-date">
+  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">https://router.vuejs.org/zh-cn/essentials/getting-started.html</div><div class="line">1.&lt;router-view&gt;&lt;/router-view&gt;:&lt;!-- 路由匹配到的组件将渲染在这里 --&gt;</div><div class="line">2.&lt;router-link to=<span class="string">"/bar"</span>&gt;Go to Bar&lt;/router-link&gt;: to后面的是路由配置的路径如3所示</div><div class="line">&lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签</div><div class="line">3.动态路由传参</div><div class="line">const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">	 routes: [</div><div class="line">		&#123;</div><div class="line">		path:<span class="string">"/home"</span>,  //路径</div><div class="line">		component:Home,// 组件</div><div class="line">		children:[//子组件</div><div class="line">			&#123;</div><div class="line">				path:<span class="string">"ads/:id"</span>,// 动态路径参数 以冒号开头</div><div class="line">				component:Address</div><div class="line">			&#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line">如果需要获取传的参数可以在链接页面加载时 使用 this.<span class="variable">$router</span>.params.id  可以获得传入的id</div><div class="line">id是路由配置是写入的参数</div><div class="line">4,命名路由传值</div><div class="line">路由器配置：const router = new VueRouter(&#123;</div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      path: <span class="string">'/user/:userId'</span>,//与上面一样 都是配置接收传值的参数</div><div class="line">      name: <span class="string">'user'</span>,//name给路由设置一个名字</div><div class="line">      component: User</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div><div class="line"></div><div class="line">传入产生方式：这两种方式都会把路由导航到 /user/123 路径。</div><div class="line">&lt;router-link :to=<span class="string">"&#123; name: 'user', params: &#123; userId: 123 &#125;&#125;"</span>&gt;User&lt;/router-link&gt;</div><div class="line">router.push(&#123; name: <span class="string">'user'</span>, params: &#123; userId: 123 &#125;&#125;)</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue-router</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/01/vue-router/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1566,18 +1489,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">myreact</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -1590,11 +1501,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">myreact</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1606,10 +1517,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
@@ -1618,11 +1525,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+                <a href="javascript:void(0)" class="js-tag color4">phonegap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1638,19 +1545,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1662,11 +1565,31 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
               <li class="article-tag-list-item">
