@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: myreact | SmallWen的博客</title>
+  <title>git的使用 | SmallWen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="start from zero">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SmallWen的博客">
-<meta property="og:url" content="http://yoursite.com/tags/myreact/index.html">
+  <meta name="description" content="git克隆分支的方式介绍当你进入到公司的git类网站上，会发现一般提供了两种克隆分支的方式： 1、SSH方式，可以免密登录，git拉取代码和提交分支都可以免密，但是要去git网站上配置SSH Key,添加自己生产的公钥。 2、HTTPS方式：可以不用去git网站上配置SSH Key，但是克隆、提交和拉取分支代码都需要输入用户名和密码，比较麻烦（新手推荐用这个）。 如何克隆指定分支？以next分支为">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git的使用">
+<meta property="og:url" content="http://yoursite.com/2018/06/01/公司git基本/index.html">
 <meta property="og:site_name" content="SmallWen的博客">
-<meta property="og:description" content="start from zero">
+<meta property="og:description" content="git克隆分支的方式介绍当你进入到公司的git类网站上，会发现一般提供了两种克隆分支的方式： 1、SSH方式，可以免密登录，git拉取代码和提交分支都可以免密，但是要去git网站上配置SSH Key,添加自己生产的公钥。 2、HTTPS方式：可以不用去git网站上配置SSH Key，但是克隆、提交和拉取分支代码都需要输入用户名和密码，比较麻烦（新手推荐用这个）。 如何克隆指定分支？以next分支为">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-04T07:54:05.146Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SmallWen的博客">
-<meta name="twitter:description" content="start from zero">
+<meta name="twitter:title" content="git的使用">
+<meta name="twitter:description" content="git克隆分支的方式介绍当你进入到公司的git类网站上，会发现一般提供了两种克隆分支的方式： 1、SSH方式，可以免密登录，git拉取代码和提交分支都可以免密，但是要去git网站上配置SSH Key,添加自己生产的公钥。 2、HTTPS方式：可以不用去git网站上配置SSH Key，但是克隆、提交和拉取分支代码都需要输入用户名和密码，比较麻烦（新手推荐用这个）。 如何克隆指定分支？以next分支为">
   
     <link rel="alternative" href="/atom.xml" title="SmallWen的博客" type="application/atom+xml">
   
@@ -151,71 +153,226 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-公司git基本" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/01/Myreact/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/01/Myreact/">myreact</a>
+    <h1 class="article-title" itemprop="name">
+      git的使用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/01/公司git基本/" class="archive-article-date">
+  	<time datetime="2018-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git克隆分支的方式介绍"><a href="#git克隆分支的方式介绍" class="headerlink" title="git克隆分支的方式介绍"></a>git克隆分支的方式介绍</h2><pre><code>当你进入到公司的git类网站上，会发现一般提供了两种克隆分支的方式：
+1、SSH方式，可以免密登录，git拉取代码和提交分支都可以免密，但是要去git网站上配置SSH Key,添加自己生产的公钥。
+2、HTTPS方式：可以不用去git网站上配置SSH Key，但是克隆、提交和拉取分支代码都需要输入用户名和密码，比较麻烦（新手推荐用这个）。
+</code></pre><h2 id="如何克隆指定分支？"><a href="#如何克隆指定分支？" class="headerlink" title="如何克隆指定分支？"></a>如何克隆指定分支？</h2><pre><code>以next分支为例,git地址为HTTPS方式为例
+1、打开之前建好的project文件夹，右键选择Git Bash Here,弹出git窗口
+2、初始化本地仓库：git init
+3、关联远程仓库：git remote add origin “HTTPS地址”
+
+我红色划掉的部分就是HTTPS地址啦，复制下来。
+4、拉取指定next分支：git clone -b next “git地址”
+上面命令中的-b（branch）就是克隆的时候指定分支。
+如果此时你是在git网站上添加了密钥，并且git地址是SSH方式的地址，那么可以直接克隆下来。如果你用的是HTTPS方式，你就需要输入用户名密码进行克隆。
+</code></pre><h2 id="如何优雅的在分支上开发？"><a href="#如何优雅的在分支上开发？" class="headerlink" title="如何优雅的在分支上开发？"></a>如何优雅的在分支上开发？</h2><pre><code>刚克隆下来的next分支在本地也叫next，通常我们不建议直接在这个分支上开发，而是新建一个分支。
+1、git checkout -b next-dev (创建并切换到next-dev分支上)
+2、我们可以在next-dev上愉快的写我们的代码，写完后可把代码提交到本地仓库：
+（1）、git add . （&quot;.“的意思就是保存添加所有修改到暂存区）
+（2）、git commit -m “注释” （将暂存区中的修改提交到本地仓库）
+3、开发完成后我们可将next-dev分支合并到本地next分支上：
+（1）切换到本地next分支：git checkout next （切换分之前，需要先在next-dev上commit更改到本地仓库）
+（2）本地next分支更新：git pull origin next （当你合并分支的时候，可能其他同事又提交了新的内容）
+（3）在本地next分支上去合并next-dev分支：git merge next-dev。（若分支合并出现冲突，这里推荐使用idea集成git工具在idea中去合并冲突，因为比较方便的就能查看到冲突代码块）
+4、提交本地next到远程next: git pull origin next:next (”:“前面的是本地分支的名字，”:&quot;后面的是远程分支的名字)
+</code></pre><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre><code>初始化本地仓库：git init
+本地仓库关联远程仓库：git remote add origin “git 地址”
+查看已关联的仓库：git remote -v
+切换关联仓库（如想要从HTTPS方式的关联仓库切换到SSH方式关联的仓库）：
+（1）、取消关联：git remote remove origin
+（2）、重新关联：git remote add origin “git SSH方式的地址”
+查看所有的分支：git branch -a
+更新分支列表（当你不能查看到完整的分支列表时）：git fetch
+切换分支：git checkout 分支名
+创建分支：git branch 分支名
+强制删除分支（可删除当前分支）：git branch-D 分支名
+非强制删除分支（不可删除当前分支）：git branch -d 分支名
+创建并切换到新分支：git checkout -b 分支名
+克隆远程仓库的项目代码：git clone “远程仓库地址”
+克隆远程仓库指定分支的代码：git clone “远程仓库地址”
+拉取远程分支：git pull 远程分支
+提交变更到本地仓库：git commit -m “修改信息注释”：
+将你的分支推到远程仓库：git push origin “本地分支名”:远程分支名
+撤销本地commit:
+（1）、git log 查看commit_id
+（2）、git reset --hard commit_id
+查看当前仓库的状态（你修改了哪些，哪些保存到了本地仓库，哪些没有）：git status
+查看提交历史：git log
+</code></pre><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><pre><code>1、提交前先git pull是一个好习惯，更新别人提交的代码，避免冲突。
+2、为防止我们的误操作，如不小心按到键盘在配置文件中多加了一个字母。我们可以使用idea中的git compare去查看本地分支与远程分支中的差异，确定都是我们自己的正确修改后再提交。
+3、分支切换前需要先commit保存修改到本地仓库，不然切换不会成功，强行切换会导致当前分支被覆盖。
+4、在git里面总是有后悔药吃的，所以大胆搞，出错了大不了回滚。
+</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">myreact</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/myreact//" class="article-tag-list-link color3">myreact</a>
+        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/06/01/公司git基本/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/01/01/vuex状态管理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vuex</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -238,9 +395,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
